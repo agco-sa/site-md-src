@@ -25,7 +25,7 @@ menu:
             relativeUrl: conta.html
         ddi:
             text: Dealer Data Integration
-             relativeUrl: 1introddi.html
+            relativeUrl: 1introddi.html
         config:
             text: Configuração
             relativeUrl: 2configddi.html
