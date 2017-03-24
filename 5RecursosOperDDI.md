@@ -33,10 +33,10 @@ Segue um exemplo do corpo de uma mensagem válida, no padrão JSON esperado, con
          },
          "emit": {
            "CNPJ": "92028224000391",
-           "xNome": "SOTRIMA AGRICOLA LTDA",
-           "xFant": "SOTRIMA AGRICOLA LTDA",
+           "xNome": "CONCESSIONARIA X",
+           "xFant": "CONCESSIONARIA X",
            "enderEmit": {
-             "xMun": "CAXIAS DO SUL",
+             "xMun": "SANTANA DO LIVRAMENTO",
              "UF": "RS",
              "xPais": "BRASIL"
            }
@@ -44,10 +44,10 @@ Segue um exemplo do corpo de uma mensagem válida, no padrão JSON esperado, con
          "dest": {
            "CPF": "23518456091",
            "CNPJ": "",
-           "xNome": "ABRELINO ANTONIO DANELLI",
+           "xNome": "MARCOS DA SILVA",
            "enderDest": {
              "cMun": 4305108,
-             "xMun": "CAXIAS DO SUL",
+             "xMun": "BAGE",
              "UF": "RS",
              "cPais": 1058
            }
@@ -78,7 +78,7 @@ Segue um exemplo do corpo de uma mensagem válida, no padrão JSON esperado, con
        "tipoOp": 1,
        "vend": {
          "CPF": "68037503020",
-         "xNome": "MARCELO ORESTES TOSS",
+         "xNome": "FRANCISCO DA SILVA",
          "telefone": "5499999999"
        },
        "prodDet": [
@@ -99,7 +99,7 @@ Segue um exemplo do corpo de uma mensagem válida, no padrão JSON esperado, con
 
 ### Especificação dos atributos (grupo "NFe")
 | TAG PAI | TAG | TIPO | DESCRIÇÃO | OBRIGATÓRIO | EXEMPLO |
-| ------- | --- | ---- | --------- | ----------- | ------- |
+| :------- | :--- | :---- | :--------- | :----------- | :------- |
 | | **versão** | numeric(4,2) | Versão do layout | Sim | "versao": 2.00 |
 | | **id** | varchar(47) | Identificador da TAG a ser assinada. *(informar a chave de acesso da NF-e precedida do literal ‘NFe’, acrescentada a validação do formato)* | Sim | "Id": " NFe43150395437281000312550030000296371002180066" |
 | ide | **natOp** | varchar(60) | Descrição da Natureza da Operação | Sim | “natOp”: “TRANSFERENCIA ENTRE FILIAIS”|
@@ -118,7 +118,7 @@ Segue um exemplo do corpo de uma mensagem válida, no padrão JSON esperado, con
 | emitenderEmit | **xPais** | varchar(60) | Nome do País do emitente | Não | "xPais": "BRASIL" |
 | dest | **CNPJ** | varchar(14) | CNPJ do destinatário | /* | "CNPJ": "95485281000312" |
 | dest | **CPF** | varchar(11) | CPF do destinatário | /* | "CPF": "29896908087" |
-| dest | **xNome** | varchar(60) | Razão social ou nome do destinatário | Sim | "xNome": "ANTONIO WELTER" |
+| dest | **xNome** | varchar(60) | Razão social ou nome do destinatário | Sim | "xNome": "ANTONIO DA SILVA" |
 | destenderDest |	**cMun** | int |	Código do município |	Sim	| "cMun": 4306205 |
 | destenderDest | **xMun**	| varchar(60) |	Nome do município do destinatário |	Sim	| "xMun": "CRUZEIRO DO SUL" |
 | destenderDest | **UF** |	varchar(2)	| Sigla da UF do destinatário |	Sim	| "UF": "RS" |
@@ -132,9 +132,11 @@ Segue um exemplo do corpo de uma mensagem válida, no padrão JSON esperado, con
 | detprod | **vProd** |	numeric(15,2) |	Valor total bruto dos produtos |	Sim	| "vProd": 287000.00 |
 | totalICMSTot |	**vNF** |	numeric(15,2) |	Valor Total da NF-e |	Sim |	"vNF": 287000.00 |
 
+
+
 ### Especificação dos atributos (grupo “ddi”)
 | TAG PAI | TAG | TIPO | DESCRIÇÃO | OBRIGATÓRIO | EXEMPLO |
-| ------- | --- | ---- | --------- | ----------- | ------- |
+| :------- | :--- | :---- | :--------- | :----------- | :------- |
 | | **tipoOp** | int | Código do tipo de operação *( ***1***=venda, ***4***=devolução, ***5***=transferência)* | Sim | "tipoOp": 1 |
 | vend | **CPF** |	varchar(11) |	CPF do Vendedor |	Não |	"CPF": "29896908085"|
 | vend | **xNome** |	varchar(60) |	Nome completo do Vendedor	| Não |	"xNome": "NOME VENDEDOR" |
