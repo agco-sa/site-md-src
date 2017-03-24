@@ -1,5 +1,5 @@
 template:
-    url: https://github.com/CouscousPHP/Template-ReadTheDocs
+    url: https://github.com/agco-sa/Template-ReadTheDocs
 
 # Base URL of the published website
 baseUrl: https://agco-sa.github.io/
