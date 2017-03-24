@@ -1,0 +1,13 @@
+language: php
+php:
+  - 5.4
+env:
+  global:
+    - GIT_NAME: "'AGCO-SA API docs site auto deploy'"
+    - GIT_EMAIL: eduardo.bobsin@gmail.com
+    - GH_REF: github.com/agco-sa/agco-sa.github.io
+    - secure: 
+before_script:
+  - composer install --no-progress
+script:
+  - vendor/bin/couscous travis-auto-deploy
