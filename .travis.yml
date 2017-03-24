@@ -10,4 +10,4 @@ env:
 before_script:
   - composer install --no-progress
 script:
-  - vendor/bin/couscous travis-auto-deploy --php-version=5.5 --branch master -vvv
+  - vendor/bin/couscous travis-auto-deploy --php-version=5.5 -vvv
