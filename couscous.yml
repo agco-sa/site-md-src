@@ -1,3 +1,19 @@
+template:
+    url: https://github.com/CouscousPHP/Template-ReadTheDocs
+
+# Base URL of the published website
+baseUrl: https://agco-sa.github.io/
+
+# Used to link to the GitHub project
+github:
+    user: eduardobobsin
+    repo: agco-sa
+
+branch: master
+
+title: AGCO South America APIs
+subTitle: API Documentation
+
 # The left menu bar
   menu:
       items:
