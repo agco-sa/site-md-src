@@ -9,7 +9,7 @@ github:
     user: eduardobobsin
     repo: agco-sa
 
-branch: master
+# branch: master
 
 title: AGCO South America APIs
 subTitle: API Documentation
