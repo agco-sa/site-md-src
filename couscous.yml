@@ -38,19 +38,6 @@ menu:
         resources-ddi:
             text: Recursos DDI
             relativeUrl: 5recursosoperddi.html
-        items:
-            config:
-                text: Configuração
-                relativeUrl: 2configddi.html
-            seguranca:
-                text: Segurança
-                relativeUrl: 3segurancaddi.html
-            returncodes:
-                text: Códigos de retorno
-                relativeUrl: 4codretornoddi.html
-            resources-ddi:
-                text: Recursos DDI
-                relativeUrl: 5recursosoperddi.html
         politicas:
             text: Políticas
             relativeUrl: politicas.html
