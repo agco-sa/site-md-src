@@ -5,4 +5,4 @@
 
 Para solicitar uma conta clique no link abaixo!
 
-[**EU QUERO!**](<mailto:dss@sa.agcocorp.com>)
+[**EU QUERO!**](mailto:dss@sa.agcocorp.com)
