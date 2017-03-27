@@ -32,7 +32,7 @@ Segue um exemplo do corpo de uma mensagem válida, no padrão JSON esperado, con
            "tpNF": 1
          },
          "emit": {
-           "CNPJ": "92028224000391",
+           "CNPJ": "92028224000399",
            "xNome": "CONCESSIONARIA X",
            "xFant": "CONCESSIONARIA X",
            "enderEmit": {
@@ -42,7 +42,7 @@ Segue um exemplo do corpo de uma mensagem válida, no padrão JSON esperado, con
            }
          },
          "dest": {
-           "CPF": "23518456091",
+           "CPF": "23518456099",
            "CNPJ": "",
            "xNome": "MARCOS DA SILVA",
            "enderDest": {
@@ -77,7 +77,7 @@ Segue um exemplo do corpo de uma mensagem válida, no padrão JSON esperado, con
      "ddi": {
        "tipoOp": 1,
        "vend": {
-         "CPF": "68037503020",
+         "CPF": "68037503029",
          "xNome": "FRANCISCO DA SILVA",
          "telefone": "5499999999"
        },
