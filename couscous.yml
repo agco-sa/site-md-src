@@ -16,26 +16,25 @@ subTitle: API Documentation
 
 # The left menu bar
 menu:
-    sections:
-        items:
-            ddi:
-                text: Introdução 
-                relativeUrl: 1introddi.html
-            acesso:
-                text: Solicitando uma conta
-                relativeUrl: conta.html        
-            seguranca:
-                text: Segurança
-                relativeUrl: 3segurancaddi.html
-            config:
-                text: Configuração
-                relativeUrl: 2configddi.html
-            returncodes:
-                text: Códigos de retorno
-                relativeUrl: 4codretornoddi.html
-            resources-ddi:
-                text: Recursos DDI
-                relativeUrl: 5recursosoperddi.html
-            politicas:
-                text: Políticas
-                relativeUrl: politicas.html
+    items:
+        ddi:
+            text: Introdução 
+            relativeUrl: 1introddi.html
+        acesso:
+            text: Solicitando uma conta
+            relativeUrl: conta.html        
+        seguranca:
+            text: Segurança
+            relativeUrl: 3segurancaddi.html
+        config:
+            text: Configuração
+            relativeUrl: 2configddi.html
+        returncodes:
+            text: Códigos de retorno
+            relativeUrl: 4codretornoddi.html
+        resources-ddi:
+            text: Recursos DDI
+            relativeUrl: 5recursosoperddi.html
+        politicas:
+            text: Políticas
+            relativeUrl: politicas.html
