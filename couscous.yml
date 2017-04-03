@@ -9,7 +9,9 @@ github:
     user: eduardobobsin
     repo: agco-sa
 
-# branch: master
+# Set the target branch in which to deploy the generated website
+#branch: gh-pages
+branch: master
 
 title: AGCO South America APIs
 subTitle: API Documentation
