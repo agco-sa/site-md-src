@@ -26,8 +26,10 @@ Exemplo de JSON para a interface Inventory Data
           }
         }
 
- 
+
+
 **Especificação dos atributos**
+
 |**ID**|**Campo**|**Pai**|**Tipo**|**Descrição**|**Obrigatório**|**Regra**|**Exemplo**|
 |----|-----|---|----|---------|-----------|-----|---------|
 |A01	|data|	Raiz|	 |	TAG raiz da mensagem|	![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)	 	| ||
@@ -92,7 +94,9 @@ Exemplo de JSON para a interface Parts Data
         }
 
 
+
 **Especificação dos atributos**
+
 |ID|Campo|Pai|Tipo|Descrição|Obrigatório|Regra|Exemplo|
 |--|-----|---|----|---------|-----------|-----|-------|
 |B01|data|Raiz| |TAG raiz da mensagem|![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)| | | 
@@ -126,6 +130,7 @@ Exemplo de JSON para a interface Parts Data
 |B29|segmentationCode04|B04|varchar(30)|Campo para informações de segmentação da concessionária|![error](https://github.com/agco-sa/site-md-src/blob/master/error.png?raw=true)| | |
 |B30|firstAvailableDate|B04|date|Data da primeira movimentação do item na filial. Opção 1: enviar a data que a peça foi recebida pela primeira vez no estoque. Opção 2: se não tiver a informação da opção 1 enviar a data que a peça foi solicita pela primeira vez pela oficina. Opção 3: se não tiver a informação das opções 1 e 2 enviar a data que a peça foi adicionada pela primeira vez no estoque. Opção 4: se não tiver a informação das opções 1, 2 e 3 enviar a data 1900-01-01|![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)| |"2016-11-23"|
 |B31|firstPurchase|B04|boolean|Esse campo identifica se essa peça nunca esteve em estoque porque é um registro de primeira compra|![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)|V003|false|
+
 
 ### 3. Interface Purchase Order
 Exemplo de JSON para a interface Purchase Order
@@ -165,6 +170,7 @@ Exemplo de JSON para a interface Purchase Order
 
 
 **Especificação dos atributos**
+
 |ID|Campo|Pai|Tipo|Descrição|Obrigatório|Regra|Exemplo|
 |--|-----|---|----|---------|-----------|-----|-------|
 |C01|data|Raiz| |TAG raiz da mensagem|![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)| | |
@@ -231,7 +237,9 @@ Exemplo de JSON para a interface Sales Order
       }
     }
 
+
 **Especificação dos atributos**
+
 |ID|Campo|Pai|Tipo|Descrição|Obrigatório|Regra|Exemplo|
 |--|-----|---|----|---------|-----------|-----|-------|
 |D01|data|Raiz| |TAG raiz da mensagem|![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)| | |
@@ -279,7 +287,9 @@ Exemplo de JSON para a interface Lost Sales
       }
     }
 
+
 **Especificação dos atributos**
+
 |ID|Campo|Pai|Tipo|Descrição|Obrigatório|Regra|Exemplo|
 |--|-----|---|----|---------|-----------|-----|-------|
 |E01|data|Raiz| |TAG raiz da mensagem|![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)| | |
@@ -312,7 +322,9 @@ Exemplo de JSON para a interface Customer
       }
     }
 
+
 **Especificação dos atributos**
+
 |ID|Campo|Pai|Tipo|Descrição|Obrigatório|Regra|Exemplo|
 |--|-----|---|----|---------|-----------|-----|-------|
 |F01|data|Raiz| | |![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)| | |
