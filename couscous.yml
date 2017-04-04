@@ -6,7 +6,7 @@ baseUrl: https://agco-sa.github.io/
 
 # Used to link to the GitHub project
 github:
-    user: eduardobobsin
+    user: agco-sa
     repo: agco-sa
 
 # Set the target branch in which to deploy the generated website
@@ -19,26 +19,26 @@ subTitle: API Documentation
 # The left menu bar
 menu:
     items:
-        ddi:
-            text: Introdução 
-            relativeUrl: 1introddi.html
         novaconta:
             text: Solicitando uma conta
             relativeUrl: conta.html        
         seguranca:
             text: Segurança
-            relativeUrl: 3segurancaddi.html
-        config:
-            text: Configuração
-            relativeUrl: 2configddi.html
-        returncodes:
-            text: Códigos de retorno
-            relativeUrl: 4codretornoddi.html
+            relativeUrl: seguranca.html
+        ddi:
+            text: DDI
+            relativeUrl: ddi/index.html
             submenu:
                 items:
-                    resources-ddi:
-                        text: Recursos DDI
-                        relativeUrl: 5recursosoperddi.html
+                    ddi-endpoints:
+                        text: Endpoints
+                        relativeUrl: ddi/endpoints.html
+                    ddi-returncodes:
+                        text: Códigos de retorno
+                        relativeUrl: ddi/codretorno.html
+                    ddi-config:
+                        text: Configuração
+                        relativeUrl: ddi/config.html
         politicas:
             text: Políticas
             relativeUrl: politicas.html
