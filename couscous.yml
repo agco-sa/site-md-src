@@ -22,9 +22,6 @@ menu:
         novaconta:
             text: Solicitando uma conta
             relativeUrl: conta.html        
-        seguranca:
-            text: Segurança
-            relativeUrl: seguranca.html
         ddi:
             text: DDI
             relativeUrl: ddi/index.html
@@ -36,6 +33,9 @@ menu:
                     ddi-returncodes:
                         text: Códigos de retorno
                         relativeUrl: ddi/codretorno.html
+                    ddi-seguranca:
+                        text: Segurança
+                        relativeUrl: ddi/seguranca.html
                     ddi-config:
                         text: Configuração
                         relativeUrl: ddi/config.html
