@@ -4,7 +4,7 @@ parentMenu: vmi
 ---
 
 
-# Integração VMI
+# Vendor Management Inventory Integration
 
 ## Padrões e lista de valores
 Essa sessão contém os padrões e lista de valores utilizados no contrato de dados.
