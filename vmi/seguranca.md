@@ -3,7 +3,7 @@ currentMenu: vmi-seguranca
 parentMenu: vmi
 ---
 
-# Integração VMI
+# Vendor Management Inventory Integration
 
 ## Segurança
 A fim de garantir a segurança das informações transmitidas, todas as chamadas devem ser feitas com SSL.
