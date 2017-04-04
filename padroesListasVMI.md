@@ -11,7 +11,7 @@ Abaixo estão os padrões existentes no contrato de dados.
 |P001	|ISO 8601|	YYYY-MM-DDThh:mm:ss+03:00|	 |
 |P002	|ISO 4217|	BRL	 | |
 |P003	|ISO 3166-2	|"BR"|	https://www.iso.org/obp/ui/#search/code/|
-|P004	|ISO 3166-2|"BR-RS"	| No final da url https://www.iso.org/obp/ui/#iso:code:3166: coloque o código do país da ISO 3166-2. Exemplo: https://www.iso.org/obp/ui/#iso:code:3166:BR|
+|P004	|ISO 3166-2|"BR-RS"	| No final da url https://www.iso.org/obp/ui/#iso:code:3166: coloque o código do país da ISO 3166-2. Exemplo: [https://www.iso.org/obp/ui/#iso:code:3166:**BR**](https://www.iso.org/obp/ui/#iso:code:3166:BR)|
 
 
 ### 2. Lista de valores
@@ -39,8 +39,8 @@ Abaixo estão as listas de valores utilizadas em alguns campos no contrato de da
 ||"W"|W: oficina|
 ||"T"|T: transferência|
 ||"R"|R: devolução|
-|V008	|"REGULAR"|REGULAR:|
-||"EXPEDITE"|EXPEDITE:|
+|V008	|"REGULAR"|REGULAR: entrega normal|
+||"EXPEDITE"|EXPEDITE: entrega expressa|
 |V009	|"OPEN"|OPEN: linha da venda está pendente de atendimento|
 ||"RESERVED"|RESERVED: linha da venda tem reserva no estoque|
 ||"CLOSED"|CLOSED: linha da venda foi enviado para o cliente|
