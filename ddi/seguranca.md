@@ -1,5 +1,6 @@
 ---
-currentMenu: seguranca
+currentMenu: ddi-seguranca
+parentMenu: ddi
 ---
 
 # Segurança
