@@ -2,7 +2,6 @@
 currentMenu: novaconta
 ---
 
-# Dealer Data Integration
 
 ## Solicitando uma conta
 
