@@ -22,7 +22,7 @@ menu:
         ddi:
             text: Introdução 
             relativeUrl: 1introddi.html
-        acesso:
+        novaconta:
             text: Solicitando uma conta
             relativeUrl: conta.html        
         seguranca:
