@@ -1,5 +1,5 @@
 ---
-currentMenu: seguranca_vmi
+currentMenu: seguranca-vmi
 parentMenu: vmi
 ---
 
