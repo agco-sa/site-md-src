@@ -2,5 +2,5 @@
 
 # AGCO APIs
 
-- [DDI](https://agco-sa.github.io/1introddi.html)
-- [VMI](introducaovmi.html)
+- [DDI](https://agco-sa.github.io/ddi/index.html)
+- [VMI](https://agco-sa.github.io/vmi/index.html)
