@@ -33,10 +33,10 @@ Exemplo de JSON para a interface Inventory Data
 |**ID**|**Campo**|**Pai**|**Tipo**|**Descrição**|**Obrigatório**|**Regra**|**Exemplo**|
 |----|-----|---|----|---------|-----------|-----|---------|
 |A01	|data|	Raiz|	 |	TAG raiz da mensagem|	![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)	 	| ||
-|A02	|dealerLegalNumber|	| 	varchar(50)|	CNPJ da concessionária|	![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)	||	"99.999.999/0001-99"|
-|A03	|extractionDateTime	| 	|timestamp|	Data da extração dos dados da mensagem|	![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)	|P001|"2016-11-23T10:45:00+03:00"|
-|A04	|parts|	A01|	| 	Grupo que contém as informações de peças|	![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)|	 |	| 
-|A05| partsNumber	|A04|	varchar(50)|	Código do item vendido pela concessionária.Código original da concessionária|	![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)|	 |	"1444437P"|
+|A02	|dealerLegalNumber|	| 	varchar(50)|	CNPJ da concessionária|	![check](images/check.png)||	"99.999.999/0001-99"|
+|A03	|extractionDateTime	| 	|timestamp|	Data da extração dos dados da mensagem|	![check](images/check.png)	|P001|"2016-11-23T10:45:00+03:00"|
+|A04	|parts|	A01|	| 	Grupo que contém as informações de peças|	![check](images/check.png)|	 |	| 
+|A05| partsNumber	|A04|	varchar(50)|	Código do item vendido pela concessionária.Código original da concessionária|	![check](images/check.png)|	 |	"1444437P"|
 |A06|	availableQuantity|	A04	|number(10,2)	|Quantidade de itens disponíveis no estoque para venda |![check](https://github.com/agco-sa/site-md-src/blob/master/check.png?raw=true)|	| 	20|
 ||||| - Excluir desse número peças que estão reservadas para ordens de serviços e que ainda não foram contadas como venda. ||||
 ||||| - Excluir desse número peças que estão reservadas para atender pedidos de venda. ||||
