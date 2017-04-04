@@ -39,6 +39,29 @@ menu:
                     ddi-config:
                         text: Configuração
                         relativeUrl: ddi/config.html
+        vmi:
+            text: VMI
+            relativeUrl: vmi/index.html
+            submenu:
+                items:
+                    vmi-endpoints:
+                        text: Endpoints
+                        relativeUrl: vmi/endpoints.html
+                    vmi-seguranca:
+                        text: Segurança
+                        relativeUrl: vmi/seguranca.html
+                    vmi-padroes-listas:
+                        text: Padrões e Listas
+                        relativeUrl: vmi/padroeslistas.html
+                    vmi-config:
+                        text: Configuração
+                        relativeUrl: vmi/config.html
+                    vmi-regras-processo:
+                        text: Regras e Processos
+                        relativeUrl: vmi/regrasprocesso.html
+                    vmi-returncodes:
+                        text: Códigos de Retorno
+                        relativeUrl: vmi/retornos.html
         politicas:
             text: Políticas
             relativeUrl: politicas.html
