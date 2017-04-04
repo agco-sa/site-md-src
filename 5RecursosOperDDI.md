@@ -3,7 +3,6 @@ currentMenu: resources-ddi
 parentMenu: returncodes
 ---
 
-![AGCO Logo](images/agco-logo.png)
 # Dealer Data Integration
 
 ## Recursos e operações

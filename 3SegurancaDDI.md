@@ -2,7 +2,6 @@
 currentMenu: seguranca
 ---
 
-![AGCO Logo](images/agco-logo.png)
 # Dealer Data Integration
 
 ### Segurança

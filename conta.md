@@ -2,7 +2,6 @@
 currentMenu: novaconta
 ---
 
-![AGCO Logo](images/agco-logo.png)
 # Dealer Data Integration
 
 ## Solicitando uma conta

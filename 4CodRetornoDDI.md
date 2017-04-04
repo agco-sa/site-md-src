@@ -2,7 +2,6 @@
 currentMenu: returncodes
 ---
 
-![AGCO Logo](images/agco-logo.png)
 # Dealer Data Integration
 ## Códigos de Retorno
 

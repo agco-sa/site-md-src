@@ -2,7 +2,6 @@
 currentMenu: config
 ---
 
-![AGCO Logo](images/agco-logo.png)
 # Dealer Data Integration
 
 ## Configuração
