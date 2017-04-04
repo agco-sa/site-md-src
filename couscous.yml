@@ -22,7 +22,7 @@ menu:
     items:
         ddi:
             text: Introdução 
-            relativeUrl: 1introddi.html
+            relativeUrl: introddi.html
         novaconta:
             text: Solicitando uma conta
             relativeUrl: conta.html        
