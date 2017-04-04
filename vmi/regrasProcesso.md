@@ -3,7 +3,7 @@ currentMenu: vmi-regras-processo
 parentMenu: vmi
 ---
 
-# Integração VMI
+# Vendor Management Inventory Integration
 
 ## Regras do processo de integração
 Essa sessão contém as regras que devem ser utilizadas para enviar a primeira carga dos dados e para a configuração dos eventos que devem disparar novas mensagens.
