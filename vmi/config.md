@@ -3,7 +3,7 @@ currentMenu: vmi-config
 parentMenu: vmi
 ---
 
-# Integração VMI
+# Vendor Management Inventory Integration
 
 ## Configuração
 O serviço é oferecido como cinco interfaces REST e que trafegam conteúdo JSON. Ele está disponibilizado nos ambientes abaixo.
