@@ -2,8 +2,9 @@
 currentMenu: ddi-seguranca
 parentMenu: ddi
 ---
+# Dealer Data Integration
 
-# Segurança
+## Segurança
 A fim de garantir a segurança das informações transmitidas, todas as chamadas devem ser feitas com SSL.
 Além da criptografia da comunicação, o uso da API exige que as chamadas sejam autenticadas. O modo de autenticação é o Basic Auth, e ele é feito através do uso de headers nas chamadas das operações.
 Além das informações de segurança, mais headers são especificados conforme a tabela a seguir.
