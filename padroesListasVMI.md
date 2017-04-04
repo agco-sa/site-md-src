@@ -39,8 +39,8 @@ Abaixo estão as listas de valores utilizadas em alguns campos no contrato de da
 ||"W"|W: oficina|
 ||"T"|T: transferência|
 ||"R"|R: devolução|
-|V008	|"REGULAR"|REGULAR:|
-||"EXPEDITE"|EXPEDITE:|
+|V008	|"REGULAR"|REGULAR: entrega normal|
+||"EXPEDITE"|EXPEDITE: entrega expressa|
 |V009	|"OPEN"|OPEN: linha da venda está pendente de atendimento|
 ||"RESERVED"|RESERVED: linha da venda tem reserva no estoque|
 ||"CLOSED"|CLOSED: linha da venda foi enviado para o cliente|
