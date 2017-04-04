@@ -3,7 +3,7 @@ currentMenu: vmi-returncodes
 parentMenu: vmi
 ---
 
-# Integração VMI
+# Vendor Management Inventory Integration
 
 ## Códigos de Retorno
 Ao enviar uma mensagem para o serviço, será retornado um código que varia de acordo com o resultado do processamento da mensagem na AGCO. A lista de possíveis retornos, assim como as ações a serem tomadas em cada caso de erro, são descritas na tabela a seguir.
