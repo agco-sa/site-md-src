@@ -1,4 +1,9 @@
-![AGCO_logo](http://www.agco.com.br/content/agcocorp/pt_BR/_jcr_content/footermainparsys/footer/footerlogoimage.img.png/1485893878104.png)
+---
+currentMenu: padroes_lista_vmi
+parentMenu: vmi
+---
+
+
 # Integração VMI
 
 ## Padrões e lista de valores
