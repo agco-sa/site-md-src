@@ -1,5 +1,6 @@
 template:
-    url: https://github.com/agco-sa/Template-ReadTheDocs
+#    url: https://github.com/agco-sa/Template-ReadTheDocs
+    directory: template
 
 # Base URL of the published website
 baseUrl: https://agco-sa.github.io/

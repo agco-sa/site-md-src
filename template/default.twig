@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="{{ baseUrl }}/css/theme.css" type="text/css"/>
+    <link rel="stylesheet" href="{{ baseUrl }}/css/theme-fixes.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+    <!--
+    <link rel="stylesheet" href="{{ baseUrl }}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    -->
+</head>
+<body class="wy-body-for-nav">
+
+    <div class="wy-grid-for-nav">
+
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-nav-search">
+                <a href="{{ baseUrl }}/" class="fa fa-home"> {{ title|default('The title') }}</a>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    {% for itemId, item in menu.items %}
+                        <li class="toctree-l1 {{ itemId == currentMenu ? 'current' }}">
+                            <a class="reference internal {{ itemId == currentMenu ? 'current' }}"
+                               href="{{ item.absoluteUrl|default(baseUrl ~ '/' ~ item.relativeUrl) }}">
+                                {{ item.text|raw }}
+                            </a>
+                        </li>
+                        
+                {% if itemId == currentMenu or itemId == parentMenu or itemId == parent2Menu or itemId == parent3Menu %}
+                <ul class="submenu nav nav-stacked nav-pills">
+                    {% for item2Id, item2 in item.submenu.items %}
+                    <li class="{{ item2Id == currentMenu ? 'active' }}">
+                        <a href="{{ item2.absoluteUrl|default(baseUrl ~ '/' ~ item2.relativeUrl) }}">
+                            {{ item2.text|raw }}
+                        </a>
+                    </li>
+
+                    {% if item2Id == currentMenu or item2Id == parentMenu or item2Id == parent2Menu or item2Id == parent3Menu %}
+                    <ul class="submenu nav nav-stacked nav-pills">
+                        {% for item3Id, item3 in item2.submenu.items %}
+                        <li class="{{ item3Id == currentMenu ? 'active' }}">
+                            <a href="{{ item3.absoluteUrl|default(baseUrl ~ '/' ~ item3.relativeUrl) }}">
+                                {{ item3.text|raw }}
+                            </a>
+                        </li>
+
+                        {% if item3Id == currentMenu or item3Id == parentMenu or item3Id == parent2Menu or item3Id == parent3Menu %}
+                        <ul class="submenu nav nav-stacked nav-pills">
+                            {% for item4Id, item4 in item3.submenu.items %}
+                            <li class="{{ item4Id == currentMenu ? 'active' }}">
+                                <a href="{{ item4.absoluteUrl|default(baseUrl ~ '/' ~ item4.relativeUrl) }}">
+                                    {{ item4.text|raw }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                    {% endfor %}
+                </ul>
+                {% endif %}                        
+                    {% endfor %}
+                </ul>
+            </div>
+            &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+            {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
+            <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="{{ baseUrl }}/">{{ title|default('The title') }}</a>
+            </nav>
+
+
+            {# PAGE CONTENT #}
+            <div class="wy-nav-content">
+                <div class="rst-content">
+                    <div role="main" class="document">
+                        {{ content|raw }}
+                    </div>
+
+                    <footer>
+                        <hr/>
+                        {% if not github is empty %}
+                            <div role="contentinfo">
+                                <p>
+                                    Find {{ title }} on <a href="https://github.com/{{ github.user }}/{{ github.repo }}">GitHub</a>.
+                                </p>
+                            </div>
+                        {% endif %}
+                        Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
+                    </footer>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="{{ baseUrl }}/js/theme.js"></script>
+
+    <script>
+        $(function() {
+            // Syntax highlighting
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+</body>
+</html>
