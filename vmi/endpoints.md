@@ -3,7 +3,7 @@ currentMenu: vmi-endpoints
 parentMenu: vmi
 ---
 
-# Integração VMI
+# Vendor Management Inventory Integration
 
 ## Recursos e operações
 Essa sessão contém os campos e regras das interfaces disponibilizadas para capturar informações de peças das concessionárias.
