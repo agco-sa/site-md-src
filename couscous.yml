@@ -34,9 +34,11 @@ menu:
         returncodes:
             text: Códigos de retorno
             relativeUrl: 4codretornoddi.html
-        resources-ddi:
-            text: Recursos DDI
-            relativeUrl: 5recursosoperddi.html
+            submenu:
+                items:
+                    resources-ddi:
+                        text: Recursos DDI
+                        relativeUrl: 5recursosoperddi.html
         politicas:
             text: Políticas
             relativeUrl: politicas.html
