@@ -1,5 +1,5 @@
 ---
-currentMenu: padroes_lista_vmi
+currentMenu: padroes-lista-vmi
 parentMenu: vmi
 ---
 
