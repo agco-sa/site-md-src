@@ -106,7 +106,7 @@ Exemplo de JSON para a interface Parts Data
 |B01|data|Raiz| |TAG raiz da mensagem|![check](/images/check.png)| | | 
 |B02|dealerLegalNumber|B01|varchar(50)|CNPJ da concessionária|![check](/images/check.png)| |"99.999.999/0001-99"|
 |B03|extractionDateTime|B01|timestamp|Data da extração dos dados da mensagem|![check](/images/check.png)|P001|"2016-11-23T10:45:00+03:00"|
-|B04|part|B01||Grupo que contém as informações de peças|![check](/images/check.png)| | |
+|B04|part|B01| |Grupo que contém as informações de peças|![check](/images/check.png)| | |
 |B05|partsNumber|B04|varchar(50)|Código do item. Código original da concessionária|![check](/images/check.png)|	|"1444437P"|
 |B06|agcoPartNumber|B04|varchar(50)|Código do item AGCO. Se o item não for um item original AGCO a concessionária deve ter um código AGCO que corresponda ao item em questão|![check](/images/check.png)| |"1480626M1"|
 |B07|originalPart|B04|boolean|Informação que define se o item é um item original AGCO ou não|![check](/images/check.png)|V001|true|
@@ -180,7 +180,7 @@ Exemplo de JSON para a interface Purchase Order
 |C01|data|Raiz| |TAG raiz da mensagem|![check](/images/check.png)| | |
 |C02|dealerLegalNumber|C01|varchar(50)|CNPJ da concessionária|![check](/images/check.png)| |"99.999.999/0001-99"|
 |C03|extractionDateTime|C01|timestamp|Data da extração dos dados da mensagem|![check](/images/check.png)|P001|"2016-11-23T10:45:00+03:00"|
-|C04|order|C01||Grupo que contém as informações de pedido|![check](/images/check.png)| | |
+|C04|order|C01| |Grupo que contém as informações de pedido|![check](/images/check.png)| | |
 |C05|orderID|C04|varchar(50)|Número do pedido na concessionária|![check](/images/check.png)|	|"34562"|
 |C06|orderAgco|C04|varchar(10)|Número do pedido AGCO|![error](/images/error.png)| |"AOL-123456"|
 |C07|orderIdOriginal|C04|varchar(50)|Número original do pedido na concessionária. O valor desse campo nunca pode mudar. Deve sempre manter o primeiro número recebido pelo pedido|![error](/images/error.png)|	|"4567"|
@@ -192,7 +192,7 @@ Exemplo de JSON para a interface Purchase Order
 |C13|filter1|C04|varchar|Campo utilizado para filtro de informações|![error](/images/error.png)| | |
 |C14|filter2|C04|varchar|Campo utilizado para filtro de informações|![error](/images/error.png)| | |
 |C15|filter3|C04|varchar|Campo utilizado para filtro de informações|![error](/images/error.png)| | |
-|C16|items|C04||Grupo que contém as informações de peças do pedido|![check](/images/check.png)| | |
+|C16|items|C04| |Grupo que contém as informações de peças do pedido|![check](/images/check.png)| | |
 |C17|sourceLocation|C16|varchar(20)|Informação do armazém em que o pedido foi colocado na AGCO|![error](/images/error.png)|V005|"REPVT03"|
 |C18|orderLineNumber|C16|varchar(10)|Linha única do pedido|![check](/images/check.png)|	|"1"|
 |C19|partNumber|C16|varchar(20)|Código do item vendido. Código original da concessionária|![check](/images/check.png)|	|"1444437P"|
@@ -249,7 +249,7 @@ Exemplo de JSON para a interface Sales Order
 |D01|data|Raiz| |TAG raiz da mensagem|![check](/images/check.png)| | |
 |D02|dealerLegalNumber|D01|varchar(50)|CNPJ da concessionária|![check](/images/check.png)| |"99.999.999/0001-99"|
 |D03|extractionDateTime|D01|timestamp|Data da extração dos dados da mensagem|![check](/images/check.png)|P001|"2016-11-23T10:45:00+03:00"|
-|D04|order|D01||Grupo que contém as informações de pedido|![check](/images/check.png)| | |
+|D04|order|D01| |Grupo que contém as informações de pedido|![check](/images/check.png)| | |
 |D05|orderDate|D04|date|Data que o pedido foi coloca no sistema|![check](/images/check.png)|	|"2016-11-23"|
 |D06|orderType|D04|varchar(1)|Tipo do pedido|![check](/images/check.png)|V007|"W"|
 |D07|orderId|D04|varchar(50)|Número do pedido na concessionária|![check](/images/check.png)| |"1233"|
@@ -258,7 +258,7 @@ Exemplo de JSON para a interface Sales Order
 |D10|dealerFilter1|D04|varchar(100)|Campo utilizado para filtro de informações|![error](/images/error.png)| | |
 |D11|dealerFilter2|D04|varchar(100)|Campo utilizado para filtro de informações|![error](/images/error.png)| | |
 |D12|dealerFilter3|D04|varchar(100)|Campo utilizado para filtro de informações|![error](/images/error.png)| | |
-|D13|items|D04||Grupo que contém as informações de peças do pedido|![check](/images/check.png)| | |
+|D13|items|D04| |Grupo que contém as informações de peças do pedido|![check](/images/check.png)| | |
 |D14|orderLineNumber|D13|varchar(10)|Linha única do pedido|![check](/images/check.png)|	|"1A2B3C4D5E"|
 |D15|partNumber|D13|varchar(50)|Código do item vendido. Código original da concessionária|![check](/images/check.png)|	|"1444437P"|
 |D16|firstPassFill|D13|boolean|Identifica se o pedido foi atendido por completo no momento da solicitação|![error](/images/error.png)|	|false|
@@ -299,7 +299,7 @@ Exemplo de JSON para a interface Lost Sales
 |E01|data|Raiz| |TAG raiz da mensagem|![check](/images/check.png)| | |
 |E02|dealerLegalNumber|E01|varchar(50)|CNPJ da concessionária|![check](/images/check.png)| |"99.999.999/0001-99"|
 |E03|extractionDateTime|E01|timestamp|Data da extração dos dados da mensagem|![check](/images/check.png)|P001|"2016-11-23T10:45:00+03:00"|
-|E04|order|E01||Grupo que contém as informações de pedido|![check](/images/check.png)| | |
+|E04|order|E01| |Grupo que contém as informações de pedido|![check](/images/check.png)| | |
 |E05|customerLegalNumber|E04|varchar(50)|CPF ou CNPJ do cliente|![error](/images/error.png)| |"000.000.000-00"|
 |E06|partNumber|E04|varchar(50)|Código do item. Código original da concessionária|![check](/images/check.png)| |"1444437P"|
 |E07|lostSalesQuantity|E04|number(14,2)|Quantidade de itens perdidos por falta de estoque|![check](/images/check.png)|	|10|
