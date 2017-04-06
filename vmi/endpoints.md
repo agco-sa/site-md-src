@@ -36,24 +36,24 @@ Exemplo de JSON para a interface Inventory Data
 
 |**ID**|**Campo**|**Pai**|**Tipo**|**Descrição**|**Obrigatório**|**Regra**|**Exemplo**|
 |----|-----|---|----|---------|-----------|-----|---------|
-|A01	|data|	Raiz|	 |	TAG raiz da mensagem|	![check](/images/check.png)	 	| ||
-|A02	|dealerLegalNumber|	| 	varchar(50)|	CNPJ da concessionária|	![check](/images/check.png)||	"99.999.999/0001-99"|
+|A01	|data|	Raiz|	 |	TAG raiz da mensagem|	![check](/images/check.png)	 	| | |
+|A02	|dealerLegalNumber|	| 	varchar(50)|	CNPJ da concessionária|	![check](/images/check.png)| |	"99.999.999/0001-99"|
 |A03	|extractionDateTime	| 	|timestamp|	Data da extração dos dados da mensagem|	![check](/images/check.png)	|P001|"2016-11-23T10:45:00+03:00"|
 |A04	|parts|	A01|	| 	Grupo que contém as informações de peças|	![check](/images/check.png)|	 |	| 
 |A05| partsNumber	|A04|	varchar(50)|	Código do item vendido pela concessionária.Código original da concessionária|	![check](/images/check.png)|	 |	"1444437P"|
 |A06|	availableQuantity|	A04	|number(10,2)	|Quantidade de itens disponíveis no estoque para venda |![check](/images/check.png)|	| 	20|
-||||| - Excluir desse número peças que estão reservadas para ordens de serviços e que ainda não foram contadas como venda. ||||
-||||| - Excluir desse número peças que estão reservadas para atender pedidos de venda. ||||
-||||| - Excluir desse número peças pendentes de transferências||||
-|A07|	onOrderQuantity|	A04|	number(10,2)	|Quantidade de itens com pedidos de compras em aberto ou transferências entre filiais pendentes e que não foram baixados no estoque.|![check](/images/check.png)	||15|
-|||||1.1 Pedidos||||
-|||||- Contar todas as peças em pedidos de compra, independente do tipo de pedido (emergência, estoque, etc), tirando os de compras realizados especificamente para um cliente.||||
-|||||1.2 Transferências||||
-|||||- Contar todos os pedidos pendentes de transferências internas, tirando os itens que já estão alocados para um cliente específico, assim como itens que estão em pedidos de balcão ou oficina||||
-|A08	|reservedQuantityWorkOrders|	A04|	number(10,2)|	Itens reservados para ordens de serviços abertas na oficina e que ainda não foram contados como venda.|	![check](/images/check.png)||	 	1.5|
+| | | | | - Excluir desse número peças que estão reservadas para ordens de serviços e que ainda não foram contadas como venda. | | | |
+| | | | | - Excluir desse número peças que estão reservadas para atender pedidos de venda. | | | |
+| | | | | - Excluir desse número peças pendentes de transferências||||
+|A07|	onOrderQuantity|	A04|	number(10,2)	|Quantidade de itens com pedidos de compras em aberto ou transferências entre filiais pendentes e que não foram baixados no estoque.|![check](/images/check.png)	| |15|
+| | | | |1.1 Pedidos| | | |
+| | | | |- Contar todas as peças em pedidos de compra, independente do tipo de pedido (emergência, estoque, etc), tirando os de compras realizados especificamente para um cliente.| | | |
+| | | | |1.2 Transferências| | | |
+| | | | |- Contar todos os pedidos pendentes de transferências internas, tirando os itens que já estão alocados para um cliente específico, assim como itens que estão em pedidos de balcão ou oficina| | | |
+|A08	|reservedQuantityWorkOrders|	A04|	number(10,2)|	Itens reservados para ordens de serviços abertas na oficina e que ainda não foram contados como venda.|	![check](/images/check.png)| |	 	1.5|
 |A09|	reservedQuantityPartTickets	|A04|	number(10,2)|	Itens reservados para pedidos de balcão e que ainda não foram contados como venda.	|![check](/images/check.png)	 |	|1.5|
 |A10|	openCustomerOrders|	A04|	number(10,2)|	Soma de itens em pedidos em aberto para cliente final.|![error](/images/error.png)|	| 	1.5|
-|A11	|quantityReturnedByDealer|	A04|	number(10,2)|	Itens retornados da concessionária para a AGCO.|	![check](/images/check.png)|| 	10|
+|A11	|quantityReturnedByDealer|	A04|	number(10,2)|	Itens retornados da concessionária para a AGCO.|	![check](/images/check.png)| | 	10|
 |A12|	quantityReturnedByCustomerCounter|	A04|	number(10,2)|	Itens retornados por pedidos de balcão para a concessionária.|	![check](/images/check.png)| |	1.5|
 |A13	|quantityReturnedByCustomerShop|	A04|	number(10,2)|	Itens retornados por pedidos de oficina para a concessionária.|	![check](/images/check.png)|	| 	1.5|
 |A14|	quantityReturnedTotal|	A04|	number(10,2)|	Soma de itens retornados por pedidos de oficina e balcão para a concessionária.|	![check](/images/check.png)	| |	1.5|
