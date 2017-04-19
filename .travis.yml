@@ -19,6 +19,6 @@ deploy:
   github_token: $GH_TOKEN # Set in travis-ci.org dashboard
   local_dir: .couscous/generated
   on:
-    branch: master
+    #branch: master
     repo: $GH_REF
-    #target_branch: master
+    target_branch: master
