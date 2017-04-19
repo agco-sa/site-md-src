@@ -10,7 +10,7 @@ env:
 before_script:
   - composer install --no-progress
 script:
-  - vendor/bin/couscous generate --php-version=5.5 -vvv
+  - vendor/bin/couscous generate -vvv
   #- vendor/bin/couscous travis-auto-deploy --php-version=5.5 -vvv
   
 deploy:
