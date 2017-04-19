@@ -5,7 +5,7 @@ env:
   global:
     - GIT_NAME: "'AGCO-SA API docs site auto deploy'"
     - GIT_EMAIL: eduardo.bobsin@gmail.com
-    - GH_REF: agco-sa/agco-sa.github.io
+    - GH_REF: github.com/agco-sa/agco-sa.github.io
     - secure: XeDFpet4y7sKLtnVM8+w7Qr6/diumZkCIFUTKed6TD5qkT7H4XYJXFR4Lzv0O4wJ+JQNp+oc3An0J5MuXPr6Xxxp7jJXIYS9S7e9MGXRpm7Kyd7Ax88yX1WUAGxurQrjfFAHqU1NNuq4txOWtm6/qkb5inxVO2VVCYegYHl3uoH6UD/9o6ukJECCJkTs/XDj3f9niHBxKHoNLRAIeL1YTmVoW4Uny3EhdaCuea816+XRZJyEqMaoFUZUgStaS+dI3j8iT49r2mkGwKSTgmvjWU6trPW48eSvz7CemF6NhBX5o3vQXxhR+BdKu4chr6237RyjZNONcBRRzI8lsFkaMMjZQjGnnPDn6ljHZtK9Ad26ngHEnd7NlCxXhGyOKBr2SlqJ2b7fWjWc4LajjZJMCVxJcl3TRXYIfcK07VNWxGCXZTmktDQMWr83CVjraeVz2jShcq353AxL2tPm2rFzf7MHtp5lPBn74foHexCYRctRXRlpoUud7qGJGtVgiyMrLCBc6kTCQuf0SsNrh+WQonj6/gzXJekWQ1vpIut0wtboPKbOk5x+dw6U05wWKYTjOpKPiwFBOlL/m1mgFSLGCa3oszusMN4iOUTLcrKnHW8rKmErnCVEUOXtG9LGfOl8CTmJibsudCZ5soOKXxPI4JQ7XhpVKS1YTdGRr5dnQKA=
 before_script:
   - composer install --no-progress
