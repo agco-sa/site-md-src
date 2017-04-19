@@ -29,3 +29,4 @@ table {	background-color:#fff; width:100%;	max-width:700px; }
 tr:nth-child(odd)>th { background-color:#f9f9f9; font-size: 12px; }
 th {	text-align:left; 	padding:5px;line-height:1.4285714;vertical-align:top;border-top:1px solid #ddd; vertical-align:bottom;border-bottom:2px solid #ddd; border:1px solid #ddd }
 td { padding:5px; border-top:2px solid #ddd; border:1px solid #ddd; font-size: 12px; }
+ul { margin-left: 10px; }
