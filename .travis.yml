@@ -21,4 +21,4 @@ deploy:
   on:
     branch: master
     repo: $GH_REF
-    target_branch: master
+    #target_branch: master
