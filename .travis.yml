@@ -10,5 +10,15 @@ env:
 before_script:
   - composer install --no-progress
 script:
-  - vendor/bin/couscous travis-auto-deploy --php-version=5.5 -vvv
+  - vendor/bin/couscous generate --php-version=5.5 -vvv
+  #- vendor/bin/couscous travis-auto-deploy --php-version=5.5 -vvv
   
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  local_dir: .couscous/generated
+  on:
+    branch: master
+    repo: agco-sa/agco-sa.github.io
+    target_branch: master
