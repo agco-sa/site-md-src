@@ -20,5 +20,5 @@ deploy:
   local_dir: .couscous/generated
   on:
     branch: master
-    #repo: agco-sa/agco-sa.github.io
+    repo: $GH_REF
     target_branch: master
