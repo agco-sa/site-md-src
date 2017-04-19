@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGCO South America APIs</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/theme.css" type="text/css"/>
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/theme-fixes.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+    <!--
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    -->
+</head>
+<body class="wy-body-for-nav">
+
+    <div class="wy-grid-for-nav">
+
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-nav-search">
+                <a href="https://agco-sa.github.io/" class="fa fa-home"> AGCO South America APIs</a>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/conta.html">
+                                Solicitando uma conta
+                            </a>
+                        </li>
+                        
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/ddi/index.html">
+                                DDI
+                            </a>
+                        </li>
+                        
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/vmi/index.html">
+                                VMI
+                            </a>
+                        </li>
+                        
+                                <ul class="submenu nav nav-stacked nav-pills">
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/endpoints.html">
+                            Endpoints
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/seguranca.html">
+                            Segurança
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/padroeslistas.html">
+                            Padrões e Listas
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/config.html">
+                            Configuração
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/regrasprocesso.html">
+                            Regras e Processos
+                        </a>
+                    </li>
+
+                    
+                                        <li class="active">
+                        <a href="https://agco-sa.github.io/vmi/retornos.html">
+                            Códigos de Retorno
+                        </a>
+                    </li>
+
+                                        <ul class="submenu nav nav-stacked nav-pills">
+                                            </ul>
+                    
+                                    </ul>
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/politicas.html">
+                                Políticas
+                            </a>
+                        </li>
+                        
+                                        
+                                    </ul>
+            </div>
+            &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="https://agco-sa.github.io/">AGCO South America APIs</a>
+            </nav>
+
+
+                        <div class="wy-nav-content">
+                <div class="rst-content">
+					<div><p><img src="/images/agco-logo.png" alt="AGCO Logo" /></p></div>
+                    <div role="main" class="document">
+                        <h1 id="vendor-management-inventory-integration">Vendor Management Inventory Integration</h1>
+<h2 id="cdigos-de-retorno">Códigos de Retorno</h2>
+<p>Ao enviar uma mensagem para o serviço, será retornado um código que varia de acordo com o resultado do processamento da mensagem na AGCO. A lista de possíveis retornos, assim como as ações a serem tomadas em cada caso de erro, são descritas na tabela a seguir.</p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Status</th>
+<th>Descrição</th>
+<th>Ação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Sucesso</td>
+<td>Dados atualizados com sucesso</td>
+<td>-</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Sucesso</td>
+<td>Dados inseridos com sucesso</td>
+<td>-</td>
+</tr>
+<tr>
+<td>304</td>
+<td>Sucesso</td>
+<td>Mensagem descartada devido a dados já presentes no banco</td>
+<td>-</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Erro</td>
+<td>Requisição inválida</td>
+<td>Rever formato dos dados enviados <em>(header incompleto, formato JSON incorreto, campos obrigatórios faltando, etc)</em></td>
+</tr>
+<tr>
+<td>401</td>
+<td>Erro</td>
+<td>Usuário não autenticado</td>
+<td>Verificar usuário e senha</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Erro</td>
+<td>Usuário não autorizado</td>
+<td>Usuário não tem acesso aos dados ou token expirado</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Erro</td>
+<td>Endereço não encontrado</td>
+<td>Revisar url de acesso ao serviço.</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Erro</td>
+<td>Conflito no banco de dados</td>
+<td>Rever dados enviados.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Erro</td>
+<td>Dados inválidos</td>
+<td>Rever dados enviados.<em>(as validações realizadas pelo sistema estão na sessão 4.1)</em></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Erro</td>
+<td>Erro inesperado</td>
+<td>Entrar em contato com o DSS.</td>
+</tr>
+<tr>
+<td>504</td>
+<td>Erro</td>
+<td>Problema de comunicação entre proxy e aplicação</td>
+<td>Entrar em contato com o DSS.</td>
+</tr>
+</tbody>
+</table>
+<p>Referência: <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</a></p>
+<h3 id="1-validao-de-dados">1. Validação de dados</h3>
+<p>Todos os dados enviados devem passar pela validação abaixo. Caso os critérios não sejam atendidos será retornado um erro <strong>422</strong>.
+Neste caso, os dados incorretos devem ser corrigidos antes de serem re-enviados.</p>
+<table>
+<thead>
+<tr>
+<th>Erro</th>
+<th>Descrição</th>
+<th>Mensagem de erro</th>
+<th>Exemplo de valor enviado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>001</td>
+<td>Tipo de dado não está correto</td>
+<td>Status: &quot;422&quot; – expected type: <tipo esperado>, found: <tipo recebido></td>
+</tr>
+<tr>
+<td>002</td>
+<td>Formato da mensagem JSON enviada está incorreto</td>
+<td>Status: &quot;422&quot; – Invalid JSON Format</td>
+</tr>
+<tr>
+<td>003</td>
+<td>A data enviada não está de acordo com o padrão definido P001</td>
+<td>Status: &quot;422&quot; – string <data enviada> does not match pattern ^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$</td>
+<td>2005/10/30</td>
+</tr>
+<tr>
+<td>004</td>
+<td>Formato do número enviado não está correto</td>
+<td>Status: &quot;422&quot; – <valor recebido> is not a multiple of 0.01</td>
+<td>123.4512</td>
+</tr>
+<tr>
+<td>005</td>
+<td>Valor negativo enviado em campo que aceita apenas números positivos</td>
+<td>Status: &quot;422&quot; – <valor recebido> is not higher or equal to 0</td>
+<td>-123.45</td>
+</tr>
+<tr>
+<td>006</td>
+<td>Valor enviado com tamanho maior do que o esperado</td>
+<td>Status: &quot;422&quot; – <campo> expected maxLength: &lt;tamanho máximo esperado&gt;, actual: &lt;tamanho máximo enviado&gt;</td>
+<td></td>
+</tr>
+<tr>
+<td>007</td>
+<td>CNPJ do dealer não existe na base da AGCO ou está inativo</td>
+<td>Status: &quot;422&quot; –  Invalid dealerLegalNumber provided. Dealer not found or is not currently active</td>
+<td></td>
+</tr>
+<tr>
+<td>008</td>
+<td>Campo obrigatório não foi enviado na mensagem</td>
+<td>Status: &quot;422&quot; – required key <campo> not found</td>
+<td></td>
+</tr>
+<tr>
+<td>009</td>
+<td>Não foi atendida a regra R001</td>
+<td>Status: &quot;422&quot; – <campo> is required when firstPurchase is true</td>
+<td></td>
+</tr>
+<tr>
+<td>010</td>
+<td>O valor enviado não está de acordo com a lista de valores aceitos. Conforme item 5.2</td>
+<td>Status: &quot;422&quot; – <valor recebido> is not a valid enum value&quot;</td>
+<td>usd</td>
+</tr>
+<tr>
+<td>011</td>
+<td>O CNPJ enviado não é válido</td>
+<td>Status: &quot;422&quot; – <campo> is an invalid legal number</td>
+</tr>
+<tr>
+<td>012</td>
+<td>Não foi atendida a regra R002</td>
+<td>Status: &quot;422&quot; – <campo> is required when lineStatus is CLOSED</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+                    </div>
+
+                    <footer>
+                        <hr/>
+                                                    <div role="contentinfo">
+                                <p>
+                                    Find AGCO South America APIs on <a href="https://github.com/agco-sa/agco-sa">GitHub</a>.
+                                </p>
+                            </div>
+                                                Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
+                    </footer>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="https://agco-sa.github.io/js/theme.js"></script>
+
+    <script>
+        $(function() {
+            // Syntax highlighting
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+</body>
+</html>

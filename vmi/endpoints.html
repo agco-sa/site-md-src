@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGCO South America APIs</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/theme.css" type="text/css"/>
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/theme-fixes.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+    <!--
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    -->
+</head>
+<body class="wy-body-for-nav">
+
+    <div class="wy-grid-for-nav">
+
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-nav-search">
+                <a href="https://agco-sa.github.io/" class="fa fa-home"> AGCO South America APIs</a>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/conta.html">
+                                Solicitando uma conta
+                            </a>
+                        </li>
+                        
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/ddi/index.html">
+                                DDI
+                            </a>
+                        </li>
+                        
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/vmi/index.html">
+                                VMI
+                            </a>
+                        </li>
+                        
+                                <ul class="submenu nav nav-stacked nav-pills">
+                                        <li class="active">
+                        <a href="https://agco-sa.github.io/vmi/endpoints.html">
+                            Endpoints
+                        </a>
+                    </li>
+
+                                        <ul class="submenu nav nav-stacked nav-pills">
+                                            </ul>
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/seguranca.html">
+                            Segurança
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/padroeslistas.html">
+                            Padrões e Listas
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/config.html">
+                            Configuração
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/regrasprocesso.html">
+                            Regras e Processos
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/retornos.html">
+                            Códigos de Retorno
+                        </a>
+                    </li>
+
+                    
+                                    </ul>
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/politicas.html">
+                                Políticas
+                            </a>
+                        </li>
+                        
+                                        
+                                    </ul>
+            </div>
+            &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="https://agco-sa.github.io/">AGCO South America APIs</a>
+            </nav>
+
+
+                        <div class="wy-nav-content">
+                <div class="rst-content">
+					<div><p><img src="/images/agco-logo.png" alt="AGCO Logo" /></p></div>
+                    <div role="main" class="document">
+                        <h1 id="vendor-management-inventory-integration">Vendor Management Inventory Integration</h1>
+<h2 id="recursos-e-operaes">Recursos e operações</h2>
+<p>Essa sessão contém os campos e regras das interfaces disponibilizadas para capturar informações de peças das concessionárias.</p>
+<h3 id="1-interface-inventory-data">1. Interface Inventory Data</h3>
+<p>Exemplo de JSON para a interface Inventory Data</p>
+<pre><code>    {
+      "data": {
+        "dealerLegalNumber": "99.999.999/0001-99",
+        "extractionDateTime": "2016-11-23T10:45:00+03:00",
+        "part": {
+          "partNumber": "1444437P",
+          "availableQuantity": 20,
+          "onOrderQuantity": 1.5,
+          "reservedQuantityWorkOrders": 1.5,
+          "reservedQuantityPartTickets": 1.5,
+          "openCustomerOrders": 1.5,
+          "quantityReturnedByDealer": 10,
+          "quantityReturnedByCustomerCounter": 1.5,
+          "quantityReturnedByCustomerShop": 1.5,
+          "quantityReturnedTotal": 1.5
+        }
+      }
+    }</code></pre>
+<p><strong>Especificação dos atributos</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>ID</strong></th>
+<th><strong>Campo</strong></th>
+<th><strong>Pai</strong></th>
+<th><strong>Tipo</strong></th>
+<th><strong>Descrição</strong></th>
+<th><strong>Obrigatório</strong></th>
+<th><strong>Regra</strong></th>
+<th><strong>Exemplo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td>data</td>
+<td>Raiz</td>
+<td></td>
+<td>TAG raiz da mensagem</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>A02</td>
+<td>dealerLegalNumber</td>
+<td></td>
+<td>varchar(50)</td>
+<td>CNPJ da concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;99.999.999/0001-99&quot;</td>
+</tr>
+<tr>
+<td>A03</td>
+<td>extractionDateTime</td>
+<td></td>
+<td>timestamp</td>
+<td>Data da extração dos dados da mensagem</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>P001</td>
+<td>&quot;2016-11-23T10:45:00+03:00&quot;</td>
+</tr>
+<tr>
+<td>A04</td>
+<td>parts</td>
+<td>A01</td>
+<td></td>
+<td>Grupo que contém as informações de peças</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>A05</td>
+<td>partsNumber</td>
+<td>A04</td>
+<td>varchar(50)</td>
+<td>Código do item vendido pela concessionária.Código original da concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;1444437P&quot;</td>
+</tr>
+<tr>
+<td>A06</td>
+<td>availableQuantity</td>
+<td>A04</td>
+<td>number(10,2)</td>
+<td>Quantidade de itens disponíveis no estoque para venda</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>20</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>- Excluir desse número peças que estão reservadas para ordens de serviços e que ainda não foram contadas como venda.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>- Excluir desse número peças que estão reservadas para atender pedidos de venda.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>- Excluir desse número peças pendentes de transferências</td>
+</tr>
+<tr>
+<td>A07</td>
+<td>onOrderQuantity</td>
+<td>A04</td>
+<td>number(10,2)</td>
+<td>Quantidade de itens com pedidos de compras em aberto ou transferências entre filiais pendentes e que não foram baixados no estoque.</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>15</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1.1 Pedidos</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>- Contar todas as peças em pedidos de compra, independente do tipo de pedido (emergência, estoque, etc), tirando os de compras realizados especificamente para um cliente.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1.2 Transferências</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>- Contar todos os pedidos pendentes de transferências internas, tirando os itens que já estão alocados para um cliente específico, assim como itens que estão em pedidos de balcão ou oficina</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>A08</td>
+<td>reservedQuantityWorkOrders</td>
+<td>A04</td>
+<td>number(10,2)</td>
+<td>Itens reservados para ordens de serviços abertas na oficina e que ainda não foram contados como venda.</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>A09</td>
+<td>reservedQuantityPartTickets</td>
+<td>A04</td>
+<td>number(10,2)</td>
+<td>Itens reservados para pedidos de balcão e que ainda não foram contados como venda.</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>A10</td>
+<td>openCustomerOrders</td>
+<td>A04</td>
+<td>number(10,2)</td>
+<td>Soma de itens em pedidos em aberto para cliente final.</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>A11</td>
+<td>quantityReturnedByDealer</td>
+<td>A04</td>
+<td>number(10,2)</td>
+<td>Itens retornados da concessionária para a AGCO.</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>10</td>
+</tr>
+<tr>
+<td>A12</td>
+<td>quantityReturnedByCustomerCounter</td>
+<td>A04</td>
+<td>number(10,2)</td>
+<td>Itens retornados por pedidos de balcão para a concessionária.</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>A13</td>
+<td>quantityReturnedByCustomerShop</td>
+<td>A04</td>
+<td>number(10,2)</td>
+<td>Itens retornados por pedidos de oficina para a concessionária.</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>A14</td>
+<td>quantityReturnedTotal</td>
+<td>A04</td>
+<td>number(10,2)</td>
+<td>Soma de itens retornados por pedidos de oficina e balcão para a concessionária.</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>1.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-interface-parts-data">2. Interface Parts Data</h3>
+<p>Exemplo de JSON para a interface Parts Data</p>
+<pre><code>    {
+      "data": {
+        "dealerLegalNumber": "99.999.999/0001-99",
+        "extractionDateTime": "2016-11-23T10:45:00+03:00",
+        "part": {
+          "partNumber": "1444437P",
+          "agcoPartNumber": "1480626M1",
+          "originalPart": true,
+          "description": "REPARO PLATO  C/ ALAVANCA 8 VELOCIDADE",
+          "dealerNote": "Parafuso 12X70 MM Locação Obsoletos",
+          "stockable": true,
+          "lastSaleDate": "2016-11-23",
+          "mainBinLocation": "E 03 03",
+          "alternateBinLocation": "E 03 03",
+          "minimumThreshold": 1.5,
+          "maximumThreshold": 1.5,
+          "preferredSupplierLegalNumber": "00.000.000/0001-00",
+          "preferredSupplierName": "NOME FANTASIA DO FORNECEDOR",
+          "netPrice": 200.00,
+          "averageCost": 200.00,
+          "unitOfMeasure": "M",
+          "dealerPartsPerPackage": 1.5,
+          "currencyCode": "BRL",
+          "lastPurchasePrice": 200.00,
+          "openPurchaseOrders": 10,
+          "vendorPackageQuantity": 10,
+          "segmentationCode01": "FLT",
+          "segmentationCode02": "",
+          "segmentationCode03": "",
+          "segmentationCode04": "",
+          "firstAvailableDate": "2016-11-23",
+          "firstPurchase": false
+        }
+      }
+    }</code></pre>
+<p><strong>Especificação dos atributos</strong></p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Campo</th>
+<th>Pai</th>
+<th>Tipo</th>
+<th>Descrição</th>
+<th>Obrigatório</th>
+<th>Regra</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B01</td>
+<td>data</td>
+<td>Raiz</td>
+<td></td>
+<td>TAG raiz da mensagem</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B02</td>
+<td>dealerLegalNumber</td>
+<td>B01</td>
+<td>varchar(50)</td>
+<td>CNPJ da concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;99.999.999/0001-99&quot;</td>
+</tr>
+<tr>
+<td>B03</td>
+<td>extractionDateTime</td>
+<td>B01</td>
+<td>timestamp</td>
+<td>Data da extração dos dados da mensagem</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>P001</td>
+<td>&quot;2016-11-23T10:45:00+03:00&quot;</td>
+</tr>
+<tr>
+<td>B04</td>
+<td>part</td>
+<td>B01</td>
+<td></td>
+<td>Grupo que contém as informações de peças</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B05</td>
+<td>partsNumber</td>
+<td>B04</td>
+<td>varchar(50)</td>
+<td>Código do item. Código original da concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;1444437P&quot;</td>
+</tr>
+<tr>
+<td>B06</td>
+<td>agcoPartNumber</td>
+<td>B04</td>
+<td>varchar(50)</td>
+<td>Código do item AGCO. Se o item não for um item original AGCO a concessionária deve ter um código AGCO que corresponda ao item em questão</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;1480626M1&quot;</td>
+</tr>
+<tr>
+<td>B07</td>
+<td>originalPart</td>
+<td>B04</td>
+<td>boolean</td>
+<td>Informação que define se o item é um item original AGCO ou não</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>V001</td>
+<td>true</td>
+</tr>
+<tr>
+<td>B08</td>
+<td>description</td>
+<td>B04</td>
+<td>varchar(60)</td>
+<td>Descrição da peça da concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;REPARO PLATO  C/ ALAVANCA 8 VELOCIDADES&quot;</td>
+</tr>
+<tr>
+<td>B09</td>
+<td>dealerNote</td>
+<td>B04</td>
+<td>varchar(60)</td>
+<td>Observações da concessionária para o item</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>&quot;Parafuso 12X70 MM Locação Obsoletos&quot;</td>
+</tr>
+<tr>
+<td>B10</td>
+<td>stockable</td>
+<td>B04</td>
+<td>boolean</td>
+<td>É um item estocável ou não</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td>V002</td>
+<td>true</td>
+</tr>
+<tr>
+<td>B11</td>
+<td>lastSaleDate</td>
+<td>B04</td>
+<td>date</td>
+<td>Última data de venda da peça (data de nota fiscal)</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>&quot;2016-11-23&quot;</td>
+</tr>
+<tr>
+<td>B12</td>
+<td>mainBinLocation</td>
+<td>B04</td>
+<td>varchar(60)</td>
+<td>Local principal de armazenamento da peça na concessionária. Se não existe a informação para o item enviar apenas os delimitador</td>
+<td>R001</td>
+<td></td>
+<td>&quot;E   03  03&quot;</td>
+</tr>
+<tr>
+<td>B13</td>
+<td>alternateBinLocation</td>
+<td>B04</td>
+<td>varchar(60)</td>
+<td>Local secundário de armazenamento da peça na concessionária.</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>&quot;E   03  03&quot;</td>
+</tr>
+<tr>
+<td>B14</td>
+<td>minimumThreshold</td>
+<td>B04</td>
+<td>number(10,2)</td>
+<td>Estoque mínimo para o item na concessionária</td>
+<td>R001</td>
+<td></td>
+<td>1,5</td>
+</tr>
+<tr>
+<td>B15</td>
+<td>maximumThreshold</td>
+<td>B04</td>
+<td>number(10,2)</td>
+<td>Estoque máximo para o item na concessionária</td>
+<td>R001</td>
+<td></td>
+<td>1,5</td>
+</tr>
+<tr>
+<td>B16</td>
+<td>preferredSupplierLegalNumber</td>
+<td>B04</td>
+<td>varchar(50)</td>
+<td>CNPJ do fornecedor do item</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;00.000.000/0001-00&quot;</td>
+</tr>
+<tr>
+<td>B17</td>
+<td>preferredSupplierName</td>
+<td>B04</td>
+<td>varchar(100)</td>
+<td>Nome fantasia do fornecedor preferencial para o item</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>&quot;NOME FANTASIA DO FORNECEDOR&quot;</td>
+</tr>
+<tr>
+<td>B18</td>
+<td>netPrice</td>
+<td>B04</td>
+<td>number(14,2)</td>
+<td>Preço de lista do item na concessionária</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>200,00</td>
+</tr>
+<tr>
+<td>B19</td>
+<td>averageCost</td>
+<td>B04</td>
+<td>number(14,2)</td>
+<td>Custo médio do item na concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>200,00</td>
+</tr>
+<tr>
+<td>B20</td>
+<td>unitOfMeasure</td>
+<td>B04</td>
+<td>varchar(3)</td>
+<td>Unidade de medida de armazenamento do item</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;M&quot;</td>
+</tr>
+<tr>
+<td>B21</td>
+<td>dealerPartsPerPackage</td>
+<td>B04</td>
+<td>number(14,2)</td>
+<td></td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>1,5</td>
+</tr>
+<tr>
+<td>B22</td>
+<td>currencyCode</td>
+<td>B04</td>
+<td>varchar(3)</td>
+<td>Código da moeda</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>P002</td>
+<td>&quot;BRL&quot;</td>
+</tr>
+<tr>
+<td>B23</td>
+<td>lastPurchasePrice</td>
+<td>B04</td>
+<td>number(14,2)</td>
+<td>Último preço de venda pago</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>200.00</td>
+</tr>
+<tr>
+<td>B24</td>
+<td>openPurchaseOrders</td>
+<td>B04</td>
+<td>number</td>
+<td>Quantidade de itens em pedidos de compras abertos</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>10</td>
+</tr>
+<tr>
+<td>B25</td>
+<td>vendorPackageQuantity</td>
+<td>B04</td>
+<td>number</td>
+<td>Informação apenas para itens não AGCO:Embalagem mínima que o item é solicitado no fornecedor</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>10</td>
+</tr>
+<tr>
+<td>B26</td>
+<td>segmentationCode01</td>
+<td>B04</td>
+<td>varchar(30)</td>
+<td>Campo para informações de segmentação da concessionária</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>&quot;FLT&quot;</td>
+</tr>
+<tr>
+<td>B27</td>
+<td>segmentationCode02</td>
+<td>B04</td>
+<td>varchar(30)</td>
+<td>Campo para informações de segmentação da concessionária</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B28</td>
+<td>segmentationCode03</td>
+<td>B04</td>
+<td>varchar(30)</td>
+<td>Campo para informações de segmentação da concessionária</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B29</td>
+<td>segmentationCode04</td>
+<td>B04</td>
+<td>varchar(30)</td>
+<td>Campo para informações de segmentação da concessionária</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B30</td>
+<td>firstAvailableDate</td>
+<td>B04</td>
+<td>date</td>
+<td>Data da primeira movimentação do item na filial. Opção 1: enviar a data que a peça foi recebida pela primeira vez no estoque. Opção 2: se não tiver a informação da opção 1 enviar a data que a peça foi solicita pela primeira vez pela oficina. Opção 3: se não tiver a informação das opções 1 e 2 enviar a data que a peça foi adicionada pela primeira vez no estoque. Opção 4: se não tiver a informação das opções 1, 2 e 3 enviar a data 1900-01-01</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;2016-11-23&quot;</td>
+</tr>
+<tr>
+<td>B31</td>
+<td>firstPurchase</td>
+<td>B04</td>
+<td>boolean</td>
+<td>Esse campo identifica se essa peça nunca esteve em estoque porque é um registro de primeira compra</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>V003</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-interface-purchase-order">3. Interface Purchase Order</h3>
+<p>Exemplo de JSON para a interface Purchase Order</p>
+<pre><code>{
+  "data": {
+    "dealerLegalNumber": "99.999.999/0001-99",
+    "extractionDateTime": "2016-11-23T10:45:00+03:00",
+    "order": {
+      "orderId": "34562",
+      "orderAgco": "AOL-123456",
+      "orderIdOriginal": "4567",
+      "deliveredDealerLegalNumber": "11.000.000/0001-00",
+      "orderDate": "2016-11-23",
+      "orderType": "STOCK_ORDER",
+      "supplierLegalNumber": "00.000.000/0001-00",
+      "supplierName": "NOME FANTASIA DO FORNECEDOR",
+      "filter1": "",
+      "filter2": "",
+      "filter3": "",
+      "items": [
+        {
+          "sourceLocation": "REPVT03",
+          "orderLineNumber": "1",
+          "partNumber": "1444437P",
+          "receivedDate": "2016-11-23",
+          "requestedQuantity": 1.5,
+          "receivedQuantity": 1.5,
+          "openQuantity": 1.5,
+          "canceledQuantity": 1.5,
+          "lineStatus": "OPEN"
+        }
+      ]
+    }
+  }
+}</code></pre>
+<p><strong>Especificação dos atributos</strong></p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Campo</th>
+<th>Pai</th>
+<th>Tipo</th>
+<th>Descrição</th>
+<th>Obrigatório</th>
+<th>Regra</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C01</td>
+<td>data</td>
+<td>Raiz</td>
+<td></td>
+<td>TAG raiz da mensagem</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C02</td>
+<td>dealerLegalNumber</td>
+<td>C01</td>
+<td>varchar(50)</td>
+<td>CNPJ da concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;99.999.999/0001-99&quot;</td>
+</tr>
+<tr>
+<td>C03</td>
+<td>extractionDateTime</td>
+<td>C01</td>
+<td>timestamp</td>
+<td>Data da extração dos dados da mensagem</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>P001</td>
+<td>&quot;2016-11-23T10:45:00+03:00&quot;</td>
+</tr>
+<tr>
+<td>C04</td>
+<td>order</td>
+<td>C01</td>
+<td></td>
+<td>Grupo que contém as informações de pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C05</td>
+<td>orderID</td>
+<td>C04</td>
+<td>varchar(50)</td>
+<td>Número do pedido na concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;34562&quot;</td>
+</tr>
+<tr>
+<td>C06</td>
+<td>orderAgco</td>
+<td>C04</td>
+<td>varchar(10)</td>
+<td>Número do pedido AGCO</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>&quot;AOL-123456&quot;</td>
+</tr>
+<tr>
+<td>C07</td>
+<td>orderIdOriginal</td>
+<td>C04</td>
+<td>varchar(50)</td>
+<td>Número original do pedido na concessionária. O valor desse campo nunca pode mudar. Deve sempre manter o primeiro número recebido pelo pedido</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>&quot;4567&quot;</td>
+</tr>
+<tr>
+<td>C08</td>
+<td>deliveredDealerLegalNumber</td>
+<td>C04</td>
+<td>varchar(50)</td>
+<td>CNPJ da filial que receberá o pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;11.000.000/0001-00&quot;</td>
+</tr>
+<tr>
+<td>C09</td>
+<td>orderDate</td>
+<td>C04</td>
+<td>date</td>
+<td>Data da abertura do pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;2016-11-23&quot;</td>
+</tr>
+<tr>
+<td>C10</td>
+<td>orderType</td>
+<td>C04</td>
+<td>varchar(50)</td>
+<td>Tipo do pedido</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td>V004</td>
+<td>&quot;STOCK_ORDER&quot;</td>
+</tr>
+<tr>
+<td>C11</td>
+<td>supplierLegalNumber</td>
+<td>C04</td>
+<td>varchar(50)</td>
+<td>CNPJ do fornecedor do pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;00.000.000/0001-00&quot;</td>
+</tr>
+<tr>
+<td>C12</td>
+<td>supplierName</td>
+<td>C04</td>
+<td>varchar(100)</td>
+<td>Nome fantasia do fornecedor do pedido</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>&quot;NOME FANTASIA DO FORNECEDOR&quot;</td>
+</tr>
+<tr>
+<td>C13</td>
+<td>filter1</td>
+<td>C04</td>
+<td>varchar</td>
+<td>Campo utilizado para filtro de informações</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C14</td>
+<td>filter2</td>
+<td>C04</td>
+<td>varchar</td>
+<td>Campo utilizado para filtro de informações</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C15</td>
+<td>filter3</td>
+<td>C04</td>
+<td>varchar</td>
+<td>Campo utilizado para filtro de informações</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C16</td>
+<td>items</td>
+<td>C04</td>
+<td></td>
+<td>Grupo que contém as informações de peças do pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C17</td>
+<td>sourceLocation</td>
+<td>C16</td>
+<td>varchar(20)</td>
+<td>Informação do armazém em que o pedido foi colocado na AGCO</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td>V005</td>
+<td>&quot;REPVT03&quot;</td>
+</tr>
+<tr>
+<td>C18</td>
+<td>orderLineNumber</td>
+<td>C16</td>
+<td>varchar(10)</td>
+<td>Linha única do pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;1&quot;</td>
+</tr>
+<tr>
+<td>C19</td>
+<td>partNumber</td>
+<td>C16</td>
+<td>varchar(20)</td>
+<td>Código do item vendido. Código original da concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;1444437P&quot;</td>
+</tr>
+<tr>
+<td>C20</td>
+<td>receivedDate</td>
+<td>C16</td>
+<td>date</td>
+<td>Data que o item foi recebimento pela concessionária</td>
+<td>R002</td>
+<td></td>
+<td>&quot;2016-11-23&quot;</td>
+</tr>
+<tr>
+<td>C21</td>
+<td>requestedQuantity</td>
+<td>C16</td>
+<td>number(14,2)</td>
+<td>Quantidade solicitada no pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>1,5</td>
+</tr>
+<tr>
+<td>C22</td>
+<td>receivedQuantity</td>
+<td>C16</td>
+<td>number(14,2)</td>
+<td>Quantidade recebida pela filial da concessionária</td>
+<td>R002</td>
+<td></td>
+<td>1,5</td>
+</tr>
+<tr>
+<td>C23</td>
+<td>openQuantity</td>
+<td>C16</td>
+<td>number(14,2)</td>
+<td>Quantidade pendentes de recebimento pela concessionária. Diferença entre a quantidade solicitada e recebida</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>1,5</td>
+</tr>
+<tr>
+<td>C24</td>
+<td>canceledQuantity</td>
+<td>C16</td>
+<td>number(14,2)</td>
+<td>Quantidade de itens cancelados no pedido</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>1,5</td>
+</tr>
+<tr>
+<td>C25</td>
+<td>lineStatus</td>
+<td>C16</td>
+<td>varchar(20)</td>
+<td>Status da linha do pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>V006</td>
+<td>&quot;OPEN&quot;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-interface-sales-order">4. Interface Sales Order</h3>
+<p>Exemplo de JSON para a interface Sales Order</p>
+<pre><code>{
+  "data": {
+    "dealerLegalNumber": "99.999.999/0001-99",
+    "extractionDateTime": "2016-11-23T10:45:00+03:00",
+    "order": {
+      "orderDate": "2016-11-23",
+      "orderType": "W",
+      "orderId": "1233",
+      "customerLegalNumber": "000.000.000-00",
+      "deliveryType": "REGULAR",
+      "dealerFilter1": "",
+      "dealerFilter2": "",
+      "dealerFilter3": "",
+      "items": [
+        {
+          "orderLineNumber": "1A2B3C4D5E",
+          "partNumber": "1444437P",
+          "firstPassFill": false,
+          "demandDate": "2016-11-23",
+          "requestedDate": "2016-11-23",
+          "requestedQuantity": 1.5,
+          "reservedQuantity": 1.5,
+          "shippedQuantity": 15,
+          "returnedQuantity": 10,
+          "canceledQuantity": 0,
+          "shippedDate": "2016-11-23",
+          "quantityAvailable": 20,
+          "lineStatus": "OPEN",
+          "serialNumber": ""
+        }
+      ]
+    }
+  }
+}</code></pre>
+<p><strong>Especificação dos atributos</strong></p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Campo</th>
+<th>Pai</th>
+<th>Tipo</th>
+<th>Descrição</th>
+<th>Obrigatório</th>
+<th>Regra</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D01</td>
+<td>data</td>
+<td>Raiz</td>
+<td></td>
+<td>TAG raiz da mensagem</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D02</td>
+<td>dealerLegalNumber</td>
+<td>D01</td>
+<td>varchar(50)</td>
+<td>CNPJ da concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;99.999.999/0001-99&quot;</td>
+</tr>
+<tr>
+<td>D03</td>
+<td>extractionDateTime</td>
+<td>D01</td>
+<td>timestamp</td>
+<td>Data da extração dos dados da mensagem</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>P001</td>
+<td>&quot;2016-11-23T10:45:00+03:00&quot;</td>
+</tr>
+<tr>
+<td>D04</td>
+<td>order</td>
+<td>D01</td>
+<td></td>
+<td>Grupo que contém as informações de pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D05</td>
+<td>orderDate</td>
+<td>D04</td>
+<td>date</td>
+<td>Data que o pedido foi coloca no sistema</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;2016-11-23&quot;</td>
+</tr>
+<tr>
+<td>D06</td>
+<td>orderType</td>
+<td>D04</td>
+<td>varchar(1)</td>
+<td>Tipo do pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>V007</td>
+<td>&quot;W&quot;</td>
+</tr>
+<tr>
+<td>D07</td>
+<td>orderId</td>
+<td>D04</td>
+<td>varchar(50)</td>
+<td>Número do pedido na concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;1233&quot;</td>
+</tr>
+<tr>
+<td>D08</td>
+<td>customerLegalNumber</td>
+<td>D04</td>
+<td>varchar(50)</td>
+<td>CPF ou CNPJ do cliente</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;000.000.000-00&quot;</td>
+</tr>
+<tr>
+<td>D09</td>
+<td>deliveryType</td>
+<td>D04</td>
+<td>varchar(20)</td>
+<td>Tipo de entrega do pedido</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td>V008</td>
+<td>&quot;REGULAR&quot;</td>
+</tr>
+<tr>
+<td>D10</td>
+<td>dealerFilter1</td>
+<td>D04</td>
+<td>varchar(100)</td>
+<td>Campo utilizado para filtro de informações</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D11</td>
+<td>dealerFilter2</td>
+<td>D04</td>
+<td>varchar(100)</td>
+<td>Campo utilizado para filtro de informações</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D12</td>
+<td>dealerFilter3</td>
+<td>D04</td>
+<td>varchar(100)</td>
+<td>Campo utilizado para filtro de informações</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D13</td>
+<td>items</td>
+<td>D04</td>
+<td></td>
+<td>Grupo que contém as informações de peças do pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D14</td>
+<td>orderLineNumber</td>
+<td>D13</td>
+<td>varchar(10)</td>
+<td>Linha única do pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;1A2B3C4D5E&quot;</td>
+</tr>
+<tr>
+<td>D15</td>
+<td>partNumber</td>
+<td>D13</td>
+<td>varchar(50)</td>
+<td>Código do item vendido. Código original da concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;1444437P&quot;</td>
+</tr>
+<tr>
+<td>D16</td>
+<td>firstPassFill</td>
+<td>D13</td>
+<td>boolean</td>
+<td>Identifica se o pedido foi atendido por completo no momento da solicitação</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>D17</td>
+<td>demandDate</td>
+<td>D13</td>
+<td>date</td>
+<td>Data que surgiu a demanda do item. Por exemplo, data que a máquina quebrou</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>&quot;2016-11-23&quot;</td>
+</tr>
+<tr>
+<td>D18</td>
+<td>requestedDate</td>
+<td>D13</td>
+<td>date</td>
+<td>Data que foi solicitada a entrega do pedido</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>&quot;2016-11-23&quot;</td>
+</tr>
+<tr>
+<td>D19</td>
+<td>requestedQuantity</td>
+<td>D13</td>
+<td>number(14,2)</td>
+<td>Quantidade que foi solicitada no pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>D20</td>
+<td>reservedQuantity</td>
+<td>D13</td>
+<td>number(14,2)</td>
+<td>Quantidades de itens que estão reservados e que ainda não estão contando como venda</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>D21</td>
+<td>shippedQuantity</td>
+<td>D13</td>
+<td>number(14,2)</td>
+<td>Quantidade de itens que já foram enviados para o cliente</td>
+<td>R002</td>
+<td></td>
+<td>15</td>
+</tr>
+<tr>
+<td>D22</td>
+<td>returnedQuantity</td>
+<td>D13</td>
+<td>number(14,2)</td>
+<td>Quantidade de itens que foram retornados do cliente para a concessionária</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>10</td>
+</tr>
+<tr>
+<td>D23</td>
+<td>canceledQuantity</td>
+<td>D13</td>
+<td>number(14,2)</td>
+<td>Quantidade de itens que foram cancelados pelo clinte na concessionária</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>D24</td>
+<td>shippedDate</td>
+<td>D13</td>
+<td>date</td>
+<td>Data que o pedido foi enviado para o cliente</td>
+<td>R002</td>
+<td></td>
+<td>&quot;2016-11-23&quot;</td>
+</tr>
+<tr>
+<td>D25</td>
+<td>quantityAvailable</td>
+<td>D13</td>
+<td>number(14,2)</td>
+<td>Quantidade de itens disponíveis na data que o pedido foi solicitado</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>20</td>
+</tr>
+<tr>
+<td>D26</td>
+<td>lineStatus</td>
+<td>D13</td>
+<td>varchar(20)</td>
+<td>Status da linha do pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>V009</td>
+<td>&quot;OPEN&quot;</td>
+</tr>
+<tr>
+<td>D27</td>
+<td>serialNumber</td>
+<td>D13</td>
+<td>varchar(30)</td>
+<td>Série comercial da maquina que esse item será utilizado</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-interface-lost-sales">5. Interface Lost Sales</h3>
+<p>Exemplo de JSON para a interface Lost Sales</p>
+<pre><code>{
+  "data": {
+    "dealerLegalNumber": "99.999.999/0001-99",
+    "extractionDateTime": "2016-11-23T10:45:00+03:00",
+    "order": {
+      "customerLegalNumber": "000.000.000-00",
+      "partNumber": "1444437P",
+      "lostSalesQuantity": 10,
+      "lostSalesType": "W",
+      "lostSalesDate": "2016-11-23"
+    }
+  }
+}</code></pre>
+<p><strong>Especificação dos atributos</strong></p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Campo</th>
+<th>Pai</th>
+<th>Tipo</th>
+<th>Descrição</th>
+<th>Obrigatório</th>
+<th>Regra</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E01</td>
+<td>data</td>
+<td>Raiz</td>
+<td></td>
+<td>TAG raiz da mensagem</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>E02</td>
+<td>dealerLegalNumber</td>
+<td>E01</td>
+<td>varchar(50)</td>
+<td>CNPJ da concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;99.999.999/0001-99&quot;</td>
+</tr>
+<tr>
+<td>E03</td>
+<td>extractionDateTime</td>
+<td>E01</td>
+<td>timestamp</td>
+<td>Data da extração dos dados da mensagem</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>P001</td>
+<td>&quot;2016-11-23T10:45:00+03:00&quot;</td>
+</tr>
+<tr>
+<td>E04</td>
+<td>order</td>
+<td>E01</td>
+<td></td>
+<td>Grupo que contém as informações de pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>E05</td>
+<td>customerLegalNumber</td>
+<td>E04</td>
+<td>varchar(50)</td>
+<td>CPF ou CNPJ do cliente</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>&quot;000.000.000-00&quot;</td>
+</tr>
+<tr>
+<td>E06</td>
+<td>partNumber</td>
+<td>E04</td>
+<td>varchar(50)</td>
+<td>Código do item. Código original da concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;1444437P&quot;</td>
+</tr>
+<tr>
+<td>E07</td>
+<td>lostSalesQuantity</td>
+<td>E04</td>
+<td>number(14,2)</td>
+<td>Quantidade de itens perdidos por falta de estoque</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>10</td>
+</tr>
+<tr>
+<td>E08</td>
+<td>lostSalesType</td>
+<td>E04</td>
+<td>varchar(1)</td>
+<td>Tipo do pedido</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>V007</td>
+<td>&quot;W&quot;</td>
+</tr>
+<tr>
+<td>E09</td>
+<td>lostSalesDate</td>
+<td>E04</td>
+<td>date</td>
+<td>Data da perda da venda</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;2016-11-23&quot;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-interface-customer">6. Interface Customer</h3>
+<p>Exemplo de JSON para a interface Customer</p>
+<pre><code>{
+  "data": {
+    "dealerLegalNumber": "99.999.999/0001-99",
+    "extractionDateTime": "2016-11-23T10:45:00+03:00",
+    "customer": {
+      "customerLegalNumber": "00.000.000/0001-00",
+      "customerId": "AAA-12345678",
+      "customerName": "NOME DO CLIENTE",
+      "countryCode": "BR",
+      "stateCode": "BR-RS",
+      "cityName": "Canoas",
+      "lastSalesDate": "2016-11-23T10:45:00+03:00",
+      "type": "RC"
+    }
+  }
+}</code></pre>
+<p><strong>Especificação dos atributos</strong></p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Campo</th>
+<th>Pai</th>
+<th>Tipo</th>
+<th>Descrição</th>
+<th>Obrigatório</th>
+<th>Regra</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F01</td>
+<td>data</td>
+<td>Raiz</td>
+<td></td>
+<td></td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>F02</td>
+<td>dealerLegalNumber</td>
+<td>F01</td>
+<td>varchar(50)</td>
+<td>CNPJ da concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;99.999.999/0001-99&quot;</td>
+</tr>
+<tr>
+<td>F03</td>
+<td>extractionDateTime</td>
+<td>F01</td>
+<td>timestamp</td>
+<td>Data da extração dos dados da mensagem</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>P001</td>
+<td>&quot;2016-11-23T10:45:00+03:00&quot;</td>
+</tr>
+<tr>
+<td>F04</td>
+<td>customer</td>
+<td>F01</td>
+<td></td>
+<td></td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>F05</td>
+<td>customerLegalNumber</td>
+<td>F04</td>
+<td>varchar(50)</td>
+<td>CPF ou CNPJ do cliente</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;00.000.000/0001-00&quot;</td>
+</tr>
+<tr>
+<td>F06</td>
+<td>customerId</td>
+<td>F04</td>
+<td>varchar(50)</td>
+<td>Código do cliente na concessionária</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;AAA-12345678&quot;</td>
+</tr>
+<tr>
+<td>F07</td>
+<td>customerName</td>
+<td>F04</td>
+<td>varchar(100)</td>
+<td>Nome do cliente</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;NOME DO CLIENTE&quot;</td>
+</tr>
+<tr>
+<td>F08</td>
+<td>countryCode</td>
+<td>F04</td>
+<td>varchar(60)</td>
+<td>País do cliente</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>P003</td>
+<td>&quot;BR&quot;</td>
+</tr>
+<tr>
+<td>F09</td>
+<td>stateCode</td>
+<td>F04</td>
+<td>varchar(60)</td>
+<td>Estado do cliente</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td>P004</td>
+<td>&quot;BR-RS&quot;</td>
+</tr>
+<tr>
+<td>F10</td>
+<td>cityName</td>
+<td>F04</td>
+<td>varchar(60)</td>
+<td>Cidade do cliente</td>
+<td><img src="/images/check.png" alt="check" /></td>
+<td></td>
+<td>&quot;Canoas&quot;</td>
+</tr>
+<tr>
+<td>F11</td>
+<td>type</td>
+<td>F04</td>
+<td>varchar(60)</td>
+<td>Tipo do cliente</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td></td>
+<td>&quot;RC&quot;</td>
+</tr>
+<tr>
+<td>F12</td>
+<td>lastSalesDate</td>
+<td>F04</td>
+<td>date</td>
+<td>Data da última venda para o cliente</td>
+<td><img src="/images/error.png" alt="error" /></td>
+<td>P001</td>
+<td>2016-11-23T10:45:00+03:00</td>
+</tr>
+</tbody>
+</table>
+                    </div>
+
+                    <footer>
+                        <hr/>
+                                                    <div role="contentinfo">
+                                <p>
+                                    Find AGCO South America APIs on <a href="https://github.com/agco-sa/agco-sa">GitHub</a>.
+                                </p>
+                            </div>
+                                                Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
+                    </footer>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="https://agco-sa.github.io/js/theme.js"></script>
+
+    <script>
+        $(function() {
+            // Syntax highlighting
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+</body>
+</html>

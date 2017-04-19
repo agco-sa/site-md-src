@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGCO South America APIs</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/theme.css" type="text/css"/>
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/theme-fixes.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+    <!--
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    -->
+</head>
+<body class="wy-body-for-nav">
+
+    <div class="wy-grid-for-nav">
+
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-nav-search">
+                <a href="https://agco-sa.github.io/" class="fa fa-home"> AGCO South America APIs</a>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/conta.html">
+                                Solicitando uma conta
+                            </a>
+                        </li>
+                        
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/ddi/index.html">
+                                DDI
+                            </a>
+                        </li>
+                        
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/vmi/index.html">
+                                VMI
+                            </a>
+                        </li>
+                        
+                                <ul class="submenu nav nav-stacked nav-pills">
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/endpoints.html">
+                            Endpoints
+                        </a>
+                    </li>
+
+                    
+                                        <li class="active">
+                        <a href="https://agco-sa.github.io/vmi/seguranca.html">
+                            Segurança
+                        </a>
+                    </li>
+
+                                        <ul class="submenu nav nav-stacked nav-pills">
+                                            </ul>
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/padroeslistas.html">
+                            Padrões e Listas
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/config.html">
+                            Configuração
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/regrasprocesso.html">
+                            Regras e Processos
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/retornos.html">
+                            Códigos de Retorno
+                        </a>
+                    </li>
+
+                    
+                                    </ul>
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/politicas.html">
+                                Políticas
+                            </a>
+                        </li>
+                        
+                                        
+                                    </ul>
+            </div>
+            &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="https://agco-sa.github.io/">AGCO South America APIs</a>
+            </nav>
+
+
+                        <div class="wy-nav-content">
+                <div class="rst-content">
+					<div><p><img src="/images/agco-logo.png" alt="AGCO Logo" /></p></div>
+                    <div role="main" class="document">
+                        <h1 id="vendor-management-inventory-integration">Vendor Management Inventory Integration</h1>
+<h2 id="segurana">Segurança</h2>
+<p>A fim de garantir a segurança das informações transmitidas, todas as chamadas devem ser feitas com SSL.
+Além da criptografia da comunicação, o uso da API exige que as chamadas sejam autenticadas através de token utilizando-se do padrão OAuth2.</p>
+<h3 id="1-como-gerar-o-token">1. Como gerar o token</h3>
+<p>Para gerar o token deve-se enviar uma requisição POST para a URL <a href="https://appsqa.agcoonline.com.br/SecurityApi/Token">https://appsqa.agcoonline.com.br/SecurityApi/Token</a> com as seguintes informações no cabeçalho:</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Informação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-OpenAM-Username</td>
+<td>usuário</td>
+</tr>
+<tr>
+<td>X-OpenAM-Password</td>
+<td>senha</td>
+</tr>
+</tbody>
+</table>
+<p>Caso a requisição seja efetuada com sucesso, o servidor de autenticação enviará o código HTTP 200 (OK) e o corpo da resposta com o token, como exemplificado abaixo:</p>
+<pre><code>{
+  "tokenId": "&lt;TOKEN&gt;",
+  "successUrl": ""
+}</code></pre>
+<p>Caso contrário o servidor irá responder com um código HTTP 400 (Bad Request) ou 401 (Unauthorized), sem corpo na resposta.
+Após o recebimento do token, o mesmo deverá ser enviado em todas as requisições para o serviço do VMI através do seguinte cabeçalho:</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Informação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>Bearer <TOKEN></td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-observaes">2. Observações</h3>
+<p>O token gerado poderá ser invalidado conforme regras internas, como tempo de ociosidade (tempo após o último uso). Caso isso aconteça, é responsabilidade da aplicação cliente gerar um novo token e continuar com o processo. O código de resposta que será enviado pela aplicação VMI caso o token tenha sido invalidado será o código HTTP 401 (Unauthorized).</p>
+                    </div>
+
+                    <footer>
+                        <hr/>
+                                                    <div role="contentinfo">
+                                <p>
+                                    Find AGCO South America APIs on <a href="https://github.com/agco-sa/agco-sa">GitHub</a>.
+                                </p>
+                            </div>
+                                                Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
+                    </footer>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="https://agco-sa.github.io/js/theme.js"></script>
+
+    <script>
+        $(function() {
+            // Syntax highlighting
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+</body>
+</html>

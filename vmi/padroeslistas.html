@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGCO South America APIs</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/theme.css" type="text/css"/>
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/theme-fixes.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+    <!--
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    -->
+</head>
+<body class="wy-body-for-nav">
+
+    <div class="wy-grid-for-nav">
+
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-nav-search">
+                <a href="https://agco-sa.github.io/" class="fa fa-home"> AGCO South America APIs</a>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/conta.html">
+                                Solicitando uma conta
+                            </a>
+                        </li>
+                        
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/ddi/index.html">
+                                DDI
+                            </a>
+                        </li>
+                        
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/vmi/index.html">
+                                VMI
+                            </a>
+                        </li>
+                        
+                                <ul class="submenu nav nav-stacked nav-pills">
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/endpoints.html">
+                            Endpoints
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/seguranca.html">
+                            Segurança
+                        </a>
+                    </li>
+
+                    
+                                        <li class="active">
+                        <a href="https://agco-sa.github.io/vmi/padroeslistas.html">
+                            Padrões e Listas
+                        </a>
+                    </li>
+
+                                        <ul class="submenu nav nav-stacked nav-pills">
+                                            </ul>
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/config.html">
+                            Configuração
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/regrasprocesso.html">
+                            Regras e Processos
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/vmi/retornos.html">
+                            Códigos de Retorno
+                        </a>
+                    </li>
+
+                    
+                                    </ul>
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/politicas.html">
+                                Políticas
+                            </a>
+                        </li>
+                        
+                                        
+                                    </ul>
+            </div>
+            &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="https://agco-sa.github.io/">AGCO South America APIs</a>
+            </nav>
+
+
+                        <div class="wy-nav-content">
+                <div class="rst-content">
+					<div><p><img src="/images/agco-logo.png" alt="AGCO Logo" /></p></div>
+                    <div role="main" class="document">
+                        <h1 id="vendor-management-inventory-integration">Vendor Management Inventory Integration</h1>
+<h2 id="padres-e-lista-de-valores">Padrões e lista de valores</h2>
+<p>Essa sessão contém os padrões e lista de valores utilizados no contrato de dados.</p>
+<h3 id="1-padres-utilizados-no-campos">1. Padrões utilizados no campos</h3>
+<p>Abaixo estão os padrões existentes no contrato de dados.</p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Padrão</th>
+<th>Exemplo</th>
+<th>Referência</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P001</td>
+<td>ISO 8601</td>
+<td>YYYY-MM-DDThh:mm:ss+03:00</td>
+<td></td>
+</tr>
+<tr>
+<td>P002</td>
+<td>ISO 4217</td>
+<td>BRL</td>
+<td></td>
+</tr>
+<tr>
+<td>P003</td>
+<td>ISO 3166-2</td>
+<td>&quot;BR&quot;</td>
+<td><a href="https://www.iso.org/obp/ui/#search/code/">https://www.iso.org/obp/ui/#search/code/</a></td>
+</tr>
+<tr>
+<td>P004</td>
+<td>ISO 3166-2</td>
+<td>&quot;BR-RS&quot;</td>
+<td>No final da url <a href="https://www.iso.org/obp/ui/#iso:code:3166">https://www.iso.org/obp/ui/#iso:code:3166</a>: coloque o código do país da ISO 3166-2. Exemplo: <a href="https://www.iso.org/obp/ui/#iso:code:3166:BR"><a href="https://www.iso.org/obp/ui/#iso:code:3166:**BR">https://www.iso.org/obp/ui/#iso:code:3166:**BR</a>**</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-lista-de-valores">2. Lista de valores</h3>
+<p>Abaixo estão as listas de valores utilizadas em alguns campos no contrato de dados.</p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Valores</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V001</td>
+<td>true</td>
+<td>true: item original AGCO</td>
+</tr>
+<tr>
+<td>false</td>
+<td>false: item não original AGCO</td>
+</tr>
+<tr>
+<td>V002</td>
+<td>true</td>
+<td>true: item estocável</td>
+</tr>
+<tr>
+<td></td>
+<td>false</td>
+<td>false: item não estocável</td>
+</tr>
+<tr>
+<td>V003</td>
+<td>true</td>
+<td>true: registro representa uma primeira compra do item</td>
+</tr>
+<tr>
+<td></td>
+<td>false</td>
+<td>false: registro não representa uma primeira compra do item</td>
+</tr>
+<tr>
+<td>V004</td>
+<td>&quot;STOCK_ORDER&quot;</td>
+<td>STOCK_ORDER: pedido de estoque, semanal, etc</td>
+</tr>
+<tr>
+<td>&quot;VOR&quot;</td>
+<td>VOR: pedidos emergenciais ou de máquina parada</td>
+</tr>
+<tr>
+<td>&quot;SERVICE&quot;</td>
+<td>SERVICE: pedidos de garantia</td>
+</tr>
+<tr>
+<td>&quot;TRANSFER&quot;</td>
+<td>TRANSFER: pedidos de transferência entre filiais</td>
+</tr>
+<tr>
+<td>V005</td>
+<td>&quot;REPVT03&quot;</td>
+<td>REPVT03: pedidos atendidos por Jundiaí</td>
+</tr>
+<tr>
+<td>&quot;REPVT06&quot;</td>
+<td>REPVT06: pedidos atendidos por Ernestina</td>
+</tr>
+<tr>
+<td>&quot;&quot;</td>
+<td>Vazio: pedidos não atendidos pela AGCO</td>
+</tr>
+<tr>
+<td>V006</td>
+<td>&quot;OPEN&quot;</td>
+<td>OPEN: linha do pedido está pendente de atendimento</td>
+</tr>
+<tr>
+<td>&quot;CLOSED&quot;</td>
+<td>CLOSED: linha do pedido entrou no estoque da concessionária</td>
+</tr>
+<tr>
+<td>&quot;CANCELLED&quot;</td>
+<td>CANCELLED: linha do pedido foi cancelada</td>
+</tr>
+<tr>
+<td>V007</td>
+<td>&quot;S&quot;</td>
+<td>S: venda</td>
+</tr>
+<tr>
+<td>&quot;W&quot;</td>
+<td>W: oficina</td>
+</tr>
+<tr>
+<td>&quot;T&quot;</td>
+<td>T: transferência</td>
+</tr>
+<tr>
+<td>&quot;R&quot;</td>
+<td>R: devolução</td>
+</tr>
+<tr>
+<td>V008</td>
+<td>&quot;REGULAR&quot;</td>
+<td>REGULAR: entrega normal</td>
+</tr>
+<tr>
+<td>&quot;EXPEDITE&quot;</td>
+<td>EXPEDITE: entrega expressa</td>
+</tr>
+<tr>
+<td>V009</td>
+<td>&quot;OPEN&quot;</td>
+<td>OPEN: linha da venda está pendente de atendimento</td>
+</tr>
+<tr>
+<td>&quot;RESERVED&quot;</td>
+<td>RESERVED: linha da venda tem reserva no estoque</td>
+</tr>
+<tr>
+<td>&quot;CLOSED&quot;</td>
+<td>CLOSED: linha da venda foi enviado para o cliente</td>
+</tr>
+<tr>
+<td>&quot;CANCELLED&quot;</td>
+<td>CANCELLED: linha da venda foi cancelada pelo cliente</td>
+</tr>
+<tr>
+<td>V010</td>
+<td>&quot;RC&quot;</td>
+<td>RC: cliente regular</td>
+</tr>
+<tr>
+<td>&quot;GE&quot;</td>
+<td>GE: orgão público</td>
+</tr>
+<tr>
+<td>&quot;IN&quot;</td>
+<td>IN: indústria</td>
+</tr>
+<tr>
+<td>&quot;FO&quot;</td>
+<td>FO: frotista</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-regras">3. Regras</h3>
+<p>Abaixo estão as regras aplicadas em alguns campos do contrato de dados</p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Regra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R001</td>
+<td>Quando o campo firstPurchase = true esse campo deve estar preenchido</td>
+</tr>
+<tr>
+<td>R002</td>
+<td>Quando o campo lineStatus = &quot;CLOSED&quot; esse campo deve estar preenchido</td>
+</tr>
+</tbody>
+</table>
+                    </div>
+
+                    <footer>
+                        <hr/>
+                                                    <div role="contentinfo">
+                                <p>
+                                    Find AGCO South America APIs on <a href="https://github.com/agco-sa/agco-sa">GitHub</a>.
+                                </p>
+                            </div>
+                                                Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
+                    </footer>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="https://agco-sa.github.io/js/theme.js"></script>
+
+    <script>
+        $(function() {
+            // Syntax highlighting
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+</body>
+</html>

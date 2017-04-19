@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGCO South America APIs</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/theme.css" type="text/css"/>
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/theme-fixes.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+    <!--
+    <link rel="stylesheet" href="https://agco-sa.github.io/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    -->
+</head>
+<body class="wy-body-for-nav">
+
+    <div class="wy-grid-for-nav">
+
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-nav-search">
+                <a href="https://agco-sa.github.io/" class="fa fa-home"> AGCO South America APIs</a>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/conta.html">
+                                Solicitando uma conta
+                            </a>
+                        </li>
+                        
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/ddi/index.html">
+                                DDI
+                            </a>
+                        </li>
+                        
+                                <ul class="submenu nav nav-stacked nav-pills">
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/ddi/endpoints.html">
+                            Endpoints
+                        </a>
+                    </li>
+
+                    
+                                        <li class="active">
+                        <a href="https://agco-sa.github.io/ddi/codretorno.html">
+                            Códigos de retorno
+                        </a>
+                    </li>
+
+                                        <ul class="submenu nav nav-stacked nav-pills">
+                                            </ul>
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/ddi/seguranca.html">
+                            Segurança
+                        </a>
+                    </li>
+
+                    
+                                        <li class="">
+                        <a href="https://agco-sa.github.io/ddi/config.html">
+                            Configuração
+                        </a>
+                    </li>
+
+                    
+                                    </ul>
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/vmi/index.html">
+                                VMI
+                            </a>
+                        </li>
+                        
+                                        
+                                            <li class="toctree-l1 ">
+                            <a class="reference internal "
+                               href="https://agco-sa.github.io/politicas.html">
+                                Políticas
+                            </a>
+                        </li>
+                        
+                                        
+                                    </ul>
+            </div>
+            &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="https://agco-sa.github.io/">AGCO South America APIs</a>
+            </nav>
+
+
+                        <div class="wy-nav-content">
+                <div class="rst-content">
+					<div><p><img src="/images/agco-logo.png" alt="AGCO Logo" /></p></div>
+                    <div role="main" class="document">
+                        <h1 id="dealer-data-integration">Dealer Data Integration</h1>
+<h2 id="cdigos-de-retorno">Códigos de Retorno</h2>
+<p>Ao enviar uma mensagem para o serviço, será retornado um código que varia de acordo com o resultado do processamento da mensagem na AGCO. A lista de possíveis retornos, assim como as ações a serem tomadas em cada caso de erro, são descritas na tabela a seguir.</p>
+<table>
+<thead>
+<tr>
+<th>CÓDIGO</th>
+<th>STATUS</th>
+<th>DESCRIÇÃO</th>
+<th>AÇÃO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td>Sucesso</td>
+<td>Dados criados com sucesso</td>
+<td>-</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Erro</td>
+<td>Requisição inválida</td>
+<td>Rever formato dos dados enviados. (header incompleto, formato JSON incorreto, campos obrigatórios faltando, etc)</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Erro</td>
+<td>Usuário não autorizado</td>
+<td>Verificar usuário e senha. (valores válidos corretamente convertidos em base64 no header)</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Erro</td>
+<td>Endereço não encontrado</td>
+<td>Revisar url de acesso ao serviço.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Erro</td>
+<td>Dados inválidos</td>
+<td>Entrar em contato com o DSS</td>
+</tr>
+</tbody>
+</table>
+<p>Referência: <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</a></p>
+<h3 id="1-validao-de-dados">1. Validação de dados</h3>
+<p>Todos os dados enviados devem passar pelas validações abaixo. Caso os critérios não sejam atendidos será retornado um erro <strong>422</strong>.
+Neste caso, os dados incorretos devem ser corrigidos antes de serem re-enviados.</p>
+<table>
+<thead>
+<tr>
+<th>ERRO</th>
+<th>DESCRIÇÃO</th>
+<th>TAG PAI</th>
+<th>EXEMPLO DE ERRO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>CNPJ do emitente não existe na base</td>
+<td>NFe/infNFe/emit</td>
+<td>&quot;CNPJ&quot;: &quot;99999999999999” <em>(CNPJ da filial deve existir na base)</em></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Informe apenas uma das opções: CPF ou CNPJ do destinatário</td>
+<td>NFe/infNFe/dest</td>
+<td>&quot;CPF&quot;: &quot;11111111111”, &quot;CNPJ&quot;: &quot;99999999999999” <em>(somente um dos dois deve ser enviado)</em></td>
+</tr>
+<tr>
+<td>3</td>
+<td>O CNPJ do destinatário precisa ser válido</td>
+<td>NFe/infNFe/dest</td>
+<td>&quot;CNPJ&quot;: &quot;55555” <em>(CNPJ deve ser válido)</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>O CPF do destinatário precisa ser válido</td>
+<td>NFe/infNFe/dest</td>
+<td>&quot;CPF&quot;: &quot;777” <em>(CPF deve ser válido)</em></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Informe apenas uma das opções: CPF ou CNPJ do emissor</td>
+<td>NFe/infNFe/emit</td>
+<td>&quot;CPF&quot;: &quot;11111111111”, &quot;CNPJ&quot;: &quot;99999999999999” <em>(somente um dos dois deve ser enviado)</em></td>
+</tr>
+<tr>
+<td>6</td>
+<td>O CNPJ do emitente precisa ser válido</td>
+<td>NFe/infNFe/emit</td>
+<td>&quot;CNPJ&quot;: &quot;55555” <em>(CNPJ deve ser válido)</em></td>
+</tr>
+<tr>
+<td>7</td>
+<td>O CPF do emitente precisa ser válido</td>
+<td>NFe/infNFe/emit</td>
+<td>&quot;CPF&quot;: &quot;777” <em>(CPF deve ser válido)</em></td>
+</tr>
+<tr>
+<td>8</td>
+<td>O produto enviado não existe no estoque</td>
+<td>ddi/prodDet/prod</td>
+<td>&quot;codigoItem&quot;: &quot;42754F0913D&quot;, &quot;serieComercial&quot;: &quot;4275344889&quot;, &quot;monobloco&quot;: &quot; AAAT0012PCC002382&quot; <em>(produto deve existir no estoque da filial)</em></td>
+</tr>
+<tr>
+<td>9</td>
+<td>O tipo da nota fiscal não é válido</td>
+<td>NFe/infNFe/ide</td>
+<td>&quot;tpNF&quot;: 9 <em>(deve ser 0 ou 1)</em></td>
+</tr>
+<tr>
+<td>10</td>
+<td>O tipo da operação não é válido</td>
+<td>ddi</td>
+<td>&quot;tipoOp&quot;: 9 <em>(deve ser 1, 4 ou 5)</em></td>
+</tr>
+<tr>
+<td>11</td>
+<td>A data de emissão deve ser válida e menor do que a data atual</td>
+<td>NFe/infNFe/ide</td>
+<td>&quot;dhEmi&quot;: &quot;2099-01-01T00:00:00.000Z&quot; <em>(data deve ser menor que a atual)</em></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Município do destinatário não existe na base</td>
+<td>NFe/infNFe/dest /enderDest</td>
+<td>&quot;cMun&quot;: 111111 <em>(código do município deve existir na base)</em></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Produto não pode ser devolvido</td>
+<td>ddi/prodDet/prod</td>
+<td>&quot;codigoItem&quot;: &quot;42754F0913D&quot;, &quot;serieComercial&quot;: &quot;4275344889&quot;, &quot;monobloco&quot;: &quot; AAAT0012PCC002382&quot; <em>(produto não está com status disponível para devolução)</em></td>
+</tr>
+<tr>
+<td>14</td>
+<td>CNPJ do destinatário não existe na nota</td>
+<td>NFe/infNFe/dest</td>
+<td>&quot;CNPJ&quot;: &quot;” <em>(CNPJ está vazio ou não existe a tag)</em></td>
+</tr>
+<tr>
+<td>15</td>
+<td>CNPJ do emitente não existe na nota</td>
+<td>NFe/infNFe/emit</td>
+<td>&quot;CNPJ&quot;: &quot;” <em>(CNPJ está vazio ou não existe a tag)</em></td>
+</tr>
+<tr>
+<td>16</td>
+<td>CNPJ da nota é diferente do CNPJ da concessionária</td>
+<td>NFe/infNFe/dest ou NFe/infNFe/emit</td>
+<td>&quot;CNPJ&quot;: &quot;99999999999999” <em>(CNPJ enviado é diferente do CNPJ que está com o produto em estoque)</em></td>
+</tr>
+<tr>
+<td>17</td>
+<td>CNPJ do destinatário não existe na base</td>
+<td>NFe/infNFe/dest</td>
+<td>&quot;CNPJ&quot;: &quot;99999999999999” <em>(CNPJ enviado não existe na base)</em></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Produtos duplicados na nota fiscal</td>
+<td>ddi/prodDet/prod</td>
+<td>&quot;codigoItem&quot;: &quot;42754F0913D&quot;, &quot;serieComercial&quot;: &quot;4275344889&quot;, &quot;monobloco&quot;: &quot; AAAT0012PCC002382&quot; <em>(produto aparece duas vezes na mesma nota fiscal)</em></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-regra-de-negcio">2. Regra de negócio</h3>
+<h4 id="21-venda">2.1. Venda</h4>
+<p>Produto que foi faturado para um cliente final.
+Produto que foi faturado para outra concessionária AGCO não deve ser enviado como venda e sim como transferência. Ver item 4.2.3.</p>
+<h4 id="22-devoluo">2.2. Devolução</h4>
+<p>Devolução de um produto do cliente final para a concessionária.
+Devoluções da concessionária para a AGCO não devem ser enviadas.</p>
+<h4 id="23-transferncia">2.3. Transferência</h4>
+<p>Transferência entre filiais ou transferência de uma concessionária para outra.</p>
+                    </div>
+
+                    <footer>
+                        <hr/>
+                                                    <div role="contentinfo">
+                                <p>
+                                    Find AGCO South America APIs on <a href="https://github.com/agco-sa/agco-sa">GitHub</a>.
+                                </p>
+                            </div>
+                                                Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
+                    </footer>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="https://agco-sa.github.io/js/theme.js"></script>
+
+    <script>
+        $(function() {
+            // Syntax highlighting
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+</body>
+</html>
