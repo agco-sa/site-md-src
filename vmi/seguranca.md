@@ -5,11 +5,11 @@ parentMenu: vmi
 
 # Vendor Management Inventory Integration
 
-## Segurança
-A fim de garantir a segurança das informações transmitidas, todas as chamadas devem ser feitas com SSL.
+## 3. Segurança
+A fim de garantir a segurança das informações transmitidas, todas as chamadas devem ser feitas com SSL.<br/>
 Além da criptografia da comunicação, o uso da API exige que as chamadas sejam autenticadas através de token utilizando-se do padrão OAuth2.
 
-### 1. Como gerar o token
+### 3.1. Como gerar o token
 Para gerar o token deve-se enviar uma requisição POST para a URL:
 
 |Ambiente|URL|
@@ -31,13 +31,13 @@ Caso a requisição seja efetuada com sucesso, o servidor de autenticação envi
       "successUrl": ""
     }
 
-Caso contrário o servidor irá responder com um código HTTP 400 (Bad Request) ou 401 (Unauthorized), sem corpo na resposta.
+Caso contrário o servidor irá responder com um código HTTP 400 (Bad Request) ou 401 (Unauthorized), sem corpo na resposta.<br/>
 Após o recebimento do token, o mesmo deverá ser enviado em todas as requisições para o serviço do VMI através do seguinte cabeçalho:
 
 |Header|Informação|
 |------|----------|
-|Authorization|	Bearer <TOKEN>|
+|Authorization|	Bearer <TOKEN\>|
 |Content-Type|	application/json|
 
-### 2. Observações
+### 3.2. Observações
 O token gerado poderá ser invalidado conforme regras internas, como tempo de ociosidade (tempo após o último uso). Caso isso aconteça, é responsabilidade da aplicação cliente gerar um novo token e continuar com o processo. O código de resposta que será enviado pela aplicação VMI caso o token tenha sido invalidado será o código HTTP 401 (Unauthorized).
