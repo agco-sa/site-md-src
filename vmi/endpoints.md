@@ -5,10 +5,10 @@ parentMenu: vmi
 
 # Vendor Management Inventory Integration
 
-## Recursos e operações
+## 7. Recursos e operações
 Essa sessão contém os campos e regras das interfaces disponibilizadas para capturar informações de peças das concessionárias.
 
-### 1. Interface Inventory Data
+### 7.1. Interface Inventory Data
 Exemplo de JSON para a interface Inventory Data
 
         {
@@ -41,15 +41,8 @@ Exemplo de JSON para a interface Inventory Data
 |A03	|extractionDateTime	| 	|timestamp|	Data da extração dos dados da mensagem|	![check](/images/check.png)	|P001|"2016-11-23T10:45:00+03:00"|
 |A04	|parts|	A01|	| 	Grupo que contém as informações de peças|	![check](/images/check.png)|	 |	| 
 |A05| partsNumber	|A04|	varchar(50)|	Código do item vendido pela concessionária.Código original da concessionária|	![check](/images/check.png)|	 |	"1444437P"|
-|A06|	availableQuantity|	A04	|number(10,2)	|Quantidade de itens disponíveis no estoque para venda |![check](/images/check.png)|	| 	20|
-| | | | | - Excluir desse número peças que estão reservadas para ordens de serviços e que ainda não foram contadas como venda. | | | |
-| | | | | - Excluir desse número peças que estão reservadas para atender pedidos de venda. | | | |
-| | | | | - Excluir desse número peças pendentes de transferências||||
-|A07|	onOrderQuantity|	A04|	number(10,2)	|Quantidade de itens com pedidos de compras em aberto ou transferências entre filiais pendentes e que não foram baixados no estoque.|![check](/images/check.png)	| |15|
-| | | | |1.1 Pedidos| | | |
-| | | | |- Contar todas as peças em pedidos de compra, independente do tipo de pedido (emergência, estoque, etc), tirando os de compras realizados especificamente para um cliente.| | | |
-| | | | |1.2 Transferências| | | |
-| | | | |- Contar todos os pedidos pendentes de transferências internas, tirando os itens que já estão alocados para um cliente específico, assim como itens que estão em pedidos de balcão ou oficina| | | |
+|A06|	availableQuantity|	A04	|number(10,2)	|Quantidade de itens disponíveis no estoque para venda<br/>- Excluir desse número peças que estão reservadas para ordens de serviços e que ainda não foram contadas como venda.<br/>- Excluir desse número peças que estão reservadas para atender pedidos de venda. <br/>- Excluir desse número peças pendentes de transferências |![check](/images/check.png)|	| 	20|
+|A07|	onOrderQuantity|	A04|	number(10,2)	|Quantidade de itens com pedidos de compras em aberto ou transferências entre filiais pendentes e que não foram baixados no estoque.<br/>1.1 Pedidos<br/>- Contar todas as peças em pedidos de compra, independente do tipo de pedido (emergência, estoque, etc), tirando os de compras realizados especificamente para um cliente.<br/>1.2 Transferências<br/>- Contar todos os pedidos pendentes de transferências internas, tirando os itens que já estão alocados para um cliente específico, assim como itens que estão em pedidos de balcão ou oficina |![check](/images/check.png)	| |15|
 |A08	|reservedQuantityWorkOrders|	A04|	number(10,2)|	Itens reservados para ordens de serviços abertas na oficina e que ainda não foram contados como venda.|	![check](/images/check.png)| |	 	1.5|
 |A09|	reservedQuantityPartTickets	|A04|	number(10,2)|	Itens reservados para pedidos de balcão e que ainda não foram contados como venda.	|![check](/images/check.png)	 |	|1.5|
 |A10|	openCustomerOrders|	A04|	number(10,2)|	Soma de itens em pedidos em aberto para cliente final.|![error](/images/error.png)|	| 	1.5|
@@ -58,7 +51,7 @@ Exemplo de JSON para a interface Inventory Data
 |A13	|quantityReturnedByCustomerShop|	A04|	number(10,2)|	Itens retornados por pedidos de oficina para a concessionária.|	![check](/images/check.png)|	| 	1.5|
 |A14|	quantityReturnedTotal|	A04|	number(10,2)|	Soma de itens retornados por pedidos de oficina e balcão para a concessionária.|	![check](/images/check.png)	| |	1.5|
 
-### 2. Interface Parts Data
+### 7.2. Interface Parts Data
 Exemplo de JSON para a interface Parts Data
 
         {
@@ -118,7 +111,7 @@ Exemplo de JSON para a interface Parts Data
 |B13|alternateBinLocation|B04|varchar(60)|Local secundário de armazenamento da peça na concessionária.|![error](/images/error.png)| |"E   03  03"|
 |B14|minimumThreshold|B04|number(10,2)|Estoque mínimo para o item na concessionária|R001| |1,5|
 |B15|maximumThreshold|B04|number(10,2)|Estoque máximo para o item na concessionária|R001| |1,5|
-|B16|preferredSupplierLegalNumber|B04|varchar(50)|CNPJ do fornecedor do item|![check](/images/check.png)| |"00.000.000/0001-00"|
+|B16|preferredSupplierLegalNumber|B04|varchar(50)|CNPJ do fornecedor do item|R001| |"00.000.000/0001-00"|
 |B17|preferredSupplierName|B04|varchar(100)|Nome fantasia do fornecedor preferencial para o item|![error](/images/error.png)| |"NOME FANTASIA DO FORNECEDOR"|
 |B18|netPrice|B04|number(14,2)|Preço de lista do item na concessionária|![error](/images/error.png)| |200,00|
 |B19|averageCost|B04|number(14,2)|Custo médio do item na concessionária|![check](/images/check.png)| |200,00|
@@ -126,17 +119,17 @@ Exemplo de JSON para a interface Parts Data
 |B21|dealerPartsPerPackage|B04|number(14,2)| |![check](/images/check.png)| |1,5|
 |B22|currencyCode|B04|varchar(3)|Código da moeda|![check](/images/check.png)|P002|"BRL"|
 |B23|lastPurchasePrice|B04|number(14,2)|Último preço de venda pago|![error](/images/error.png)|	|200.00|
-|B24|openPurchaseOrders|B04|number|Quantidade de itens em pedidos de compras abertos|![check](/images/check.png)|	|10|
+|B24|openPurchaseOrders|B04|number(14,2)|Quantidade de itens em pedidos de compras abertos|![check](/images/check.png)|	|10|
 |B25|vendorPackageQuantity|B04|number|Informação apenas para itens não AGCO:Embalagem mínima que o item é solicitado no fornecedor|![error](/images/error.png)| |10|
 |B26|segmentationCode01|B04|varchar(30)|Campo para informações de segmentação da concessionária|![error](/images/error.png)|	|"FLT"|
 |B27|segmentationCode02|B04|varchar(30)|Campo para informações de segmentação da concessionária|![error](/images/error.png)| | |
 |B28|segmentationCode03|B04|varchar(30)|Campo para informações de segmentação da concessionária|![error](/images/error.png)| | |
 |B29|segmentationCode04|B04|varchar(30)|Campo para informações de segmentação da concessionária|![error](/images/error.png)| | |
-|B30|firstAvailableDate|B04|date|Data da primeira movimentação do item na filial. Opção 1: enviar a data que a peça foi recebida pela primeira vez no estoque. Opção 2: se não tiver a informação da opção 1 enviar a data que a peça foi solicita pela primeira vez pela oficina. Opção 3: se não tiver a informação das opções 1 e 2 enviar a data que a peça foi adicionada pela primeira vez no estoque. Opção 4: se não tiver a informação das opções 1, 2 e 3 enviar a data 1900-01-01|![check](/images/check.png)| |"2016-11-23"|
+|B30|firstAvailableDate|B04|date|Data da primeira movimentação do item na filial.<br/> Opção 1: enviar a data que a peça foi recebida pela primeira vez no estoque.<br/> Opção 2: se não tiver a informação da opção 1 enviar a data que a peça foi solicita pela primeira vez pela oficina.<br/> Opção 3: se não tiver a informação das opções 1 e 2 enviar a data que a peça foi adicionada pela primeira vez no estoque.<br/> Opção 4: se não tiver a informação das opções 1, 2 e 3 enviar a data 1900-01-01|![check](/images/check.png)| |"2016-11-23"|
 |B31|firstPurchase|B04|boolean|Esse campo identifica se essa peça nunca esteve em estoque porque é um registro de primeira compra|![check](/images/check.png)|V003|false|
 
 
-### 3. Interface Purchase Order
+### 7.3. Interface Purchase Order
 Exemplo de JSON para a interface Purchase Order
 
     {
@@ -203,7 +196,7 @@ Exemplo de JSON para a interface Purchase Order
 |C24|canceledQuantity|C16|number(14,2)|Quantidade de itens cancelados no pedido|![error](/images/error.png)| |1,5|
 |C25|lineStatus|C16|varchar(20)|Status da linha do pedido|![check](/images/check.png)|V006|"OPEN"|
 
-### 4. Interface Sales Order
+### 7.4. Interface Sales Order
 Exemplo de JSON para a interface Sales Order
 
     {
@@ -273,8 +266,9 @@ Exemplo de JSON para a interface Sales Order
 |D25|quantityAvailable|D13|number(14,2)|Quantidade de itens disponíveis na data que o pedido foi solicitado|![error](/images/error.png)|	|20|
 |D26|lineStatus|D13|varchar(20)|Status da linha do pedido|![check](/images/check.png)|V009|"OPEN"|
 |D27|serialNumber|D13|varchar(30)|Série comercial da maquina que esse item será utilizado|![error](/images/error.png)| | |
+|D28|unusualSale|D13|boolean|Identifica se o item foi uma venda atípica|![error](/images/error.png)|V011| |
 
-### 5. Interface Lost Sales
+### 7.5. Interface Lost Sales
 Exemplo de JSON para a interface Lost Sales
 
     {
@@ -306,7 +300,7 @@ Exemplo de JSON para a interface Lost Sales
 |E08|lostSalesType|E04|varchar(1)|Tipo do pedido|![check](/images/check.png)|V007|"W"|
 |E09|lostSalesDate|E04|date|Data da perda da venda|![check](/images/check.png)|	|"2016-11-23"|
 
-### 6. Interface Customer
+### 7.6. Interface Customer
 Exemplo de JSON para a interface Customer
 
     {

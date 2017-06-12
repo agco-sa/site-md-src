@@ -5,7 +5,7 @@ parentMenu: vmi
 
 # Vendor Management Inventory Integration
 
-## Regras do processo de integração
+## 6. Regras do processo de integração
 Essa sessão contém as regras que devem ser utilizadas para enviar a primeira carga dos dados e para a configuração dos eventos que devem disparar novas mensagens.
 As mensagens de cargas não tem ordem para envio, assim como não é necessário esperar a primeira carga finalizar para enviar as mensagens do dia.
  
