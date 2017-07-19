@@ -116,7 +116,7 @@ Exemplo de JSON para a interface Parts Data
 |B18|netPrice|B04|number(14,2)|Preço de lista do item na concessionária|![error](/images/error.png)| |200,00|
 |B19|averageCost|B04|number(14,2)|Custo médio do item na concessionária|![check](/images/check.png)| |200,00|
 |B20|unitOfMeasure|B04|varchar(3)|Unidade de medida de armazenamento do item|![check](/images/check.png)| |"M"|
-|B21|dealerPartsPerPackage|B04|number(14,2)| |![check](/images/check.png)| |1,5|
+|B21|dealerPartsPerPackage|B04|number(14,2)|Unidade de medida do item <br>Fator para conversão de unidade de venda do cliente final em unidade de venda para a fábrica|![check](/images/check.png)| |1,5|
 |B22|currencyCode|B04|varchar(3)|Código da moeda|![check](/images/check.png)|P002|"BRL"|
 |B23|lastPurchasePrice|B04|number(14,2)|Último preço de venda pago|![error](/images/error.png)|	|200.00|
 |B24|openPurchaseOrders|B04|number(14,2)|Quantidade de itens em pedidos de compras abertos|![check](/images/check.png)|	|10|
