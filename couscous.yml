@@ -68,6 +68,36 @@ menu:
                     vmi-history:
                         text: Histórico
                         relativeUrl: vmi/historico.html
+        parts:
+            text: Parts
+            relativeUrl: parts/index.html
+            submenu:
+                items:
+                    parts-config:
+                        text: Configuração
+                        relativeUrl: parts/config.html
+                    parts-seguranca:
+                        text: Segurança
+                        relativeUrl: parts/seguranca.html
+                    parts-returncodes:
+                        text: Códigos de Retorno
+                        relativeUrl: parts/retornos.html
+                    parts-padroes-listas:
+                        text: Padrões e Listas
+                        relativeUrl: parts/padroeslistas.html
+                    parts-regras-processo:
+                        text: Regras e Processos
+                        relativeUrl: parts/regrasprocesso.html
+                    parts-endpoints:
+                        text: Endpoints
+                        relativeUrl: parts/endpoints.html
+                    parts-screen-report:
+                        text: Telas e Relatórios
+                        relativeUrl: parts/telasrelatorios.html
+                    parts-history:
+                        text: Histórico
+                        relativeUrl: parts/historico.html
+                                        
         politicas:
             text: Políticas
             relativeUrl: politicas.html
