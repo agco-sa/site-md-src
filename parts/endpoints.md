@@ -73,6 +73,28 @@ GET /parts/{partnumber}
 
 GET /parts/{partnumber}/availability
 
+      parameters:
+        - in: header
+          name: Authorization
+          description: Authorization Header
+          required: true
+          type: string
+        - in: path
+          name: partnumber
+          description: Part number
+          required: true
+          type: string
+        - in: query
+          name: dealerId
+          description: Dealer identifier from AGCO internal systems
+          required: false
+          type: number
+        - in: query
+          name: lang
+          description: Desired language of the description
+          required: false
+          type: string
+
 
 ### 7.4. Interface - Price
 
