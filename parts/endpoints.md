@@ -12,8 +12,6 @@ Os campos e as regras das interfaces disponibilizadas para capturar informaçõe
 
 GET /parts/
 
-parameters:
-produces:
       parameters:
         - in: header
           name: Authorization
