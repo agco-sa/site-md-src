@@ -19,6 +19,7 @@ Abaixo estão os padrões existentes no contrato de dados.
 |P003	|ISO 3166-1	|"BR"|	https://pt.wikipedia.org/wiki/ISO_3166-1 |
 
 
+
 ### 5.2. Lista de valores
 Abaixo há exemplos de alguns campos no contrato de dados.
 

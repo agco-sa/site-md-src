@@ -39,5 +39,6 @@ Após o recebimento do token, o mesmo deverá ser enviado em todas as requisiç�
 |Authorization|	Bearer <TOKEN\>|
 |Content-Type|	application/json|
 
+
 ### 3.2. Observações
 O token gerado poderá ser invalidado conforme regras internas, como tempo de ociosidade (tempo após o último uso). Caso isso aconteça, é responsabilidade da aplicação cliente gerar um novo token e continuar com o processo. O código de resposta que será enviado pela aplicação VMI caso o token tenha sido invalidado será o código HTTP 401 (Unauthorized).
