@@ -3,13 +3,13 @@ currentMenu: ddi-endpoints
 parentMenu: ddi
 ---
 
-#Dealer Data Integration
+# Dealer Data Integration
 
-##5. Recursos e operações
+## 5. Recursos e operações
 Essa sessão contém os campos e regras das interfaces disponibilizadas para capturar informações de peças das concessionárias.
 A API é composta de uma lista de recursos com possibilidade de diferentes operações dependendo do verbo HTTP utilizado, do caminho e dos parâmetros.
 
-###5.1. Interface DealerNFe
+### 5.1. Interface DealerNFe
 Envia para a AGCO as informações de venda da revenda ao cliente final. no DMS a seleção de dados deverá atender a duas premissas importantes:
 	+ Considerar as notas fiscais de Devolução(entrada), Saída e Transferência aptas a serem integradas e que contenham produtos a serem integrados conforme definido no cadastro de produto.
 	+ Somente para as notas transmitidas e autorizadas pela SEFAZ, após o prazo máximo definido pelo cancelamento - não está previsto nenhum tratamento sobre o cancelamento de notas.
@@ -119,19 +119,20 @@ Exemplo de JSON para interface DealerNFe:
         }
     }
 
-####5.1.1. Especificação de atributos grupo “nfe”
+
+#### 5.1.1. Especificação de atributos grupo “nfe”
 
 | TAG | Tipo | Descrição | Regra | Mandatório | Exemplo |	
 |---|---|---|---|---|-|	
 |   | numeric(4,2) | Versão do layout |  | ![check](/images/check.png) | "versao": 3.00 |
 |   | varchar(47)) | Identificador da TAG a ser  assinada | Informar a chave de acesso da NFe precedida do literal ‘NFe’, acrescentada a validação do formato | ![check](/images/check.png) | "Id": " NFe43150395437281000312550030000296371002180066" |
 
-####5.1.2. Especificação de atributos grupo “XMLFile”
+#### 5.1.2. Especificação de atributos grupo “XMLFile”
 
-####5.1.3. Especificação de atributos grupo “ddi”
+#### 5.1.3. Especificação de atributos grupo “ddi”
 
-###5.2. Interface Stock
+### 5.2. Interface Stock
 
-###5.3. Interface Campaign
+### 5.3. Interface Campaign
 
 **\* Se existir a informação de CPF o campo CNPJ deve vir vazio. O mesmo acontece para o caso contrário.**
