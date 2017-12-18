@@ -1,4 +1,4 @@
-﻿---
+---
 currentMenu: ddi-releasenotes18122017
 parentMenu: ddi
 ---
