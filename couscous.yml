@@ -27,18 +27,21 @@ menu:
             relativeUrl: ddi/index.html
             submenu:
                 items:
-                    ddi-endpoints:
-                        text: Endpoints
-                        relativeUrl: ddi/endpoints.html
-                    ddi-returncodes:
-                        text: Códigos de retorno
-                        relativeUrl: ddi/codretorno.html
-                    ddi-seguranca:
-                        text: Segurança
-                        relativeUrl: ddi/seguranca.html
                     ddi-config:
                         text: Configuração
                         relativeUrl: ddi/config.html
+                    ddi-seguranca:
+                        text: Segurança
+                        relativeUrl: ddi/seguranca.html
+                    ddi-returncodes:
+                        text: Códigos de retorno
+                        relativeUrl: ddi/codretorno.html
+                    ddi-endpoints:
+                        text: Endpoints
+                        relativeUrl: ddi/endpoints.html
+                    ddi-releasenotes13112017:
+                        text: Release Notes 18/12/2017
+                        relativeUrl: ddi/releasenotes18122017.html
         vmi:
             text: VMI
             relativeUrl: vmi/index.html
