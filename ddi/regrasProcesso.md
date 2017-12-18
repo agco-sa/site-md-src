@@ -1,4 +1,4 @@
-﻿---
+---
 currentMenu: ddi-regras-processo
 parentMenu: ddi
 ---
