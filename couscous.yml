@@ -36,6 +36,9 @@ menu:
                     ddi-returncodes:
                         text: Códigos de retorno
                         relativeUrl: ddi/codretorno.html
+                    ddi-regras-processo:
+                        text: Regras e Processos
+                        relativeUrl: ddi/regrasprocesso.html
                     ddi-endpoints:
                         text: Endpoints
                         relativeUrl: ddi/endpoints.html
