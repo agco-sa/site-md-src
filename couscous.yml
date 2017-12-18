@@ -39,7 +39,7 @@ menu:
                     ddi-endpoints:
                         text: Endpoints
                         relativeUrl: ddi/endpoints.html
-                    ddi-releasenotes13112017:
+                    ddi-releasenotes18122017:
                         text: Release Notes 18/12/2017
                         relativeUrl: ddi/releasenotes18122017.html
         vmi:
