@@ -27,9 +27,9 @@ menu:
             relativeUrl: ddi/index.html
             submenu:
                  items:
-					ddi:
-						text: Introdução
-						relativeUrl:ddi/readme.html
+		   ddi:
+			text: Introdução
+			relativeUrl:ddi/readme.html
                     ddi-config:
                         text: Configuração
                         relativeUrl: ddi/config.html
@@ -39,7 +39,7 @@ menu:
                     ddi-returncodes:
                         text: Códigos de retorno
                         relativeUrl: ddi/ddi-codretorno.html
-					ddi-endpoints:
+		    ddi-endpoints:
                         text: Endpoints
                         relativeUrl: ddi/endpoints.html
                     ddi-regras-processo:
