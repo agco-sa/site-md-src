@@ -161,7 +161,7 @@ Exemplo de JSON para interface DealerNFe:
 #### 5.1.2. Especificação de atributos grupo “XMLFile”
 | TAG | Tipo | Descrição | Regra | Mandatório | Exemplo |	
 |---|---|---|---|---|---|	
-|  /base64  | Byte array  |  Arquivo XML em bytes | O XML da NF é obrigatório ao informar uma campanha. O valor da nota é obrigatório ao informar uma campanha.| ![check](/images/check.png) |  |
+|  /base64  | Byte array  | Arquivo XML em bytes | O XML da NF é obrigatório ao informar uma campanha. O valor da nota é obrigatório ao informar uma campanha.| ![check](/images/check.png) | |
 |  /filename  | varchar | Nome do arquivo  | -  |  ![check](/images/check.png) |  “filename “ : “NFe43170492197540000125550030000587641000818289.xml” |
 |  /filesize  | int |  Tamanho do arquivo em bytes | -  | ![check](/images/check.png) | “filesize” : 9765 |
 |  /filetype  | varchar | Tipo de arquivo | -   | ![check](/images/check.png) | “filetype” : “text/xml”| 
@@ -213,10 +213,35 @@ Detalhe: O parâmetro token deve ser setado via Bearer para essa interface.
 
 
 ### 5.3. Interface Campaign
+Através do método GET no DMS é possível buscar uma lista das Campanhas existentes na AGCO. 
 
+#### 5.3.1. Response Body
 
-| TAG | Tipo | Descrição | Regra | Obrigatório | Exemplo |
-|---|---|---|---|---|---|
-|/campaign/active
+> {
+  "data": [
+    {
+      "id": "1",
+      "type": "wholegoodsCampaign",
+      "attributes": {
+        "id": 1,
+        "brand": "VT",
+        "market": "I",
+        "productType": "TA",
+        "name": "Campanha tes",
+        "models": [
+          {
+            "id": 5,
+            "idWholegoodsCampaign": 1,
+            "model": "7180KFA",
+            "updateDate": null,
+            "userLogin": "avier"
+          }
+        ],
 
-* Se existir a informação de CPF o campo CNPJ deve vir vazio. O mesmo acontece para o caso contrário.
+#### 5.3.2. Request Headers
+
+> {
+  "Accept": "application/json;charset=UTF-8"
+}
+
+*** Se existir a informação de CPF o campo CNPJ deve vir vazio. O mesmo acontece para o caso contrário.
