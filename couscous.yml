@@ -26,8 +26,11 @@ menu:
             text: DDI
             relativeUrl: ddi/index.html
             submenu:
-                items:
-                   ddi-config:
+                 items:
+					ddi:
+						text: Introdução
+						relativeUrl:ddi/readme.html
+                    ddi-config:
                         text: Configuração
                         relativeUrl: ddi/config.html
                     ddi-seguranca:
@@ -35,13 +38,13 @@ menu:
                         relativeUrl: ddi/seguranca.html
                     ddi-returncodes:
                         text: Códigos de retorno
-                        relativeUrl: ddi/codretorno.html
-                    ddi-regras-processo:
-                        text: Regras e Processos
-                        relativeUrl: ddi/regrasprocesso.html
-                    ddi-endpoints:
+                        relativeUrl: ddi/ddi-codretorno.html
+					ddi-endpoints:
                         text: Endpoints
                         relativeUrl: ddi/endpoints.html
+                    ddi-regras-processo:
+                        text: Regras e Processos
+                        relativeUrl: ddi/regrasProcesso.html                    
                     ddi-releasenotes13112017:
                         text: Release Notes 18/12/2017
                         relativeUrl: ddi/releasenotes18122017.html
