@@ -35,7 +35,7 @@ menu:
                         relativeUrl: ddi/seguranca.html
                     ddi-codretorno:
                         text: Códigos de retorno
-                        relativeUrl: ddi/ddi-codretorno.html
+                        relativeUrl: ddi/codretorno.html
                     ddi-endpoints:
                         text: Endpoints
                         relativeUrl: ddi/endpoints.html
