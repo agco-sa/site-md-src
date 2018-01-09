@@ -33,7 +33,7 @@ menu:
                     ddi-seguranca:
                         text: Segurança
                         relativeUrl: ddi/seguranca.html
-                    ddi-returncodes:
+                    ddi-codretorno:
                         text: Códigos de retorno
                         relativeUrl: ddi/ddi-codretorno.html
                     ddi-endpoints:
