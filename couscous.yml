@@ -27,9 +27,6 @@ menu:
             relativeUrl: ddi/index.html
             submenu:
                 items:
-                    ddi:
-                        text: Introdução
-                        relativeUrl:ddi/readme.html
                     ddi-config:
                         text: Configuração
                         relativeUrl: ddi/config.html
