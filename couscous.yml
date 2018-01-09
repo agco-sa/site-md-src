@@ -11,7 +11,7 @@ github:
 
 # Set the target branch in which to deploy the generated website
 #branch: gh-pages
-branch: master
+branch: ddi_docs_api
 
 title: AGCO South America APIs
 subTitle: API Documentation
@@ -33,12 +33,15 @@ menu:
                     ddi-seguranca:
                         text: Segurança
                         relativeUrl: ddi/seguranca.html
-                    ddi-returncodes:
+                    ddi-codretorno
                         text: Códigos de retorno
                         relativeUrl: ddi/codretorno.html
                     ddi-endpoints:
                         text: Endpoints
                         relativeUrl: ddi/endpoints.html
+                    ddi-regras-processo:
+                        text: Regras e Processos
+                        relativeUrl: ddi/regrasProcesso.html                   
                     ddi-releasenotes18122017:
                         text: Release Notes 18/12/2017
                         relativeUrl: ddi/releasenotes18122017.html
