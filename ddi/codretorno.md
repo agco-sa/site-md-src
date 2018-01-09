@@ -3,22 +3,23 @@ currentMenu: ddi-codretorno
 parentMenu: ddi
 ---
 
-# Dealer Data Integration
-## Códigos de Retorno
 
-Ao enviar uma mensagem para o serviço, será retornado um código que varia de acordo com o resultado do processamento da mensagem na AGCO. A lista de possíveis retornos, assim como as ações a serem tomadas em cada caso de erro, são descritas na tabela a seguir.
+# Dealer Data Integration
+## 4. Códigos de Retorno
+
+Ao enviar uma mensagem para o serviço, será retornado um código que varia de acordo com o resultado do processamento da mensagem AGCO. A lista de possíveis retornos, assim como as ações a serem tomadas em cada caso de erro, são descritas na tabela a seguir.
 
 |CÓDIGO | STATUS |DESCRIÇÃO                  |AÇÃO|
 |-------|--------|---------------------------|----|
 | 201   | Sucesso| Dados criados com sucesso | \- |
-| 400   | Erro   | Requisição inválida       | Rever formato dos dados enviados. (header incompleto, formato JSON incorreto, campos obrigatórios faltando, etc)|
-| 401   | Erro   | Usuário não autorizado    | Verificar usuário e senha. (valores válidos corretamente convertidos em base64 no header) |
-| 404   | Erro   | Endereço não encontrado   | Revisar url de acesso ao serviço. |
+| 400   | Erro   | Requisição inválida       | Rever formato dos dados enviados. Exemplo: Header incompleto, formato JSON incorreto, campos obrigatórios faltando, etc)|
+| 401   | Erro   | Usuário não autorizado    | Verificar usuário e senha. Valores válidos corretamente convertidos em base64 no header. |
+| 404   | Erro   | Endereço não encontrado   | Revisar URL de acesso ao serviço. |
 | 422   | Erro   | Dados inválidos           | Entrar em contato com o DSS       |
 
 Referência: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
 
-### 1. Validação de dados
+### 4.1. Validação de dados
 Todos os dados enviados devem passar pelas validações abaixo. Caso os critérios não sejam atendidos será retornado um erro **422**.
 Neste caso, os dados incorretos devem ser corrigidos antes de serem re-enviados.
 
@@ -42,19 +43,6 @@ Neste caso, os dados incorretos devem ser corrigidos antes de serem re-enviados.
 | 16 | CNPJ da nota é diferente do CNPJ da concessionária | NFe/infNFe/dest ou NFe/infNFe/emit | "CNPJ": "99999999999999” *(CNPJ enviado é diferente do CNPJ que está com o produto em estoque)* |
 | 17 | CNPJ do destinatário não existe na base | NFe/infNFe/dest | "CNPJ": "99999999999999” *(CNPJ enviado não existe na base)* |
 | 18 | Produtos duplicados na nota fiscal | ddi/prodDet/prod | "codigoItem": "42754F0913D", "serieComercial": "4275344889", "monobloco": " AAAT0012PCC002382" *(produto aparece duas vezes na mesma nota fiscal)* |
-
-### 2. Regra de negócio
-#### 2.1. Venda
-Produto que foi faturado para um cliente final.
-Produto que foi faturado para outra concessionária AGCO não deve ser enviado como venda e sim como transferência. Ver item 4.2.3.
-
-#### 2.2. Devolução
-Devolução de um produto do cliente final para a concessionária.
-Devoluções da concessionária para a AGCO não devem ser enviadas.
-
-#### 2.3. Transferência
-Transferência entre filiais ou transferência de uma concessionária para outra.
-
 
 
 
