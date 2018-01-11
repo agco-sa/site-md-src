@@ -10,16 +10,19 @@ Além da criptografia da comunicação, o uso da API exige que as chamadas sejam
 
 ### 3.1 Como gerar o token
 Para gerar o token deve-se enviar uma requisição POST para a URL:
+
 | Ambiente | URL |
 |---|---|
 | Teste | https://appsqa.agcoonline.com.br/SecurityApi/Token |
 | Produção| https://appsqa.agcoonline.com.br/SecurityApi/Token |
 
 Com as seguintes informações de cabeçalho:
+
 | Header | Informação |
 |---|---|
 | X-OpenAM-Username | Usuário |
 | X-OpenAM-Password | Senha |
+
 Caso a requisição seja realizada com sucesso, o servidor de autenticação enviará o código HTTP 200 (OK) e o corpo da resposta com o token, como exemplificado abaixo:
 
      "tokenId": "<TOKEN>",
