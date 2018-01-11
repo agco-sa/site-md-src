@@ -220,6 +220,18 @@ The following example represents the response of the above request if it has has
 	}
 
 
+| ID  | Parent ID | Field         | Description                                                      | Required | Data Type | Example  |
+|-----|-----------|---------------|------------------------------------------------------------------|----------|-----------|----------|
+| A01 | N/A       | id            | Part number.                                                     | Yes      | String    | 040665R1 |
+| A02 | N/A       | dealerId      | Dealer identifier from AGCO internal systems.                    | Yes      | Number    | 11571    |
+| A03 | N/A       | prices        | Array of available price information for this part number.       | Yes      | Array     | []       |
+| A04 | A03       | currency      | Currency code of this price.                                     | Yes      | String    | BRL      |
+| A05 | A03       | type          | Price type information. (PUBLIC, SPECIFIC, CAMPAIGN or HARVEST). | Yes      | String    | PUBLIC   |
+| A06 | A03       | value         | Price value                                                      | Yes      | Number    | 12.34567 |
+| A07 | A03       | warehouseCode | Warehouse identification where this price data has been found.   | Yes      | String    | REPVT03  |
+<br />
+
+
 ### 7.5. Parts API - Supersession
 
 This endpoint is used to retrieve information if the specified part has been replaced and what the replacement parts are.
@@ -273,6 +285,22 @@ The following example represents the response of the above request if it has has
 	}
 
 
+| ID  | Parent ID | Field                   | Description                         | Required | Data Type | Example       |
+|-----|-----------|-------------------------|-------------------------------------|----------|-----------|---------------|
+| A01 | N/A       | supersededId            | AGCO Part number                    | Yes      | String    | 036857N1      |
+| A02 | N/A       | supersededDescription   | AGCO Part description               | Yes      | String    | LEVER RH / LD |
+| A03 | N/A       | supersedingId           | AGCO Substitution Part number       | Yes      | String    | 195910M1      |
+| A04 | N/A       | supersedingDescription  | AGCO Substitution Part description  | Yes      | String    | BUSH          |
+| A05 | N/A       | condition               | Supersession condition              | Yes      | String    | null          |
+| A06 | N/A       | reversibility           | Supersession reversibility          | Yes      | String    | N             |
+| A07 | N/A       | status                  | Supersession status                 | Yes      | String    | A             |
+| A08 | N/A       | supersessionDescription | Supersession description            | Yes      | String    | Test          |
+| A09 | N/A       | descLang                | Language of the description         | Yes      | String    | en            |
+| A10 | N/A       | type                    | Supersession type                   | Yes      | String    | CO            |
+| A11 | N/A       | quantity                | Supersession quantity               | Yes      | Number    | 1             |
+<br />
+
+
 ### 7.6. Parts API - Tax
 
 This endpoint is used to retrieve tax information of a specific part number.
@@ -314,3 +342,12 @@ The following example represents the response of the above request if it has has
 	}
 
 
+| ID  | Parent ID | Field             | Description                                     | Required | Data Type | Example  |
+|-----|-----------|-------------------|-------------------------------------------------|----------|-----------|----------|
+| A01 | N/A       | partNumber        | Part number                                     | Yes      | String    | 036857N1 |
+| A02 | N/A       | taxClassification | Tax classification                              | Yes      | String    | 0        |
+| A03 | N/A       | taxes             | Array of taxes information for this part number | Yes      | Array     | []       |
+| A04 | A03       | name              | Tax unique identifier                           | Yes      | String    | IPI      |
+| A05 | A03       | currency          | Tax currency                                    | Yes      | String    | BRL      |
+| A06 | A03       | value             | Tax value                                       | Yes      | Number    | 27.50    |
+<br />
