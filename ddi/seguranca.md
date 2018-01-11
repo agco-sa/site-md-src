@@ -8,7 +8,7 @@ parentMenu: ddi
 A fim de garantir a segurança das informações transmitidas, todas as chamadas devem ser feitas com SSL.
 Além da criptografia da comunicação, o uso da API exige que as chamadas sejam autenticadas através do padrão BasicAuth, e ele é realizado através do uso de headers nas chamadas das operações. Além das informações de segurança, mais headers são especificados conforme a tabela a seguir.
 
-###3.1 Como gerar o token
+### 3.1 Como gerar o token
 Para gerar o token deve-se enviar uma requisição POST para a URL:
 | Ambiente | URL |
 |---|---|
@@ -33,7 +33,7 @@ Após o recebimento do token, o mesmo deverá ser enviado em todas as requisiç�
 | Authorization| Inserir no header a seguinte propriedade: “**Authorization**: Basic <token>" Onde <**token**> é a conversão da concatenação <**usuario**>:<**senha**> em base64. Como auxílio, pode-se usar a função btoa(“usuario:senha”) no modo debug de algum navegador, sendo retornado o valor em base64. Pode-se também utilizar sites que convertem para base64, por exemplo: [http://base64-encoder-online.waraxe.us/](http://base64-encoder-online.waraxe.us/) | Authorization: Basic dGVzdGU6dGVzdGU=   |
 | Content-Type |Inserir no header a seguinte propriedade: “**Content-Type:application/json**”|Content-Type:application/json |
 
-###3.2 Observações
+### 3.2 Observações
 O token gerado poderá ser invalidado conforme regras internas, como tempo de ociosiodade (tempo após o último uso). Caso isso aconteça, é responsabilidade da aplicação do cliente gerar um novo token e continuar o processo. 
 O código de resposta que será enviado pela aplicação VMI caso o token tenha sido invalidado será o código HTTP 401 (Unauthorized).
 
