@@ -122,7 +122,7 @@ Exemplo de JSON para interface DealerNFe:
 #### 5.1.1. Especificação de atributos grupo “nfe”
 
 | TAG | Tipo | Descrição | Regra | Obrigatório | Exemplo |	
-|---|---|---|---|---|---|	
+|-----|------|-----------|-------|-------------|---------|	
 |   | numeric(4,2) | Versão do layout |  | ![check](/images/check.png) | "versao": 3.00 |
 |   | varchar(47)) | Identificador da TAG a ser  assinada | Informar a chave de acesso da NFe precedida do literal ‘NFe’, acrescentada a validação do formato | ![check](/images/check.png) | "Id": " NFe43150395437281000312550030000296371002180066" |
 | infNFe/dest/CNPJdest | varchar(14) | CNPJ do destinatário | Se existir a informação de CPF o campo CNPJ deve vir vazio. | * | "CNPJ": "95485281000312" |
@@ -168,7 +168,7 @@ Exemplo de JSON para interface DealerNFe:
 
 #### 5.1.3. Especificação de atributos grupo “ddi”
 | TAG | Tipo | Descrição | Regra | Obrigatório | Exemplo |	
-|---|---|---|---|---|---|	
+|-----|------|-----------|-------|-------------|---------|	
 |  /campaign/active  |  boolean| Campo booleano informa se a campanha está ativa ou não padrão false caso não informado | - | ![check](/images/check.png)  | "active": true |
 |  /campaign/beginDate/ | Datetime | Data de inicio da campanha | Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z' | ![check](/images/check.png) | "beginDate": "2017-12-20T09:44:48.416Z", |
 |  /campaign/brand/ | varchar(4) | Marca dos tratores | Brand must not be Empty or null. | ![check](/images/check.png) |  |
