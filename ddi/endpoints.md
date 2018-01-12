@@ -194,20 +194,22 @@ Exemplo de JSON para interface DealerNFe:
 Envia para a AGCO as informações de negociação do produto/monobloco em estoque. Os dados da Concessionária e do produto devem ser adicionados diretamente no endereço da API.
 
 Exemplo de JSON para interface STOCK
-Endereço
-    https://appsqa.agcoonline.com.br/portal/ddi/Stock/Tipo_empresa/Cod_Dealer/Monobloco/Serie_Comercial/Item
+
+| Endereço |
+| -------- |
+| https://appsqa.agcoonline.com.br/portal/ddi/Stock/{Tipo_empresa}/{Cod_Dealer}/{Monobloco}/{Serie_Comercial}/{Item}/ |
 
 Body
   `{"available":"S","availableCpfCnpj":"999.999.999-00"}` 
 
 | Tipo Empresa | Código Dealer | Monobloco | Série Comercial | Item |	
-|---|---|---|---|---|
+|--------------|---------------|-----------|-----------------|------|
 |6|11571|000BO3020CI0004|BP03330255|BP0302E1021|
 
 Detalhe: O parâmetro token deve ser setado via Bearer para essa interface.
 
 | Propriedade | Descrição | Exemplo |
-|---|---|---|
+|-------------|-----------|---------|
 | Authorization | Inserir no header a seguinte propriedade: “Authorization: Bearer”. | Authorization: Bearer <token> |
 | Content-Type | Inserir no header a seguinte propriedade: **"Content-Type:application/json"** | Content-Type:application/json |
 
