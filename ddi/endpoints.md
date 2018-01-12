@@ -122,8 +122,8 @@ Exemplo de JSON para interface DealerNFe:
 
 #### 5.1.1. Especificação de atributos grupo “nfe”
 
-|TAG|Tipo|Descrição|Regra|Obrigatório|Exemplo|	
-|---|----|---------|-----|-----------|-------|	
+|TAG|Tipo|Descrição|Regra|Obrig.|Exemplo|	
+|:---|:----|:---------|:-----|:---|:-------|	
 |   |numeric(4,2)|Versão do layout|  |![check](/images/check.png)|"versao": 3.00|
 |   |varchar(47)|Identificador da TAG a ser assinada|Informar a chave de acesso da NFe precedida do literal ‘NFe’, acrescentada a validação do formato|![check](/images/check.png)|"Id": " NFe43150395437281000312550030000296371002180066"|
 |infNFe/dest/CNPJdest|varchar(14)|CNPJ do destinatário|Se existir a informação de CPF o campo CNPJ deve vir vazio.| * |"CNPJ": "95485281000312"|
@@ -160,16 +160,16 @@ Exemplo de JSON para interface DealerNFe:
 |infNfe/versao|numeric(4,2)|Versão do layout| - |![check](/images/check.png)|"versao": 2.00|
 
 #### 5.1.2. Especificação de atributos grupo “XMLFile”
-|TAG|Tipo|Descrição|Regra|Obrigatório|Exemplo|	
-|---|----|---------|-----|----------|-------|	
+|TAG|Tipo|Descrição|Regra|Obrig.|Exemplo|	
+|:---|:----|:---------|:-----|:----------|:-------|	
 |/base64|Byte array|Arquivo XML em bytes|O XML da NF é obrigatório ao informar uma campanha. O valor da nota é obrigatório ao informar uma campanha.|![check](/images/check.png)| |
 |/filename|varchar|Nome do arquivo| - |![check](/images/check.png)|“filename “ : “NFe43170492197540000125550030000587641000818289.xml”|
 |/filesize|int|Tamanho do arquivo em bytes| - |![check](/images/check.png)|“filesize” : 9765|
 |/filetype|varchar|Tipo de arquivo| - |![check](/images/check.png)|“filetype” : “text/xml”| 
 
 #### 5.1.3. Especificação de atributos grupo “ddi”
-|TAG|Tipo|Descrição|Regra|Obrigatório|Exemplo|	
-|---|----|---------|-----|-----------|-------|	
+|TAG|Tipo|Descrição|Regra|Obrig.|Exemplo|	
+|:---|:----|:---------|:-----|:-----------|:-------|	
 |/campaign/active|boolean|Campo booleano informa se a campanha está ativa ou não padrão false caso não informado| - |![check](/images/check.png)|"active": true|
 |/campaign/beginDate/|Datetime|Data de inicio da campanha|Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z'|![check](/images/check.png)| "beginDate": "2017-12-20T09:44:48.416Z",|
 |/campaign/brand/|varchar(4)|Marca dos tratores|Brand must not be Empty or null.|![check](/images/check.png)|  |
