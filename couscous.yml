@@ -41,7 +41,7 @@ menu:
                         relativeUrl: ddi/endpoints.html
                     ddi-regras-processo:
                         text: Regras e Processos
-                        relativeUrl: ddi/regrasProcesso.html                   
+                        relativeUrl: ddi/regrasprocesso.html                   
                     ddi-releasenotes18122017:
                         text: Release Notes 18/12/2017
                         relativeUrl: ddi/releasenotes18122017.html
