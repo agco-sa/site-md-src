@@ -5,15 +5,15 @@ parentMenu: parts
 
 # Argentina Parts
 
-## 7. Endpoints
+## 6. Endpoints
 
 The AGCO Parts API has six endpoints available for retriving part information such as details, pricing, availability information, taxes and supersession.
 
-### 7.1. Parts API - Search
+### 6.1. Parts API - Search
 
 This endpoint can be used to retrieve a list of possible AGCO parts based on a query text which will be compared to AGCO database part numbers or description.
 
-#### 7.1.1 Request
+#### 6.1.1 Request
 
 GET /parts
 
@@ -28,7 +28,7 @@ GET /parts
 <br />
 **Request Example:** GET /parts?dealerId=1481682&query=3012224X1&lang=en-EN
 
-#### 7.1.2 Response
+#### 6.1.2 Response
 
 The following example represents the response of the above request if it has has been processed successfully:
 
@@ -56,11 +56,11 @@ The following example represents the response of the above request if it has has
 | A03 | N/A       | descriptionLanguage | Language of the description.                                                                            | Yes      | String    | en                      |
 <br />
 
-### 7.2. Parts API - Detail
+### 6.2. Parts API - Detail
 
 This endpoint is used to retrieve detailed information about a specific part number.
 
-#### 7.2.1 Request
+#### 6.2.1 Request
 
 GET /parts/**{partnumber}**
 
@@ -73,7 +73,7 @@ GET /parts/**{partnumber}**
 <br />
 **Request Example:** GET /parts/3012224X1?dealerId=1481682&lang=en-EN
 
-#### 7.2.2 Response
+#### 6.2.2 Response
 
 The following example represents the response of the above request if it has has been processed successfully:
 
@@ -111,11 +111,11 @@ The following example represents the response of the above request if it has has
 | A13 | A11       | value               | Attribute value.                                                                                        | No       | Object    | true                    |
 <br />
 
-### 7.3. Parts API - Availability
+### 6.3. Parts API - Availability
 
 This endpoint is used to retrieve information about stock availability of a specific part number.
 
-#### 7.3.1 Request
+#### 6.3.1 Request
 
 GET /parts/**{partnumber}**/availability
 
@@ -128,7 +128,7 @@ GET /parts/**{partnumber}**/availability
 <br />
 **Request Example:** GET /parts/036857N1/availability?dealerId=1481682&lang=en-EN
 
-#### 7.3.2 Response
+#### 6.3.2 Response
 
 The following example represents the response of the above request if it has has been processed successfully:
 
@@ -165,11 +165,11 @@ The following example represents the response of the above request if it has has
 | A07 | A03       | available      | Represents whether the part is available to be brought from this warehouse.             | Yes      | Boolean   | true      |
 <br />
 
-### 7.4. Parts API - Price
+### 6.4. Parts API - Price
 
 This endpoint is used to retrieve price information of a specific part number.
 
-#### 7.4.1 Request
+#### 6.4.1 Request
 
 GET /parts/**{partnumber}**/price
 
@@ -182,7 +182,7 @@ GET /parts/**{partnumber}**/price
 <br />
 **Request Example:** GET /parts/040665R1/price?dealerId=1481682&lang=en-EN
 
-#### 7.4.2 Response
+#### 6.4.2 Response
 
 The following example represents the response of the above request if it has has been processed successfully:
 
@@ -232,11 +232,11 @@ The following example represents the response of the above request if it has has
 <br />
 
 
-### 7.5. Parts API - Supersession
+### 6.5. Parts API - Supersession
 
 This endpoint is used to retrieve information if the specified part has been replaced and what the replacement parts are.
 
-#### 7.5.1 Request
+#### 6.5.1 Request
 
 GET /parts/**{partnumber}**/supersession
 
@@ -249,7 +249,7 @@ GET /parts/**{partnumber}**/supersession
 <br />
 **Request Example:** GET /parts/036857N1/supersession?dealerId=1481682&lang=en-EN
 
-#### 7.5.2 Response
+#### 6.5.2 Response
 
 The following example represents the response of the above request if it has has been processed successfully:
 
@@ -301,11 +301,11 @@ The following example represents the response of the above request if it has has
 <br />
 
 
-### 7.6. Parts API - Tax
+### 6.6. Parts API - Tax
 
 This endpoint is used to retrieve tax information of a specific part number.
 
-#### 7.6.1 Request
+#### 6.6.1 Request
 
 GET /parts/**{partnumber}**/taxes
 
@@ -318,7 +318,7 @@ GET /parts/**{partnumber}**/taxes
 <br />
 **Request Example:** GET /parts/3012224X1/taxes?dealerId=1481682&lang=en-EN
 
-#### 7.6.2 Response
+#### 6.6.2 Response
 
 The following example represents the response of the above request if it has has been processed successfully:
 
