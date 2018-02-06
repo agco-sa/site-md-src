@@ -14,27 +14,12 @@ A AGCO Parts API possui 6 endpoints disponíves para busca de informações rela
 * Search
 * Supersession
 
-### 6.1. Parts API - Search
+### 6.1. Interface - Search
 Este endpoint pode ser usado para retornar uma lista de possíveis peças de reposições da AGCO, baseado numa consulta de texto, ao qual será comparado à base de dados de partnumbers ou descriçoes da AGCO.
 
-#### 6.1.1 Request
+#### 6.1.1 Response
 
-GET /parts
-
-| **Parâmetro** | **Descrição**                                               | **Tipo de parâmetro** | **Obrigatório** | **Tipo de dados** | **Valor padrão**       | **Exemplo**    |
-|---------------|---------------------------------------------------------------|--------------------|--------------|---------------|-------------------------|----------------|
-| dealerId      | Identificaçao do Dealer conforme sistema da AGCO                 | Query              | Não           | Number        | Blank (null)            | 1481682        |
-| lang          | Linguagem ao qual pode retornar com: pt-BR, es-AR, en-EN | Query              | Não           | String        | Dealer default language | pt-BR          |
-| query         | Insira consulta de texto para pesquisar no banco de dados                | Query              | Não           | Query         | Blank (null)            | 3012224X1      |
-| Página[item]    | Máximo de número de item desejado para retornar por página  | Query              | Não           | Number        | 10                      | 100            |
-| Página[número]  | Página desejada                                                 | Query              | Não           | Number        | 1                       | 10             |
-<br />
-**Request Example:** 
-GET /parts?dealerId={dealerId}&query=3012224X1&lang={lang}
-
-#### 6.1.2 Response
-
-O exemplo a seguir representa a resposta do pedido acima se ele tiver sido processado com sucesso:
+O exemplo a seguir representa a resposta do pedido acima, se ele tiver sido processado com sucesso:
 
 	{
 		"data": [
@@ -52,34 +37,37 @@ O exemplo a seguir representa a resposta do pedido acima se ele tiver sido proce
 		}
 	}
 
+#### 6.1.2 Especificação dos atributos
 
-| ID  | Parent ID | Campo               | Descrição                                                                                             | Obrigatório | Tipo de dado | Exemplo                |
-|-----|-----------|---------------------|---------------------------------------------------------------------------------------------------------|----------|-----------|-------------------------|
-| A01 | N/A       | id                  | Número da peça                                                                                           | Sim      | String    | 3012224X1               |
-| A02 | N/A       | description         | Descrição da peça                                                                                      | Sim      | String    | HEXAGON M20             |
-| A03 | N/A       | descriptionLanguage | Linguagem da descrição                                                                            | Sim      | String    | en                      |
-<br />
+| **ID** | **Campo** | **Pai** | **Tipo** | **Descrição** | **Obrigatório** | **Regra** | **Exemplo** |
+|---|---|---|---|---|---|---|---|
+|A01|data|Raiz|Tag raiz Lista| |Sim| | |
+|A02|id|A01|String|Número da peça|Sim||3012224X1|
+|A03|description|A01|String|Descrição da peça|Sim||HEXAGON M20|
+|A04|descriptionLanguage|A01|String|Linguagem da descrição|Sim||en|
+|A05|meta|Raiz|Tag raiz||Não|||
+|A06|currentPage|A5|integer|Número da página|Sim||1|
+|A07|nextPage|A5|integer|Próxima página|Não||null|
+|A08|totalPages|A5|integer|Total de páginas|Sim||1|
+|A09|totalItems|A5|integer|Total de itens da busca|Sim||1|
 
-### 6.2. Parts API - Detail
+#### 6.1.3 Exemplo de request
 
+GET /parts
+GET /parts?dealerId=**{dealerId}**&query=3012224X1&lang={lang}
 
+|**Parâmetro**|**Descrição**|**Tipo de parâmetro**|**Obrigatório**|**Tipo de dado**|**Valor padrão**|**Exemplo**|
+|---|---|---|---|---|---|---|
+|dealerId|Identificaçao do Dealer conforme sistema da AGCO|Query|Não|Number|Blank (null)|1481682|
+|lang|Linguagem ao qual pode retornar com: pt-BR, es-AR, en-EN|Query|Não|String|Dealer default language|pt-BR|
+|query|Insira consulta de texto para pesquisar no banco de dados|Query|Não|Query|Blank (null)|3012224X1|
+|Página[item]|Máximo de número de item desejado para retornar por página|Query|Não|Number|10|100|
+|Página[número]|Página desejada|Query|Não|Number|1|10|
+
+### 6.2. Interface - Detail
 Esse endpoint é utilizado para recuperar informações detalhadas sobre um partnumber específico:
 
-#### 6.2.1 Request
-
-GET /parts/**{partnumber}**
-
-| **Par** | **Descrição**                                               | **Tipo parâmetro** | **Obrigatório** | **Tipo de dado** | **Valor default**       | **Exemplo**    |
-|---------------|---------------------------------------------------------------|--------------------|--------------|---------------|-------------------------|----------------|
-| partNumber    | AGCO Part Number                                              | Path               | Não           | String        | Blank (null)            | 3012224X1      |
-| dealerId      | Identificador do Dealer no sistema AGCO                | Query              | Não           | Number        | Blank (null)            | 1481682        |
-| lang          | Linguagem que deve ser retornado: pt-BR, es-AR, en-EN | Query              | Não           | String        | Dealer default language | pt-BR          |
-<br />
-**Request Example:** 
-GET /parts/{partNumber}?dealerId={dealerId}&lang={lang}
-
-#### 6.2.2 Response
-
+#### 6.2.1 Response
 O exemplo a seguir representa a resposta do pedido acima se ele tiver sido processado com sucesso:
 
 	{
@@ -98,41 +86,40 @@ O exemplo a seguir representa a resposta do pedido acima se ele tiver sido proce
 		}
 	}
 
+#### 6.2.2 Especificação de atributos
+| **ID** | **Campo** | **Pai** | **Tipo** | **Descrição** | **Obrigatório** | **Regra** | **Exemplo** |
+|---|---|---|---|---|---|---|---|
+|B01|data|Raiz|Tag raiz||Sim|||
+|B02|additionalInfo|B01|Lista|Informações adicionais|Não||"Informações adicionais a incluir"|
+|B03|name|B01|String|Nome do atributo|Não||BNDES|
+|B04|value|B01|Object|Valor do atributo|Não||true|
+|B05|country|B01|String|País associado com a descrição|Sim||BRA|
+|B06|description|B01|String|Descrição da peça|Sim||HEXAGON M20|
+|B07|descriptionLanguage|B01|String|Linguagem da descrição|Sim||en|
+|B08|directShipping|B01|Boolean|Indica se esta parte tem transporte direto ou não|Sim||false|
+|B09|fiscalCategory|B01|String|Categoria fiscal|Sim|||
+|B10|id|B01|String|Part number|Sim||3012224X1|
+|B11|minimunQuantity|B01|Decimal|Quantidade mínima de pedidos deste número de peça|Sim||1.23456|
+|B12|movementCode|B01|String|Codigo do Movimento|Sim||Criticidade Muito Baixa|
+|B13|superseded|B01|Boolean|Indica que este número de peça é obsoleto e precisa procurar o número de peça de substituição mais recente|Sim||true|
+|B14|weigth|B01|Decimal|Peso em Kg|Sim||1.23456|
 
-| ID  | Parent ID | Campo               | Descrição                                                                                             | Obrigatório | Tipo de dado | Exemplo                 |
-|-----|-----------|---------------------|---------------------------------------------------------------------------------------------------------|----------|-----------|-------------------------|
-| A01 | N/A       | id                  | Part number.                                                                                            | Sim      | String    | 3012224X1               |
-| A02 | N/A       | description         | Descrição da peça                                                                                       | Sim      | String    | HEXAGON M20             |
-| A03 | N/A       | descriptionLanguage | Linguagem da descrição                                                                           | Sim      | String    | en                      |
-| A04 | N/A       | country             | País associado com a descrição da peça                                                           | Sim      | String    | BRA                     |
-| A05 | N/A       | weight              | Peso em Kg                                                                                    | Sim      | Decimal   | 1.23456                 |
-| A06 | N/A       | minimumQuantity     | Quantidade mínima de pedidos deste número de peça                                                         | Sim      | Decimal   | 1.23456                 |
-| A07 | N/A       | movementCode        | Codigo do Movimento                                                                                          | Sim      | String    | Criticidade Muito Baixa |
-| A08 | N/A       | fiscalCategory      | Categoria fiscal                                                                                        | Sim      | String    |                         |
-| A09 | N/A       | directShipping      | Indica se esta parte tem transporte direto ou não                                              | Sim      | Boolean   | false                   |
-| A10 | N/A       | superseded          | Indica que este número de peça é obsoleto e precisa procurar o número de peça de substituição mais recente | Sim      | Boolean   | true                    |
-| A11 | N/A       | additionalInfo      | Informações adicionais                                                                       | Não       | Array     | []                      |
-| A12 | A11       | name                | Nome do atributo                                                                                        | Não       | String    | BNDES                   |
-| A13 | A11       | value               | Valor do atributo                                                                                        | Não       | Object    | true                    |
-<br />
+#### 6.2.3 Exemplo de request
 
-### 6.3. Parts API - Availability
+GET /parts/**{partnumber}**
+GET /parts/**{partNumber}**?dealerId={dealerId}&lang={lang}
+
+|**Parâmetro**|**Descrição**|**Tipo de parâmetro**|**Obrigatório**|**Tipo de dado**|**Valor padrão**|**Exemplo**|
+|---|---|---|---|---|---|---|
+| partNumber    | AGCO Part Number                                              | Path               | Não           | String        | Blank (null)            | 3012224X1      |
+| dealerId      | Identificador do Dealer no sistema AGCO                | Query              | Não           | Number        | Blank (null)            | 1481682        |
+| lang          | Linguagem que deve ser retornado: pt-BR, es-AR, en-EN | Query              | Não           | String        | Dealer default language | pt-BR          |
+
+### 6.3. Interface - Availability
 
 Este endpoint é utilizado para recuperar informações sobre a disponibilidade de estoque de um número de peça específico.
 
-#### 6.3.1 Request
-
-GET /parts/**{partnumber}**/availability
-
-| **Parameter** | **Description**                                               | **Parameter Type** | **Required** | **Data Type** | **Default Value**       | **Example**    |
-|---------------|---------------------------------------------------------------|--------------------|--------------|---------------|-------------------------|----------------|
-| partNumber    | AGCO Part Number                                              | Path               | No           | String        | Blank (null)            | 3012224X1      |
-| dealerId      | Dealer identifier from AGCO internal systems.                 | Query              | No           | Number        | Blank (null)            | 1481682        |
-| lang          | Language which data should be returned (pt-BR, es-AR, en-EN). | Query              | No           | String        | Dealer default language | pt-BR          |
-<br />
-**Request Example:** GET /parts/{partNumber}/availability?dealerId={dealerId}&lang={lang}
-
-#### 6.3.2 Response
+#### 6.3.1 Response
 
 O exemplo a seguir representa a resposta do pedido acima se ele tiver sido processado com sucesso:
 
@@ -156,36 +143,35 @@ O exemplo a seguir representa a resposta do pedido acima se ele tiver sido proce
 			]
 		}
 	}
+#### 6.3.2 Especificação de atributos
+
+| **ID** | **Campo** | **Pai** | **Tipo** | **Descrição** | **Obrigatório** | **Regra** | **Exemplo** |
+|---|---|---|---|---|---|---|---|
+|C01|data|Raiz|Tag raiz||Sim|||
+|C02|availabilities|C01|Array|Lista|Array da informação de disponibilidade de cada warehouse acessível pelo revendedor solicitado||[]|
+|C03|available|C02|Boolean|Representa se a peça está disponível para ser comprada deste warehouse|Sim||true|
+|C04|warehouseCode|C02|String|Identificador único do armazém retornado|Sim||REPVT06|
+|C05|warehouseName|C02|String|Nome das warehouse retornadas|Sim||ERNESTINA|
+|C06|warehouseOrder|C02|Number|Ordem de prioridade do warehouse retornado|Sim||1|
+|C07|dealerId|C01|Number|Identificador do Dealer no Sistema AGCO|Sim||11571|
+|C08|id|C01|Boolean|Representa se a peça está disponível para ser comprada deste warehouse|Sim||true|
+
+#### 6.3.3 Exemplo de request
+
+GET /parts/**{partnumber}**/availability
+GET /parts/**{partNumber}**/availability?dealerId={dealerId}&lang={lang}
+
+|**Parâmetro**|**Descrição**|**Tipo de parâmetro**|**Obrigatório**|**Tipo de dado**|**Valor padrão**|**Exemplo**|
+|---|---|---|---|---|---|---|
+| partNumber    | AGCO Part Number                                              | Path               | No           | String        | Blank (null)            | 3012224X1      |
+| dealerId      | Dealer identifier from AGCO internal systems.                 | Query              | No           | Number        | Blank (null)            | 1481682        |
+| lang          | Language which data should be returned (pt-BR, es-AR, en-EN). | Query              | No           | String        | Dealer default language | pt-BR          |
 
 
-| ID  | Parent ID | Campo          | Descrição                                                                             | Obrigatório | Tipo | Exemplo   |
-|-----|-----------|----------------|-----------------------------------------------------------------------------------------|----------|-----------|-----------|
-| A01 | N/A       | id             | Identificador da peça no sistema AGCO              | Sim      | String    | 036857N1  |
-| A02 | N/A       | dealerId       | Identificador do Dealer no Sistema AGCO     | Sim      | Number    | 11571     |
-| A03 | N/A       | availabilities | Array da informação de disponibilidade de cada warehouse acessível pelo revendedor solicitado | Sim      | Array     | []        |
-| A04 | A03       | warehouseCode  | Identificador único do armazém retornado | Sim      | String    | REPVT06   |
-| A05 | A03       | warehouseOrder | Ordem de prioridade do warehouse retornado| Sim      | Number    | 1         |
-| A06 | A03       | warehouseName  | Nome das warehouse retornadas                   | Sim      | String    | ERNESTINA |
-| A07 | A03       | available      | Representa se a peça está disponível para ser comprada deste warehouse  | Sim      | Boolean   | true      |
-<br />
-
-### 6.4. Parts API - Price
+### 6.4. Interface - Price
 Este endpoint é utilizado para recuperar informações de preço de um número de peça específico.
 
-#### 6.4.1 Request
-
-GET /parts/**{partnumber}**/price
-
-| **Parâmetro** | **Descrição**   | **Tipo parâmetro** | **Obrigatório** | **Tipo** | **Valor padrão**  | **Exemplo**    |
-|---------------|---------------------------------------------------------------|--------------------|--------------|---------------|-------------------------|----------------|
-| partNumber    | Identificador da peça no sistema AGCO| Path  | Não       | String        | Blank (null)            | 3012224X1      |
-| dealerId      | Identificador do Dealer no sistema AGCO  | Query    | Não   | Number    | Blank (null)            | 1481682        |
-| lang         | Idioma que os dados devem ser devolvidos: pt-BR, es-AR, en-EN | Query | Não | String | Dealer default language | pt-BR|
-<br />
-**Request Example:** 
-GET /parts/{partNumber}/price?dealerId={dealerId}&lang={lang}
-
-#### 6.4.2 Response
+#### 6.4.1 Resposta
 O exemplo a seguir representa a resposta do pedido acima se ele tiver sido processado com sucesso:
 
 	{
@@ -220,37 +206,36 @@ O exemplo a seguir representa a resposta do pedido acima se ele tiver sido proce
 			]
 		}
 	}
+	
+#### 6.4.2 Especificação de atributos
+| **ID** | **Campo** | **Pai** | **Tipo** | **Descrição** | **Obrigatório** | **Regra** | **Exemplo** |
+|---|---|---|---|---|---|---|---|
+|D01|data|Raiz|Tag raiz|||||
+|D02|dealerId|D01|Number|Identificador do Dealer no sistema AGCO|Sim||11571|
+|D03|id|D01|String|Identificador da peça no sistema da AGCO|Sim||040665R1|
+|D04|prices|D01|Lista|Array com informação de preços disponíveisle para peça|Sim||[]|
+|D05|currency|D04|String|Código da moeda para peça selecionada|Sim||BRL|
+|D06|type|D04|String|Informação de tipo de peça: Pública, Específica, Campanha, Safra|Sim||PUBLIC|
+|D07|value|D04|Number|Preço da peça|Sim||12.34567|
+|D08|warehouseCode|D04|String|Identificação do warehouse onde esses dados de preço foram encontrados|Sim||REPVT03|
 
+#### 6.4.3 Exemplo Request
 
-| ID  | Parent ID | Campo         | Descrição                                                      | Obrigatório | Tipo | Exemplo  |
-|-----|-----------|---------------|------------------------------------------------------------------|----------|-----------|----------|
-| A01 | N/A       | id            | Identificador da peça no sistema da AGCO              | Sim      | String    | 040665R1 |
-| A02 | N/A       | dealerId      | Identificado do Dealer no sistema AGCO                   | Sim      | Number    | 11571    |
-| A03 | N/A       | prices        | Array com informação de preços disponíveisle para peça     | Sim      | Array     | []       |
-| A04 | A03       | currency      | Código da moeda para peça selecionada                      | Sim      | String    | BRL      |
-| A05 | A03       | type          | Informação de tipo de peça: Pública, Específica, Campanha, Safra | Sim      | String    | PUBLIC   |
-| A06 | A03       | value         | Preço da peça                                                    | Sim      | Number    | 12.34567 |
-| A07 | A03       | warehouseCode | Identificação do warehouse onde esses dados de preço foram encontrados  | Sim      | String    | REPVT03  |
+GET /parts/**{partnumber}**/price
+GET /parts/**{partNumber}**/price?dealerId={dealerId}&lang={lang}
+
+|**Parâmetro**|**Descrição**|**Tipo de parâmetro**|**Obrigatório**|**Tipo de dado**|**Valor padrão**|**Exemplo**|
+|---|---|---|---|---|---|---|
+| partNumber    | Identificador da peça no sistema AGCO| Path  | Não       | String        | Blank (null)            | 3012224X1      |
+| dealerId      | Identificador do Dealer no sistema AGCO  | Query    | Não   | Number    | Blank (null)            | 1481682        |
+| lang         | Idioma que os dados devem ser devolvidos: pt-BR, es-AR, en-EN | Query | Não | String | Dealer default language | pt-BR|
 <br />
 
-
-### 6.5. Parts API - Supersession
+### 6.5. Interface - Supersession
 
 Este endpoint é utilizado para recuperar informações se a parte especificada foi substituída e quais são as peças de reposição.
 
-#### 6.5.1 Request
-
-GET /parts/**{partnumber}**/supersession
-
-| **Parâmetro** | **Descrição**                                               | **Tipo** | **Obrigatório** | **Tipo** | **Valor padrão**       | **Exemplo**    |
-|---------------|---------------------------------------------------------------|--------------------|--------------|---------------|-------------------------|----------------|
-| partNumber    | Identificador da peça no Sistema AGCO                                              | Path               | Não           | String        | Blank (null)            | 3012224X1      |
-| dealerId      | Identificador do Dealer no Sistema AGCO                 | Query              | Não           | Number        | Blank (null)            | 1481682        |
-| lang          | Linguagem com que deve retornar: pt-BR, es-AR, en-EN | Query              | Não           | String        | Linguagem padrão do Dealer | pt-BR          |
-<br />
-**Exemplo de requisição:** GET /parts/036857N1/supersession?dealerId=1481682&lang=en-EN
-
-#### 6.5.2 Resposta
+#### 6.5.1 Resposta
 
 O exemplo a seguir representa a resposta do pedido acima se ele tiver sido processado com sucesso:
 
@@ -284,42 +269,39 @@ O exemplo a seguir representa a resposta do pedido acima se ele tiver sido proce
 			}
 		]
 	}
+#### 6.5.2 Especificação de atributos
+
+| **ID** | **Campo** | **Pai** | **Tipo** | **Descrição** | **Obrigatório** | **Regra** | **Exemplo** |
+|---|---|---|---|---|---|---|---|
+|E01|data|Raiz|Tag raiz Lista||Sim|||
+|E02|condition|E01|String|Condição da substituição|Sim||null|
+|E03|descLang|E01|String|Linguagem da descrição|Sim||en|
+|E04|reversibility|E01|String|Reversão da substituição|Sim||N|
+|E05|status|E01|String|Status da substituição|Sim||A|
+|E06|supersededId|E01|String|Substituição do partnumber AGCO|Sim||195910M1|
+|E07|supersededDescription|E01|String|Descrição partnumber AGCO|Sim||LEVER RH / LD|
+|E08|supersedingDescription|E01|String|Descrição do partnumber AGCO|Sim||BUSH|
+|E09|supersedingId|E01|String|Identificador do partnumber de substituição|Sim||195910M1|
+|E10|supersessionDescription|E01|String|Descrição da substituição|Sim||Test|
+|E11|type|E01|String|Tipo de substituição|Sim||CO|
+|E12|quantity|E01|number|Quantidade|Sim||1|
 
 
-| ID  | Parent ID | Campo                   | Descrição                           | Obrigatório | Tipo      | Exemplo       |
-|-----|-----------|-------------------------|-------------------------------------|-------------|-----------|---------------|
-| A01 | N/A       | supersededId            | AGCO Part number                    | Sim         | String    | 036857N1      |
-| A02 | N/A       | supersededDescription   | AGCO Part description               | Sim         | String    | LEVER RH / LD |
-| A03 | N/A       | supersedingId           | AGCO Substitution Part number       | Sim         | String    | 195910M1      |
-| A04 | N/A       | supersedingDescription  | AGCO Substitution Part description  | Sim         | String    | BUSH          |
-| A05 | N/A       | condition               | Supersession condition              | Sim         | String    | null          |
-| A06 | N/A       | reversibility           | Supersession reversibility          | Sim         | String    | N             |
-| A07 | N/A       | status                  | Supersession status                 | Sim         | String    | A             |
-| A08 | N/A       | supersessionDescription | Supersession description            | Sim         | String    | Test          |
-| A09 | N/A       | descLang                | Language of the description         | Sim         | String    | en            |
-| A10 | N/A       | type                    | Supersession type                   | Sim         | String    | CO            |
-| A11 | N/A       | quantity                | Supersession quantity               | Sim         | Number    | 1             |
-<br />
+#### 6.5.3 Exemplo de request
 
+GET /parts/**{partnumber}**/supersession
+GET /parts/**{partnumber}**/supersession?dealerId=1481682&lang=en-EN
 
-### 6.6. Parts API - Taxes
+|**Parâmetro**|**Descrição**|**Tipo de parâmetro**|**Obrigatório**|**Tipo de dado**|**Valor padrão**|**Exemplo**|
+|---|---|---|---|---|---|---|
+| partNumber    | Identificador da peça no Sistema AGCO                                              | Path               | Não           | String        | Blank (null)            | 3012224X1      |
+| dealerId      | Identificador do Dealer no Sistema AGCO                 | Query              | Não           | Number        | Blank (null)            | 1481682        |
+| lang          | Linguagem com que deve retornar: pt-BR, es-AR, en-EN | Query              | Não           | String        | Linguagem padrão do Dealer | pt-BR          |
 
-Este ponto final é usado para recuperar informações fiscais de um número de peça específico.
+### 6.6. Interface - Taxes
 
-#### 6.6.1 Request
-
-GET /parts/**{partnumber}**/taxes
-
-| **Parâmetro** | **Descrição**                                               | **Tipo de parâmetro** | **Obrigatório** | **Tipo de dado** | **Valor padrão**       | **Exemplo**    |
-|---------------|---------------------------------------------------------------|--------------------|--------------|---------------|-------------------------|----------------|
-| partNumber    | AGCO Part Number                                              | Path               | Não           | String        | Blank (null)            | 3012224X1      |
-| dealerId      | Dealer identifier from AGCO internal systems.                 | Query              | Não           | Number        | Blank (null)            | 1481682        |
-| lang          | Language which data should be returned (pt-BR, es-AR, en-EN). | Query              | Não           | String        | Dealer default language | pt-BR          |
-<br />
-**Exemplo de resposta:** 
-GET /parts/{partNumber}/taxes?dealerId={dealerId}&lang={lang}
-
-#### 6.6.2 Resposta
+Este endpoint é utilizado para recuperar informações fiscais de um número de peça específico.
+#### 6.6.1 Response
 O exemplo a seguir representa a resposta do pedido acima se ele tiver sido processado com sucesso:
 
 	{
@@ -340,14 +322,25 @@ O exemplo a seguir representa a resposta do pedido acima se ele tiver sido proce
 			]
 		}
 	}
+#### 6.6.2 Especificação de atributos
 
+| **ID** | **Campo** | **Pai** | **Tipo** | **Descrição** | **Obrigatório** | **Regra** | **Exemplo** |
+|---|---|---|---|---|---|---|---|
+|F01|data|Raiz|Tag raiz||Sim|||
+|F02|partnumber|F01|String|Número da peça|Sim||036857N1|
+|F03|taxClassification|F01|String|Classificação de taxas|Sim||0|
+|F04|taxes|F01|Lista|Conjunto de informação de taxas do partnumber|Sim||[]|
+|F05|currency|F04|String|Moeda|Sim||BRL|
+|F06|name|F04|String|Identificador exclusivo de taxas|Sim||IPI|
+|F07|value|F04|Number|Valor|Sim||27.50|
 
-| ID  | Parent ID | Campo             | Descrição                                       | Obrigatório | Tipo| Exemplo  |
-|-----|-----------|-------------------|-------------------------------------------------|----------|-----------|----------|
-| A01 | N/A       | partNumber        | Número da peça                                    | Sim      | String    | 036857N1 |
-| A02 | N/A       | taxClassification | Classificação de taxas                            | Sim      | String    | 0        |
-| A03 | N/A       | taxes             | Conjunto de informação de taxas do partnumber | Sim      | Array     | []       |
-| A04 | A03       | name              | Identificador exclusivo de taxas                           | Sim      | String    | IPI      |
-| A05 | A03       | currency          | Moeda                                    | Sim      | String    | BRL      |
-| A06 | A03       | value             | Valor                                     | Sim      | Number    | 27.50    |
-<br />
+#### 6.6.3 Exemplo de request
+
+GET /parts/**{partnumber}**/taxes
+GET /parts/**{partNumber}**/taxes?dealerId={dealerId}&lang={lang}
+
+|**Parâmetro**|**Descrição**|**Tipo de parâmetro**|**Obrigatório**|**Tipo de dado**|**Valor padrão**|**Exemplo**|
+|---|---|---|---|---|---|---|
+|partNumber|AGCO Part Number| Path|Não|String|Blank (null)|3012224X1|
+|dealerId|Identificador do Dealter no sistema AGCO| Query|Não|Number|Blank (null)|1481682|
+|lang|Idioma que os dados devem ser devolvidos: pt-BR, es-AR, en-EN|Query|Não|String|Idioma padrão da Concessionária|pt-BR|
