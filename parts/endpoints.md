@@ -171,7 +171,7 @@ GET /parts/**{partNumber}**/availability?dealerId={dealerId}&lang={lang}
 ### 6.4. Interface - Price
 Este endpoint é utilizado para recuperar informações de preço de um número de peça específico.
 
-#### 6.4.1 Resposta
+#### 6.4.1 Response
 O exemplo a seguir representa a resposta do pedido acima se ele tiver sido processado com sucesso:
 
 	{
@@ -208,6 +208,7 @@ O exemplo a seguir representa a resposta do pedido acima se ele tiver sido proce
 	}
 	
 #### 6.4.2 Especificação de atributos
+
 | **ID** | **Campo** | **Pai** | **Tipo** | **Descrição** | **Obrigatório** | **Regra** | **Exemplo** |
 |---|---|---|---|---|---|---|---|
 |D01|data|Raiz|Tag raiz|||||
@@ -235,7 +236,7 @@ GET /parts/**{partNumber}**/price?dealerId={dealerId}&lang={lang}
 
 Este endpoint é utilizado para recuperar informações se a parte especificada foi substituída e quais são as peças de reposição.
 
-#### 6.5.1 Resposta
+#### 6.5.1 Response
 
 O exemplo a seguir representa a resposta do pedido acima se ele tiver sido processado com sucesso:
 
@@ -301,6 +302,7 @@ GET /parts/**{partnumber}**/supersession?dealerId=1481682&lang=en-EN
 ### 6.6. Interface - Taxes
 
 Este endpoint é utilizado para recuperar informações fiscais de um número de peça específico.
+
 #### 6.6.1 Response
 O exemplo a seguir representa a resposta do pedido acima se ele tiver sido processado com sucesso:
 
