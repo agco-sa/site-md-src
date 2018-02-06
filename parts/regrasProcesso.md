@@ -5,7 +5,7 @@ parentMenu: parts
 
 # Argentina Parts
 
-## 6. Regras do processo de integração
+## 5. Regras do processo de integração
 
 As apis abaixo retornam dados de peças, como detalhes, preço, disponibilidade, substituição, impostos:
 
