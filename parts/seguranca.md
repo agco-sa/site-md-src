@@ -16,6 +16,7 @@ Para gerar o token deve-se enviar uma requisição POST para a URL:
 |--------|---|
 |Teste|https://appsqa.agcoonline.com.br/SecurityApi/Token |
 |Produção|https://apps.agcoonline.com.br/SecurityApi/Token |
+</br>
 
 Com as seguintes informações no cabeçalho:
 
@@ -23,6 +24,7 @@ Com as seguintes informações no cabeçalho:
 |------|----------|
 |X-OpenAM-Username|	usuário|
 |X-OpenAM-Password|	senha|
+</br>
 
 Caso a requisição seja efetuada com sucesso, o servidor de autenticação enviará o código HTTP 200 (OK) e o corpo da resposta com o token, como exemplificado abaixo:
 
@@ -38,7 +40,7 @@ Após o recebimento do token, o mesmo deverá ser enviado em todas as requisiç�
 |------|----------|
 |Authorization|	Bearer <TOKEN\>|
 |Content-Type|	application/json|
-
+</br>
 
 ### 3.2. Observações
 O token gerado poderá ser invalidado conforme regras internas, como tempo de ociosidade (tempo após o último uso). Caso isso aconteça, é responsabilidade da aplicação cliente gerar um novo token e continuar com o processo. O código de resposta que será enviado pela aplicação VMI caso o token tenha sido invalidado será o código HTTP 401 (Unauthorized).
