@@ -5,7 +5,7 @@ parentMenu: parts
 
 # Argentina Parts
 
-## 7. Histórico de alterações
+## 8. Histórico de alterações
 Os versionamentos realizados neste documento foram os seguintes:
 
 
@@ -13,4 +13,3 @@ Os versionamentos realizados neste documento foram os seguintes:
 | ------ | --------- | ---- |
 | 1.0 | Elaboração do documento | 20/11/2017 |
 | 1.1 | Atualização dos endpoints | 28/11/2017 |
-
