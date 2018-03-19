@@ -36,5 +36,7 @@ Abaixo estão as regras aplicadas em alguns campos do contrato de dados
 |R001	|Quando parâmetro "null" retorna vazio|
 |R002	|Quando não for encontrado nenhum registro retorna vazio|
 
+<br/>
 #### 5.3.1. Fluxo e regras tipos de substituições
-![Fluxo Tipos Substituições](https://github.com/agco-sa/site-md-src/blob/parts/images/tipos-substituicoes.png)
+
+![fluxo_tipo_substituicoes](https://github.com/agco-sa/site-md-src/blob/parts/images/tipos-substituicoes.png)
