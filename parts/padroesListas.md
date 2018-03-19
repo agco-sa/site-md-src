@@ -39,4 +39,4 @@ Abaixo estão as regras aplicadas em alguns campos do contrato de dados
 <br/>
 #### 5.3.1. Fluxo e regras tipos de substituições
 
-![fluxo_tipo_substituicoes](https://github.com/agco-sa/site-md-src/blob/parts/images/tipos-substituicoes.png)
+![fluxo_tipo_substituicoes](https://github.com/agco-sa/site-md-src/blob/parts/images/tipos-substituicoes.png?raw=true)
