@@ -40,3 +40,15 @@ Abaixo estão as regras aplicadas em alguns campos do contrato de dados
 #### 5.3.1. Fluxo e regras tipos de substituições
 
 ![fluxo_tipo_substituicoes](https://github.com/agco-sa/site-md-src/blob/parts/images/tipos-substituicoes.png?raw=true)
+
+<br/>
+
+#### 5.3.2. Regra Substituição Simples
+A substituição simples se dá quando ocorre:</br>
+*Melhoria;</br>
+*Substituição de um material com problema;</br>
+*Redução de custo;</br>
+*Melhora de especificação;</br>
+*entre outros.</br>
+Pode ser intercambiável onde a nova monta no lugar da velha e vice versa.
+Ou pode ser intercambiável não reversível onde a nova monta no lugar da velha, porém a velha não monta no lugar da nova.
