@@ -121,66 +121,66 @@ Exemplo de JSON para interface DealerNFe:
 
 #### 5.1.1. Especificação de atributos grupo “nfe”
 
-| TAG | Tipo | Descrição | Regra | Obrigatório | Exemplo |	
-|---|---|---|---|---|---|	
-|   | numeric(4,2) | Versão do layout |  | ![check](/images/check.png) | "versao": 3.00 |
-|   | varchar(47)) | Identificador da TAG a ser  assinada | Informar a chave de acesso da NFe precedida do literal ‘NFe’, acrescentada a validação do formato | ![check](/images/check.png) | "Id": " NFe43150395437281000312550030000296371002180066" |
-| infNFe/dest/CNPJdest | varchar(14) | CNPJ do destinatário | Se existir a informação de CPF o campo CNPJ deve vir vazio. | * | "CNPJ": "95485281000312" |
-| infNFe/dest/CPF | varchar(11) | CPF do destinatário | Se existir a informação de CPF o campo CNPJ deve vir vazio. | * | "CPF": "29896908087" |
-| infNFe/dest/xNome | varchar(60) | Razão social ou nome do destinatário | - | ![check](/images/check.png)  | "xNome": "ANTONIO DA SILVA" |
-| infNFe/dest/enderDest/UF | varchar(2) | Sigla UF do destinatário | - | ![check](/images/check.png)  | "UF": "RS" |
-| infNFe/dest/enderDest/cMun | int | Código do Município | - | ![check](/images/check.png)  | "cMun": 4306205 | 
-| infNFe/dest/enderDest/xMun | varchar(60) | Nome do Município | - |![check](/images/check.png) | "xMun": "CRUZEIRO DO SUL"|
-| infNFe/dest/enderDest/cPais | int | Código do País do destinatário | - | ![error](/images/error.png) | "cPais": 1058 |
-| infNFe/dest/enderDest/xPais | varchar(60) | Nome do País do destinatário | - | ![error](/images/error.png) | "xPais": "BRASIL" |
-| infNFe/det/nItem | int | Índice do item na nota | - | ![check](/images/check.png) | "nItem": 1 |
-| infNFe/det/prod/cProd | varchar(60) | Código do produto | - | ![check](/images/check.png) | "cProd": "5650MHCL876/409489" |
-| infNFe/det/prod/qCom | numeric(15,4) | Quantidadecomercial | - | ![check](/images/check.png) | "qCom": 1.0000 |
-| infNFe/det/prod/vProd | numeric(15,2) | Valor total bruto dos produtos | - | ![check](/images/check.png) | "vProd": 287000.00 |
-| infNFe/det/prod/vUnCom | numeric(15,4) | Quantidadecomercial | - | ![check](/images/check.png) | "qCom": 1.0000 |
-| infNFe/det/prod/xProd | varchar(120) | Descrição do produto | - | ![check](/images/check.png) | "xProd": "COLHEITADEIRA" |
-| infNFe/emit/CNPJ | varchar(14) | CNPJ do emitente | Se existir a informação de CPF o campo CNPJ deve vir vazio. | * | "CNPJ": "95437281000312" |
-| infNFe/emit/CPF | varchar(11) | CPF do emitente | Se existir a informação de CNPJ o campo CPF deve vir vazio. | * | "CPF": "29895508087" |
-| infNFe/emit/xFant | varchar(60) | Nome fantasia do emitente | - | ![error](/images/error.png) | "xFant": "EXEMPLO FANT EMIT" |
-| infNFe/emit/xNome | varchar(60) | Razão Social ou nome do emitente | - | ![check](/images/check.png) | "xNome": "EXEMPLO EMIT" |
-| infNFe/emit/enderEmit/UF | varchar(2) | Sigla da UF do emitente | - | ![check](/images/check.png) | "UF": "RS" |
-| infNFe/emit/enderEmit/xMun | varchar(60) | Nome do município do emitente | - | ![check](/images/check.png) |  	"xMun": "CRUZEIRO DO SUL" |
-| infNFe/emit/enderEmit/xPais | varchar(60) | Nome do País do emitente | - |![error](/images/error.png)| "xPais": "BRASIL"|
-| infNFe/id/ | varchar(47) | Identificador da TAG a ser assinada. (informar a chave de acesso da NF-e precedida do literal ‘NFe’, acrescentada a validação do formato) | - | ![check](/images/check.png) | "Id": " NFe43150395437281000312550030000296371002180066" |
-| infNFe/ide/dhEmi | datetime | Data de emissão da nota. *(formato" yyyy-MM-dd'T'HH:mm:ssX")* | - | ![check](/images/check.png) | "dhEmi": "2015-03-30T03:00:00-03:00" |
-| infNFe/ide/dhSaiEnt | datetime | Data de Saída ou da Entradada Mercadoria/Produto. *(formato"yyyy-MM-dd'T'HH:mm:ssX")* | - | ![check](/images/check.png) | "dhSaiEnt": "2015-03-30T03:00:00-03:00" |
-| infNFe/ide/mod | varchar(2) | Código do modelo da nota. (utilizar código 55 para identificação da NF-e, emitida em substituição ao modelo 1 ou 1A) | - | ![check](/images/check.png) | "mod":"55" |
-| infNFe/ide/nNf | int | Número da nota | - | ![check](/images/check.png) | "nNF": 29637 |
-|infNFe/ide/natOp | varchar(60) | Descrição da Natureza da Operação | - |![check](/images/check.png) | “natOp”: “TRANSFERENCIA ENTRE FILIAIS” |
-|infNFe/ide/serie|int|Série da nota|Preencher com zeros na hipótese de a NF-e não possuir série|![check](/images/check.png) |"serie": 3|
-|infNFe/ide/tpNF |int| Tipo de operação. (0 = entrada, 1 = saída) | - |![check](/images/check.png)| "tpNF": 1 |
-|infNFe/infAdic/infCpl|Varchar(5000)|Informações complementares da NF| - |![check](/images/check.png)|“infCpl”:  “Informações complementares sobre a NF”|
-|infNFe/total/ICMSTot/vNF |numeric(15,2)|Valor Total da NF-e| - |![check](/images/check.png) |"vNF": 287000.00|
-|infNfe/versao|numeric(4,2)|Versão do layout| - |![check](/images/check.png) | "versao": 2.00 |
+|TAG|Tipo|Descrição|Regra|Obrigatório|Exemplo|
+|---|---|---|---|---|---|
+|   |numeric(4,2)|Versão do layout|  |![check](/images/check.png)|"versao": 3.00| |
+|   |varchar(47)|Identificador da TAG a ser  assinada|Informar a chave de acesso da NFe precedida do literal ‘NFe’, acrescentada a validação do formato|![check](/images/check.png)|"Id": " NFe43150395437281000312550030000296371002180066"|
+|infNFe/dest/CNPJdest|varchar(14)|CNPJ do destinatário|Se existir a informação de CPF o campo CNPJ deve vir vazio.|*|"CNPJ": "95485281000312"|
+|infNFe/dest/CPF|varchar(11)|CPF do destinatário|Se existir a informação de CPF o campo CNPJ deve vir vazio.|*|"CPF": "29896908087"|
+|infNFe/dest/xNome|varchar(60)|Razão social ou nome do destinatário|-|![check](/images/check.png)|"xNome": "ANTONIO DA SILVA"|
+|infNFe/dest/enderDest/UF|varchar(2)|Sigla UF do destinatário|-|![check](/images/check.png)|"UF": "RS"|
+|infNFe/dest/enderDest/cMun|int|Código do Município|-|![check](/images/check.png)|"cMun": 4306205| 
+|infNFe/dest/enderDest/xMun|varchar(60)|Nome do Município|-|![check](/images/check.png)|"xMun": "CRUZEIRO DO SUL"|
+|infNFe/dest/enderDest/cPais|int|Código do País do destinatário|-|![error](/images/error.png)|"cPais": 1058|
+|infNFe/dest/enderDest/xPais|varchar(60)|Nome do País do destinatário|-|![error](/images/error.png)|"xPais": "BRASIL"|
+|infNFe/det/nItem|int|Índice do item na nota|-|![check](/images/check.png)|"nItem": 1|
+|infNFe/det/prod/cProd|varchar(60)|Código do produto|-|![check](/images/check.png)|"cProd": "5650MHCL876/409489"|
+|infNFe/det/prod/qCom|numeric(15,4)|Quantidadecomercial|-|![check](/images/check.png)|"qCom": 1.0000|
+|infNFe/det/prod/vProd|numeric(15,2)|Valor total bruto dos produtos|-|![check](/images/check.png)|"vProd": 287000.00|
+|infNFe/det/prod/vUnCom|numeric(15,4)|Quantidadecomercial|-|![check](/images/check.png)|"qCom": 1.0000|
+|infNFe/det/prod/xProd|varchar(120)|Descrição do produto|-|![check](/images/check.png)|"xProd": "COLHEITADEIRA"|
+|infNFe/emit/CNPJ|varchar(14)|CNPJ do emitente|Se existir a informação de CPF o campo CNPJ deve vir vazio.|*|"CNPJ": "95437281000312"|
+|infNFe/emit/CPF|varchar(11)|CPF do emitente|Se existir a informação de CNPJ o campo CPF deve vir vazio.|* |"CPF": "29895508087"|
+|infNFe/emit/xFant|varchar(60)|Nome fantasia do emitente|-|![error](/images/error.png)|"xFant": "EXEMPLO FANT EMIT"|
+|infNFe/emit/xNome|varchar(60)|Razão Social ou nome do emitente|-|![check](/images/check.png)|"xNome": "EXEMPLO EMIT"|
+|infNFe/emit/enderEmit/UF|varchar(2)|Sigla da UF do emitente|-|![check](/images/check.png)|"UF": "RS"|
+|infNFe/emit/enderEmit/xMun|varchar(60)|Nome do município do emitente|-|![check](/images/check.png)|"xMun": "CRUZEIRO DO SUL"|
+|infNFe/emit/enderEmit/xPais|varchar(60)|Nome do País do emitente|-|![error](/images/error.png)|"xPais": "BRASIL"|
+|infNFe/id/|varchar(47)|Identificador da TAG a ser assinada. (informar a chave de acesso da NF-e precedida do literal ‘NFe’, acrescentada a validação do formato)|-|![check](/images/check.png) |"Id": " NFe43150395437281000312550030000296371002180066"|
+|infNFe/ide/dhEmi|datetime|Data de emissão da nota. *(formato" yyyy-MM-dd'T'HH:mm:ssX")*|-| ![check](/images/check.png)|"dhEmi": "2015-03-30T03:00:00-03:00"|
+|infNFe/ide/dhSaiEnt|datetime|Data de Saída ou da Entradada Mercadoria/Produto. *(formato"yyyy-MM-dd'T'HH:mm:ssX")*|-|![check](/images/check.png)|"dhSaiEnt": "2015-03-30T03:00:00-03:00"|
+|infNFe/ide/mod|varchar(2)|Código do modelo da nota. (utilizar código 55 para identificação da NF-e, emitida em substituição ao modelo 1 ou 1A)|-|![check](/images/check.png)|"mod":"55"|
+|infNFe/ide/nNf|int|Número da nota|-|![check](/images/check.png)|"nNF": 29637|
+|infNFe/ide/natOp|varchar(60)|Descrição da Natureza da Operação|-|![check](/images/check.png)|“natOp”: “TRANSFERENCIA ENTRE FILIAIS”|
+|infNFe/ide/serie|int|Série da nota|Preencher com zeros na hipótese de a NF-e não possuir série|![check](/images/check.png)|"serie": 3|
+|infNFe/ide/tpNF|int|Tipo de operação. (0 = entrada, 1 = saída)|-|![check](/images/check.png)|"tpNF": 1|
+|infNFe/infAdic/infCpl|Varchar(5000)|Informações complementares da NF|-|![check](/images/check.png)|“infCpl”:  “Informações complementares sobre a NF”|
+|infNFe/total/ICMSTot/vNF |numeric(15,2)|Valor Total da NF-e|-|![check](/images/check.png)|"vNF": 287000.00|
+|infNfe/versao|numeric(4,2)|Versão do layout|-|![check](/images/check.png)|"versao": 2.00|
 
 #### 5.1.2. Especificação de atributos grupo “XMLFile”
-| TAG | Tipo | Descrição | Regra | Mandatório | Exemplo |	
+|TAG|Tipo|Descrição|Regra|Mandatório|Exemplo|	
 |---|---|---|---|---|---|	
-|  /base64  | Byte array  | Arquivo XML em bytes | O XML da NF é obrigatório ao informar uma campanha. O valor da nota é obrigatório ao informar uma campanha.| ![check](/images/check.png) | |
-|  /filename  | varchar | Nome do arquivo  | -  |  ![check](/images/check.png) |  “filename “ : “NFe43170492197540000125550030000587641000818289.xml” |
-|  /filesize  | int |  Tamanho do arquivo em bytes | -  | ![check](/images/check.png) | “filesize” : 9765 |
-|  /filetype  | varchar | Tipo de arquivo | -   | ![check](/images/check.png) | “filetype” : “text/xml”| 
+|/base64 |Byte array|Arquivo XML em bytes|O XML da NF é obrigatório ao informar uma campanha. O valor da nota é obrigatório ao informar uma campanha.|![check](/images/check.png)|  |
+|/filename|varchar|Nome do arquivo| -  |![check](/images/check.png)|“filename “ : “NFe43170492197540000125550030000587641000818289.xml”|
+|/filesize|int|Tamanho do arquivo em bytes| -  |![check](/images/check.png)|“filesize” : 9765|
+|/filetype|varchar|Tipo de arquivo| -  |![check](/images/check.png)|“filetype” : “text/xml”| 
 
 #### 5.1.3. Especificação de atributos grupo “ddi”
 | TAG | Tipo | Descrição | Regra | Obrigatório | Exemplo |	
 |---|---|---|---|---|---|	
-|  /campaign/active  |  boolean| Campo booleano informa se a campanha está ativa ou não padrão false caso não informado | - | ![check](/images/check.png)  | "active": true |
-|  /campaign/beginDate/ | Datetime | Data de inicio da campanha | Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z' | ![check](/images/check.png) | "beginDate": "2017-12-20T09:44:48.416Z", |
-|  /campaign/brand/ | varchar(4) | Marca dos tratores | Brand must not be Empty or null. | ![check](/images/check.png) |  |
-| /campaign/endDate/ | Datetime | Data final da campanha  | Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z' | ![check](/images/check.png) | "endDate": "2017-12-20T09:44:48.417Z", |
-| /campaign/id/ | int | Identificador da campanha  | ID must not be Empty or null | ![check](/images/check.png) | "id": 0, |
-| /campaign/market/ | varchar(2) | Informa o tipo de mercado interno. I = Interno, E = Externo. | Market must not be Empty or null | ![check](/images/check.png) | "market": "string", |
-| /campaign/models | Grupo | Campanhas envelope do grupo de Campanhas | Modelmust not be Empty or null. |![check](/images/check.png)  | "models":[{"id": 0, "idWholegoodsCampaign": 0, "model": "string", "updateDate": "2017-12-19T10:55:21.256Z", "userLogin": "string"}], |
-| /campaign/models/model/ | varchar(250) | Modelo da campanha  | Não pode ser vazio ou null.  | ![check](/images/check.png) | "model": "string", | 
-| /campaign/name/ | varchar(50) | Nome da campanha | Não pode ser vazio ou null. Tamanho min = 1 and max = 12 | ![check](/images/check.png) | "name": "string", |
-| /campaign/productType/ | varchar(4) |  Tipo do produto | ProductType must not be Empty or null |![check](/images/check.png)| "productType": "string", | 
-| /prodDet/nItem/ | int  |  Índice do item na nota | -  | ![check](/images/check.png)  | "nItem": 1 |
-| /prodDet/prod/codigoItem/ | varchar(25) | Código do item - AGCO | -  | ![check](/images/check.png)  |  "codigoItem": "42754F0913D" |
+|/campaign/active|boolean|Campo booleano informa se a campanha está ativa ou não. Padrão false caso não informado| Ativa = ? / Inativa = ? | ![check](/images/check.png)|"active": true|
+|/campaign/beginDate/|Datetime|Data de inicio da campanha|Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z'|![check](/images/check.png)|"beginDate": "2017-12-20T09:44:48.416Z"|
+|/campaign/brand/|varchar(4)|Marca dos tratores|Brand must not be Empty or null|![check](/images/check.png)|  |
+|/campaign/endDate/|Datetime|Data final da campanha|Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z'| ![check](/images/check.png) |"endDate": "2017-12-20T09:44:48.417Z"|
+|/campaign/id/ | int|Identificador da campanha|ID must not be Empty or null |![check](/images/check.png)|"id": 0|
+|/campaign/market/|varchar(2)|Informa o tipo de mercado interno.I= Interno, E = Externo.|Market must not be Empty or null| ![check](/images/check.png) |"market": "string",|
+|/campaign/models|Grupo|Campanhas envelope do grupo de Campanhas|Modelmust not be Empty or null. |![check](/images/check.png)|"models":[{"id": 0, "idWholegoodsCampaign": 0, "model": "string", "updateDate": "2017-12-19T10:55:21.256Z", "userLogin": "string"}]|
+|/campaign/models/model/|varchar(250)|Modelo da campanha|Não pode ser vazio ou null| ![check](/images/check.png) | "model": "string"| 
+|/campaign/name/|varchar(50)|Nome da campanha|Não pode ser vazio ou null. Tamanho min = 1 and max = 12| ![check](/images/check.png)|"name": "string"|
+|/campaign/productType/|varchar(4)|Tipo do produto|ProductType must not be Empty or null|![check](/images/check.png)| "productType": "string"| 
+|/prodDet/nItem/|int|Índice do item na nota| -  |![check](/images/check.png)|"nItem": 1|
+|/prodDet/prod/codigoItem/|varchar(25)|Código do item - AGCO| -  |![check](/images/check.png)|"codigoItem": "42754F0913D"|
 |/prodDet/prod/modelo/|varchar(2)|Código do modelo da nota |Utilizar código 55 para identificação da NF-e, emitida em substituição ao modelo 1 ou 1A|![check](/images/check.png)|"modelo": "MF"|
 | /prodDet/prod/TipoProd | varchar(3)  |  Tipo de produto AGCO, onde: Trator = “TA”, Colheitadeira = “CO”, Pulverizador: “PU” | -  | ![error](/images/error.png) |"tipoProd": "TA"|
 | /prodDet/prod/monobloco/ |  varchar(30) |  Número do Monobloco – AGCO  | -  |  ![error](/images/error.png) | "monobloco": " AAAT0012PCC002382" |
@@ -208,8 +208,8 @@ Detalhe: O parâmetro token deve ser setado via Bearer para essa interface.
 
 | Propriedade | Descrição | Exemplo |
 |---|---|---|
-| Authorization | Inserir no header a seguinte propriedade: “Authorization: Bearer”. | Authorization: Bearer <token> |
-| Content-Type | Inserir no header a seguinte propriedade: **"Content-Type:application/json"** | Content-Type:application/json |
+|Authorization|Inserir no header a seguinte propriedade: “Authorization: Bearer”.|Authorization: Bearer <token>|
+|Content-Type|Inserir no header a seguinte propriedade: **"Content-Type:application/json"**|Content-Type:application/json|
 
 
 ### 5.3. Interface Campaign
