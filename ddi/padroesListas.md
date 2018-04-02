@@ -18,13 +18,13 @@ Abaixo estão os padrões existentes no contrato de dados.
 ### 5.2. Lista de valores
 Abaixo estão as listas de valores utilizadas em alguns campos no contrato de dados.
 
-|Código|Valores|Descrição|
-|------|-------|---------|
-|V001|pt-BR<br>es-AR|Se não informado o parâmetro 'lang' o sistema detecta a localização do Dealer para definir linguagem|
-|V002|pt<br/>es<br/>en|pt = Português<br/>es = Espanhol<br/>en = Inglês<br/>|
-|V003|Y<br/>N|Y = Yes<br/>N = No|
-|V004|A<br/>B<br/>D<br/>vazio<br/>null|A = Ativa<br/>B = Broken<br/>D = Desativada<br/>" "<br/>null|
-|V005|SP<br/>SI<br/>IN<br/>CO<br/>CS<br/>SS|SP = Simples Parcial<br/>SI = Simples<br/>IN = Informativa<br/>CO = Composta</br>CS = Composta Seletiva<br/>SS = Simples Seletiva|
+|Código|Valores|
+|------|-------|
+|V001|Ativa = ? / Inativa = ?|
+|V002|Pattern yyyy-MM-dd’T’HH:mm:ss.SSS’Z’|
+|V003|Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z'|
+|V004|I= Interno, E = Externo|
+|V005|Tamanho Min = 1 Max = 12|
 
 <br/>
 
@@ -33,22 +33,20 @@ Abaixo estão as regras aplicadas em alguns campos do contrato de dados
 
 |Código|Regra|
 |------|-----|
-|R001	|Quando parâmetro "null" retorna vazio|
-|R002	|Quando não for encontrado nenhum registro retorna vazio|
+|R001|Informar a chave de acesso da NFe precedida do literal ‘NFe’, acrescentada a validação do formato|
+|R002|Se existir a informação de CPF o campo CNPJ deve vir vazio|
+|R003|Se existir a informação de CPF o campo CNPJ deve vir vazio|
+|R004|Se existir a informação de CPF o campo CNPJ deve vir vazio|
+|R005|Se existir a informação de CNPJ o campo CPF deve vir vazio|
+|R006|Preencher com zeros na hipótese de a NF-e não possuir série|
+|R007|O XML da NF é obrigatório ao informar uma campanha. O valor da nota é obrigatório ao informar uma campanha|
+|R008|Brand must not be Empty or null|
+|R009|ID must not be Empty or null|
+|R010|Model must not be Empty or null|
+|R011|Não pode ser vazio ou null|
+|R012|Não pode ser vazio ou null|
+|R013|ProductType must not be Empty or null|
+|R014|Utilizar código 55 para identificação da NF-e, emitida em substituição ao modelo 1 ou 1A|
+
 
 <br/>
-#### 5.3.1. Fluxo e regras tipos de substituições
-
-![fluxo_tipo_substituicoes](https://github.com/agco-sa/site-md-src/blob/parts/images/tipos-substituicoes.png?raw=true)
-
-<br/>
-
-#### 5.3.2. Regra Substituição Simples
-A substituição simples se dá quando ocorre:</br>
-*Melhoria;</br>
-*Substituição de um material com problema;</br>
-*Redução de custo;</br>
-*Melhora de especificação;</br>
-*entre outros.</br>
-Pode ser intercambiável onde a nova monta no lugar da velha e vice versa.
-Ou pode ser intercambiável não reversível onde a nova monta no lugar da velha, porém a velha não monta no lugar da nova.
