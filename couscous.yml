@@ -36,6 +36,9 @@ menu:
                     ddi-codretorno:
                         text: Códigos de retorno
                         relativeUrl: ddi/codretorno.html
+                    ddi-padroes-listas:
+                        text: Padrões e Listas
+                        relativeUrl: ddi/padroeslistas.html
                     ddi-endpoints:
                         text: Endpoints
                         relativeUrl: ddi/endpoints.html
