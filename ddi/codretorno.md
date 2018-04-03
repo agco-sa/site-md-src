@@ -43,7 +43,10 @@ Neste caso, os dados incorretos devem ser corrigidos antes de serem re-enviados.
 | 16 | CNPJ da nota é diferente do CNPJ da concessionária | NFe/infNFe/dest ou NFe/infNFe/emit | "CNPJ": "99999999999999” *(CNPJ enviado é diferente do CNPJ que está com o produto em estoque)* |
 | 17 | CNPJ do destinatário não existe na base | NFe/infNFe/dest | "CNPJ": "99999999999999” *(CNPJ enviado não existe na base)* |
 | 18 | Produtos duplicados na nota fiscal | ddi/prodDet/prod | "codigoItem": "42754F0913D", "serieComercial": "4275344889", "monobloco": " AAAT0012PCC002382" *(produto aparece duas vezes na mesma nota fiscal)* |
-
+| 19 | CNPJ não existe na base | NFe/infNFe/emitNFe/infNFe/dest | "CNPJ": "02050252” (CNPJ não está cadastrado na AGCO) |
+| 20 | O Xml da nota é obrigatório ao informar uma campanha | xml | Informação de campanha informada, mas XML não foi informado |
+| 21 | Nota Fiscal já cadastrada | NFe/infNFe/ide | "nNF": 14253 (nota fiscal já está informada com base no CNPJ, número da nota e série) |
+| 22 | Já existe uma nota fiscal mais recente no sistema para esse produto. | NFe/infNFe/ide | "dhEmi": "2018-01-01T00:00:00.000Z" (se já existir uma nota para o produto a nova nota deve ter data maior do que a data da nota anterior) |
 
 
 
