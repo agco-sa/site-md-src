@@ -1,4 +1,3 @@
-
 ---
 currentMenu: ddi-endpoints
 parentMenu: ddi
@@ -11,11 +10,12 @@ A API é composta de uma lista de recursos com possibilidade de diferentes opera
 
 ### 5.1. Interface DealerNFe
 
-Envia para a AGCO as informações de venda da revenda ao cliente final. no DMS a seleção de dados deverá atender a duas premissas importantes: </br>
+	Envia para a AGCO as informações de venda da revenda ao cliente final. no DMS a seleção de dados deverá atender a duas premissas importantes: </br>
 	* Considerar as notas fiscais de Devolução(entrada), Saída e Transferência aptas a serem integradas e que contenham produtos a serem integrados conforme definido no cadastro de produto. </br>
-	* Somente para as notas transmitidas e autorizadas pela SEFAZ, após o prazo máximo definido pelo cancelamento - não está previsto nenhum tratamento sobre o cancelamento de notas.
-Recomenda-se a adoção de um parâmetro padrão que define o tempo máximo pra cancelamento da nota fiscal SEFAZ para validar as notas aptas a integração DMS x AGCO. </br>
-A estrutura JSON contendo os dados é enviada no corpo da chamada. Segue um exemplo do corpo de uma mensagem válida, no padrão JSON esperado, contendo TAGS do schema. </br>
+	* Somente para as notas transmitidas e autorizadas pela SEFAZ, após o prazo máximo definido pelo cancelamento - não está previsto nenhum tratamento sobre o cancelamento de notas.  Recomenda-se a adoção de um parâmetro padrão que define o tempo máximo para cancelamento de nota fiscal SEFAZ para validar as notas aptas a integração DMS x AGCO. </br>
+	A estrutura JSON contendo os dados é enviada no corpo da chamada. </br>
+	Segue um exemplo do corpo da mensagem válida, no padrão JSON esperado, contendo TAGS do schema. </br>
+	
 Exemplo de JSON para interface DealerNFe:
 
     {
@@ -195,7 +195,7 @@ Exemplo de JSON para interface DealerNFe:
 | /tipoOp/vend/CPF | varchar(11) | CPF de vendedor | - | ![error](/images/error.png) | "CPF": "29896908085" |
 | /tipoOp/vend/CNPJ |  varchar(14) | CNPJ do vendedor  | - | ![error](/images/error.png) |  "CNPJ": "95485281000312" |
 | /tipoOp/vend/telefone |  varchar(15) | Número do telefone celular do vendedor  | - |  ![error](/images/error.png) |  "telefone": "5199999999" |
-| /tipoOp/vend/xNome |  varchar(60) |  Nome completo do vendedor | -  | ![error](/images/error.png) | "xNome": "NOME VENDEDOR" |
+| /tipoOp/vend/xNome | varchar(60) | Nome completo do vendedor | -  | ![error](/images/error.png) | "xNome": "NOME VENDEDOR" |
 </br>
 
 ### 5.2. Interface Stock
@@ -203,20 +203,21 @@ Exemplo de JSON para interface DealerNFe:
 Envia para a AGCO as informações de negociação do produto/monobloco em estoque. Os dados da Concessionária e do produto devem ser adicionados diretamente no endereço da API.</br>
 
 Exemplo de JSON para interface STOCK </br>
-Endereço</br>
+Endereço </br>
     https://appsqa.agcoonline.com.br/portal/ddi/Stock/Tipo_empresa/Cod_Dealer/Monobloco/Serie_Comercial/Item
 
-Body</br>
+Body
+
   `{"available":"S","availableCpfCnpj":"999.999.999-00"}` 
 
-| Tipo Empresa | Código Dealer | Monobloco | Série Comercial | Item |	
-|---|---|---|---|---|
+|Tipo Empresa|Código Dealer|Monobloco|Série Comercial|Item|	
+|------------|-------------|---------|---------------|----|
 |6|11571|000BO3020CI0004|BP03330255|BP0302E1021|
 
-Detalhe: O parâmetro token deve ser setado via Bearer para essa interface.</br>
+Detalhe: O parâmetro token deve ser setado via Bearer para essa interface. </br>
 
 | Propriedade | Descrição | Exemplo |
-|---|---|---|
+|-----------|---------|-------|
 |Authorization|Inserir no header a seguinte propriedade: “Authorization: Bearer”.|Authorization: Bearer <token>|
 |Content-Type|Inserir no header a seguinte propriedade: **"Content-Type:application/json"**|Content-Type:application/json|
 
@@ -228,9 +229,8 @@ Através do método GET no DMS é possível buscar uma lista das Campanhas exist
 </br>
 
 #### 5.3.1. Response Body
-
-> {
-  "data": [
+	{
+ 	 "data": [
     {
       "id": "1",
       "type": "wholegoodsCampaign",
@@ -253,8 +253,9 @@ Através do método GET no DMS é possível buscar uma lista das Campanhas exist
 
 #### 5.3.2. Request Headers
 
-> {
-  "Accept": "application/json;charset=UTF-8"
-}
+	{
+  		"Accept": "application/json;charset=UTF-8"
+	}
 
 * Se existir a informação de CPF o campo CNPJ deve vir vazio. O mesmo acontece para o caso contrário.
+
