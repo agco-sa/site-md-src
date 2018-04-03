@@ -7,24 +7,25 @@ parentMenu: ddi
 
 ## 5. Padrões e lista de valores
 Essa sessão contém os padrões e lista de valores utilizados no contrato de dados.
+
 ### 5.1. Padrões utilizados no campos
 Abaixo estão os padrões existentes no contrato de dados.
 
 |Código|Padrão|Exemplo|Referência|
 |------|------|-------|----------|
-|P001|ISO 3166-2|"pt-BR"|No final da url https://www.iso.org/obp/ui/#iso:code:3166: coloque o código do país da ISO 3166-2.<br/> Exemplo: [https://www.iso.org/obp/ui/#iso:code:3166:BR](https://www.iso.org/obp/ui/#iso:code:3166:BR)|
+|P001|ISO 8601|YYYY-MM-DDThh:mm:ss+03:00| |
 <br/>
 
 ### 5.2. Lista de valores
 Abaixo estão as listas de valores utilizadas em alguns campos no contrato de dados.
 
-|Código|Valores|
-|------|-------|
-|V001|Ativa = ? / Inativa = ?|
-|V002|Pattern yyyy-MM-dd’T’HH:mm:ss.SSS’Z’|
-|V003|Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z'|
-|V004|I= Interno, E = Externo|
-|V005|Tamanho Min = 1 Max = 12|
+|Código|Valores|Descrição|
+|------|-------|-------|
+|V001|Ativa = ? / Inativa = ?| |
+|V002|Pattern yyyy-MM-dd’T’HH:mm:ss.SSS’Z’| |
+|V003|Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z'| |
+|V004|I= Interno, E = Externo| |
+|V005|Tamanho Min = 1 Max = 12| |
 
 <br/>
 
