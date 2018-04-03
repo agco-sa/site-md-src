@@ -120,6 +120,7 @@ Exemplo de JSON para interface DealerNFe:
         }
     }
 
+</br>
 #### 5.1.1. Especificação de atributos grupo “nfe”
 
 |TAG|Tipo|Descrição|Regra|Obrigatório|Exemplo|
@@ -158,7 +159,7 @@ Exemplo de JSON para interface DealerNFe:
 |infNFe/infAdic/infCpl|Varchar(5000)|Informações complementares da NF|-|![check](/images/check.png)|“infCpl”:  “Informações complementares sobre a NF”|
 |infNFe/total/ICMSTot/vNF |numeric(15,2)|Valor Total da NF-e|-|![check](/images/check.png)|"vNF": 287000.00|
 |infNfe/versao|numeric(4,2)|Versão do layout|-|![check](/images/check.png)|"versao": 2.00|
-
+</br>
 #### 5.1.2. Especificação de atributos grupo “XMLFile”
 |TAG|Tipo|Descrição|Regra|Mandatório|Exemplo|	
 |---|---|---|---|---|---|	
@@ -166,7 +167,7 @@ Exemplo de JSON para interface DealerNFe:
 |/filename|varchar|Nome do arquivo| -  |![check](/images/check.png)|“filename “ : “NFe43170492197540000125550030000587641000818289.xml”|
 |/filesize|int|Tamanho do arquivo em bytes| -  |![check](/images/check.png)|“filesize” : 9765|
 |/filetype|varchar|Tipo de arquivo| -  |![check](/images/check.png)|“filetype” : “text/xml”| 
-
+</br>
 #### 5.1.3. Especificação de atributos grupo “ddi”
 | TAG | Tipo | Descrição | Regra | Obrigatório | Exemplo |	
 |---|---|---|---|---|---|	
@@ -190,7 +191,7 @@ Exemplo de JSON para interface DealerNFe:
 | /tipoOp/vend/CNPJ |  varchar(14) | CNPJ do vendedor  | - | ![error](/images/error.png) |  "CNPJ": "95485281000312" |
 | /tipoOp/vend/telefone |  varchar(15) | Número do telefone celular do vendedor  | - |  ![error](/images/error.png) |  "telefone": "5199999999" |
 | /tipoOp/vend/xNome |  varchar(60) |  Nome completo do vendedor | -  | ![error](/images/error.png) | "xNome": "NOME VENDEDOR" |
-
+</br>
 ### 5.2. Interface Stock
 Envia para a AGCO as informações de negociação do produto/monobloco em estoque. Os dados da Concessionária e do produto devem ser adicionados diretamente no endereço da API.
 
@@ -212,10 +213,10 @@ Detalhe: O parâmetro token deve ser setado via Bearer para essa interface.
 |Authorization|Inserir no header a seguinte propriedade: “Authorization: Bearer”.|Authorization: Bearer <token>|
 |Content-Type|Inserir no header a seguinte propriedade: **"Content-Type:application/json"**|Content-Type:application/json|
 
-
+</br>
 ### 5.3. Interface Campaign
 Através do método GET no DMS é possível buscar uma lista das Campanhas existentes na AGCO. 
-
+</br>
 #### 5.3.1. Response Body
 
 > {
@@ -238,7 +239,7 @@ Através do método GET no DMS é possível buscar uma lista das Campanhas exist
             "userLogin": "avier"
           }
         ],
-
+</br>
 #### 5.3.2. Request Headers
 
 > {
