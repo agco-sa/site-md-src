@@ -1,3 +1,4 @@
+
 ---
 currentMenu: ddi-endpoints
 parentMenu: ddi
@@ -170,14 +171,14 @@ Exemplo de JSON para interface DealerNFe:
 | TAG | Tipo | Descrição | Regra | Obrigatório | Exemplo |	
 |---|---|---|---|---|---|	
 |/campaign/active|boolean|Campo booleano informa se a campanha está ativa ou não. Padrão false caso não informado|V002| ![check](/images/check.png)|"active": true|
-|/campaign/beginDate/|Datetime|Data de inicio da campanha|V002|![check](/images/check.png)|"beginDate": "2017-12-20T09:44:48.416Z"|
+|/campaign/beginDate/|Datetime|Data de inicio da campanha|V003|![check](/images/check.png)|"beginDate": "2017-12-20T09:44:48.416Z"|
 |/campaign/brand/|varchar(4)|Marca dos tratores|R008|![check](/images/check.png)|  |
-|/campaign/endDate/|Datetime|Data final da campanha|V003| ![check](/images/check.png) |"endDate": "2017-12-20T09:44:48.417Z"|
+|/campaign/endDate/|Datetime|Data final da campanha|V004| ![check](/images/check.png) |"endDate": "2017-12-20T09:44:48.417Z"|
 |/campaign/id/ | int|Identificador da campanha|R009|![check](/images/check.png)|"id": 0|
-|/campaign/market/|varchar(2)|Informa o tipo de mercado interno.|V004| ![check](/images/check.png) |"market": "string",|
+|/campaign/market/|varchar(2)|Informa o tipo de mercado interno.|V005| ![check](/images/check.png) |"market": "string",|
 |/campaign/models|Grupo|Campanhas envelope do grupo de Campanhas|R010|![check](/images/check.png)|"models":[{"id": 0, "idWholegoodsCampaign": 0, "model": "string", "updateDate": "2017-12-19T10:55:21.256Z", "userLogin": "string"}]|
 |/campaign/models/model/|varchar(250)|Modelo da campanha|R011|![check](/images/check.png) | "model": "string"| 
-|/campaign/name/|varchar(50)|Nome da campanha|R012   V005| ![check](/images/check.png)|"name": "string"|
+|/campaign/name/|varchar(50)|Nome da campanha|R012   V006| ![check](/images/check.png)|"name": "string"|
 |/campaign/productType/|varchar(4)|Tipo do produto|R013|![check](/images/check.png)| "productType": "string"| 
 |/prodDet/nItem/|int|Índice do item na nota| -  |![check](/images/check.png)|"nItem": 1|
 |/prodDet/prod/codigoItem/|varchar(25)|Código do item - AGCO| -  |![check](/images/check.png)|"codigoItem": "42754F0913D"|
