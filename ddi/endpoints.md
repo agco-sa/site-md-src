@@ -153,7 +153,7 @@ Exemplo de JSON para interface DealerNFe:
 |infNFe/ide/nNf|int|Número da nota|-|![check](/images/check.png)|"nNF": 29637|
 |infNFe/ide/natOp|varchar(60)|Descrição da Natureza da Operação|-|![check](/images/check.png)|“natOp”: “TRANSFERENCIA ENTRE FILIAIS”|
 |infNFe/ide/serie|int|Série da nota|R006|![check](/images/check.png)|"serie": 3|
-|infNFe/ide/tpNF|int|Tipo de operação. (0 = entrada, 1 = saída)|-|![check](/images/check.png)|"tpNF": 1|
+|infNFe/ide/tpNF|int|Tipo de operação. |V001|![check](/images/check.png)|"tpNF": 1|
 |infNFe/infAdic/infCpl|Varchar(5000)|Informações complementares da NF|-|![check](/images/check.png)|“infCpl”:  “Informações complementares sobre a NF”|
 |infNFe/total/ICMSTot/vNF |numeric(15,2)|Valor Total da NF-e|-|![check](/images/check.png)|"vNF": 287000.00|
 |infNfe/versao|numeric(4,2)|Versão do layout|-|![check](/images/check.png)|"versao": 2.00|
@@ -169,7 +169,7 @@ Exemplo de JSON para interface DealerNFe:
 #### 5.1.3. Especificação de atributos grupo “ddi”
 | TAG | Tipo | Descrição | Regra | Obrigatório | Exemplo |	
 |---|---|---|---|---|---|	
-|/campaign/active|boolean|Campo booleano informa se a campanha está ativa ou não. Padrão false caso não informado| V001| ![check](/images/check.png)|"active": true|
+|/campaign/active|boolean|Campo booleano informa se a campanha está ativa ou não. Padrão false caso não informado|V002| ![check](/images/check.png)|"active": true|
 |/campaign/beginDate/|Datetime|Data de inicio da campanha|V002|![check](/images/check.png)|"beginDate": "2017-12-20T09:44:48.416Z"|
 |/campaign/brand/|varchar(4)|Marca dos tratores|R008|![check](/images/check.png)|  |
 |/campaign/endDate/|Datetime|Data final da campanha|V003| ![check](/images/check.png) |"endDate": "2017-12-20T09:44:48.417Z"|
