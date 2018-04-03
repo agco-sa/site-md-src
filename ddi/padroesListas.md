@@ -22,11 +22,11 @@ Abaixo estão as listas de valores utilizadas em alguns campos no contrato de da
 |Código|Valores|Descrição|
 |------|-------|-------|
 |V001|0 = Entrada, 1 = Saída|Tipo de Operação NFe|
-|V002|Ativa = ? / Inativa = ?| |
-|V003|Pattern yyyy-MM-dd’T’HH:mm:ss.SSS’Z’| |
-|V004|Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z'| |
-|V005|I= Interno, E = Externo| |
-|V006|Tamanho Min = 1 Max = 12| |
+|V002|Ativa = ?, Inativa = ?|Informa se Campanha está ativa|
+|V003|Pattern yyyy-MM-dd’T’HH:mm:ss.SSS’Z’|Data início da Campanha|
+|V004|Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z'|Data final da Campanha|
+|V005|I = Interno, E = Externo|Informa tipo de Mercado|
+|V006|Tamanho: Min = 1, Max = 12|Nome da Campanha|
 
 <br/>
 
