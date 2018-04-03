@@ -257,4 +257,4 @@ Através do método GET no DMS é possível buscar uma lista das Campanhas exist
   "Accept": "application/json;charset=UTF-8"
 }
 
-*** Se existir a informação de CPF o campo CNPJ deve vir vazio. O mesmo acontece para o caso contrário.
+* Se existir a informação de CPF o campo CNPJ deve vir vazio. O mesmo acontece para o caso contrário.
