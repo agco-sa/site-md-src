@@ -5,10 +5,10 @@ parentMenu: ddi
 
 # DDI
 
-## 5. Padrões e lista de valores
+## 6. Padrões e lista de valores
 Essa sessão contém os padrões e lista de valores utilizados no contrato de dados.
 
-### 5.1. Padrões utilizados no campos
+### 6.1. Padrões utilizados no campos
 Abaixo estão os padrões existentes no contrato de dados.
 
 |Código|Padrão|Exemplo|Referência|
@@ -16,7 +16,7 @@ Abaixo estão os padrões existentes no contrato de dados.
 |P001|ISO 8601|YYYY-MM-DDThh:mm:ss+03:00| |
 <br/>
 
-### 5.2. Lista de valores
+### 6.2. Lista de valores
 Abaixo estão as listas de valores utilizadas em alguns campos no contrato de dados.
 
 |Código|Valores|Descrição|
@@ -30,7 +30,7 @@ Abaixo estão as listas de valores utilizadas em alguns campos no contrato de da
 
 <br/>
 
-### 5.3. Regras
+### 6.3. Regras
 Abaixo estão as regras aplicadas em alguns campos do contrato de dados
 
 |Código|Regra|
