@@ -21,11 +21,12 @@ Abaixo estão as listas de valores utilizadas em alguns campos no contrato de da
 
 |Código|Valores|Descrição|
 |------|-------|-------|
-|V001|Ativa = ? / Inativa = ?| |
-|V002|Pattern yyyy-MM-dd’T’HH:mm:ss.SSS’Z’| |
-|V003|Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z'| |
-|V004|I= Interno, E = Externo| |
-|V005|Tamanho Min = 1 Max = 12| |
+|V001|0 = Entrada, 1 = Saída|Tipo de Operação NFe|
+|V002|Ativa = ? / Inativa = ?| |
+|V003|Pattern yyyy-MM-dd’T’HH:mm:ss.SSS’Z’| |
+|V004|Pattern yyyy-MM-dd'T'HH:mm:ss.SSS'Z'| |
+|V005|I= Interno, E = Externo| |
+|V006|Tamanho Min = 1 Max = 12| |
 
 <br/>
 
